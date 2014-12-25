@@ -25,10 +25,48 @@
  */
 package com.sawan.mathattack.screen.game;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.sawan.mathattack.screen.Screen;
+
 /**
  * @author Sawan J. Kapai Harpalani
  *
  */
-public class MenuScreen {
+public class MenuScreen extends Screen {
+
+	@Override
+	public void create() {
+		
+	}
+
+	@Override
+	public void render(SpriteBatch sprite_batch) {
+		
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		
+	}
+
+	@Override
+	public void dispose() {
+		
+	}
+
+	@Override
+	public void hide() {
+		
+	}
+
+	@Override
+	public void pause() {
+		
+	}
+
+	@Override
+	public void resume() {
+		
+	}
 
 }
