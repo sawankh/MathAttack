@@ -31,7 +31,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.screen.ScreenManager;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MAGame.
  */
