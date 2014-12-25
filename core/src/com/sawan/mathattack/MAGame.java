@@ -30,8 +30,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.screen.ScreenManager;
+import com.sawan.mathattack.screen.game.MenuScreen;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MAGame.
  */
@@ -54,6 +54,7 @@ public class MAGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
+		ScreenManager.setCurrentScreen(new MenuScreen());
 	}
 
 	/* (non-Javadoc)

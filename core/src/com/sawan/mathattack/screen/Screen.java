@@ -73,4 +73,9 @@ public abstract class Screen {
 	 * Resume.
 	 */
 	public abstract void resume();
+	
+	/**
+	 * Update.
+	 */
+	public abstract void update();
 }
