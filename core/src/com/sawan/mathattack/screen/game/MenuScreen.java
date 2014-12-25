@@ -28,13 +28,14 @@ package com.sawan.mathattack.screen.game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.screen.Screen;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MenuScreen.
  *
  * @author Sawan J. Kapai Harpalani
  */
 public class MenuScreen extends Screen {
+	
+	
 
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#create()
@@ -90,6 +91,11 @@ public class MenuScreen extends Screen {
 	@Override
 	public void resume() {
 		System.out.println("resumed!");
+	}
+
+	@Override
+	public void update() {
+		
 	}
 
 }
