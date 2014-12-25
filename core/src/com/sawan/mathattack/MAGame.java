@@ -30,14 +30,34 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MAGame.
+ */
 public class MAGame extends ApplicationAdapter {
+	
+	
+	/** The Constant WIDTH. */
+	public final static int WIDTH = 480;
+	
+	
+	/** The Constant HEIGHT. */
+	public final static int HEIGHT = 800;
+	
+	/** The batch. */
 	SpriteBatch batch;
 	
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationAdapter#create()
+	 */
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationAdapter#render()
+	 */
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(0, 0, 0, 1);

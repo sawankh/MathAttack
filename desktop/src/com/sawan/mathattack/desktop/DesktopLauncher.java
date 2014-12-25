@@ -32,6 +32,8 @@ import com.sawan.mathattack.MAGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		config.width = MAGame.WIDTH;
+		config.height = MAGame.HEIGHT;
 		new LwjglApplication(new MAGame(), config);
 	}
 }
