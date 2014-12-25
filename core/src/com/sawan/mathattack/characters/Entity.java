@@ -25,6 +25,7 @@
  */
 package com.sawan.mathattack.characters;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -79,6 +80,18 @@ public abstract class Entity {
 	 */
 	public Vector2 getPosition() {
 		return position;
+	}
+
+	
+	/**
+	 * Sets the direction.
+	 *
+	 * @param x the x
+	 * @param y the y
+	 */
+	public void setDirection(float x, float y) {
+		direction.set(x, y);
+		direction = direction.scl(Gdx.graphics.getDeltaTime());
 	}
 	
 	
