@@ -42,7 +42,11 @@ public class ScreenManager {
 	 * @param screen the new current screen
 	 */
 	public static void setCurrentScreen(Screen screen) {
+		if (current_screen != null) {
+			current_screen.dispose();
+		}
 		current_screen = screen;
+		current_screen.create();
 	}
 	
 	/**
