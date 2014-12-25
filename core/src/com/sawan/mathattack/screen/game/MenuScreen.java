@@ -26,22 +26,24 @@
 package com.sawan.mathattack.screen.game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.sawan.mathattack.camera.OrthoCamera;
 import com.sawan.mathattack.screen.Screen;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MenuScreen.
  *
  * @author Sawan J. Kapai Harpalani
  */
 public class MenuScreen extends Screen {
+	
+	private OrthoCamera camera;
 
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#create()
 	 */
 	@Override
 	public void create() {
-		System.out.println("created!");
+		camera = new OrthoCamera();
 	}
 
 	/* (non-Javadoc)
@@ -49,7 +51,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void render(SpriteBatch sprite_batch) {
-		System.out.println("rendering!");
+		
 	}
 
 	/* (non-Javadoc)
@@ -57,7 +59,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void resize(int width, int height) {
-		System.out.println("resized!");
+		camera.resize();
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +67,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void dispose() {
-		System.out.println("disposed!");
+		
 	}
 
 	/* (non-Javadoc)
@@ -73,7 +75,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void hide() {
-		System.out.println("hiden!");
+		
 	}
 
 	/* (non-Javadoc)
@@ -81,7 +83,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void pause() {
-		System.out.println("paused!");
+		
 	}
 
 	/* (non-Javadoc)
@@ -89,7 +91,12 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void resume() {
-		System.out.println("resumed!");
+		
+	}
+
+	@Override
+	public void update() {
+		camera.update();
 	}
 
 }
