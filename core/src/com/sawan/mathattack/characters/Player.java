@@ -25,7 +25,6 @@
  */
 package com.sawan.mathattack.characters;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.sawan.mathattack.textures.TextureManager;
 
