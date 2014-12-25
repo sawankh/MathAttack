@@ -25,10 +25,13 @@
  */
 package com.sawan.mathattack.textures;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+
 /**
  * @author Sawan J. Kapai Harpalani
  *
  */
 public class TextureManager {
-
+	public static Texture PLAYER = new Texture(Gdx.files.internal("0.png"));
 }
