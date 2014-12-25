@@ -26,6 +26,7 @@
 package com.sawan.mathattack.characters;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 // TODO: Auto-generated Javadoc
@@ -57,4 +58,28 @@ public abstract class Entity {
 		this.position = position;
 		this.direction = direction;
 	}
+
+	/**
+	 * Update.
+	 *
+	 */
+	public abstract void update();
+	
+	/**
+	 * Render.
+	 *
+	 * @param sprite_batch the sprite_batch
+	 */
+	public void render(SpriteBatch sprite_batch) {
+		sprite_batch.draw(texture, position.x, position.y);
+	}
+	
+	/**
+	 * @return the position
+	 */
+	public Vector2 getPosition() {
+		return position;
+	}
+	
+	
 }
