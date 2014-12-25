@@ -30,6 +30,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MAGame.
  */
@@ -61,5 +62,29 @@ public class MAGame extends ApplicationAdapter {
 	public void render () {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationAdapter#dispose()
+	 */
+	@Override
+	public void dispose() {
+		
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationAdapter#pause()
+	 */
+	@Override
+	public void pause() {
+		
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationAdapter#resume()
+	 */
+	@Override
+	public void resume() {
+		
 	}
 }
