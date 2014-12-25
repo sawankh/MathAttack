@@ -66,6 +66,10 @@ public class MAGame extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		if (ScreenManager.getCurrentScreen() != null) {
+			ScreenManager.getCurrentScreen().update();
+		}
+		
+		if (ScreenManager.getCurrentScreen() != null) {
 			ScreenManager.getCurrentScreen().render(batch);
 		}
 	}
