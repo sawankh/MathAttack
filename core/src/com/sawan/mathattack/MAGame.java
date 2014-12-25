@@ -39,11 +39,11 @@ public class MAGame extends ApplicationAdapter {
 	
 	
 	/** The Constant WIDTH. */
-	public final static int WIDTH = 480;
+	public final static int WIDTH = 800;
 	
 	
 	/** The Constant HEIGHT. */
-	public final static int HEIGHT = 800;
+	public final static int HEIGHT = 480;
 	
 	/** The batch. */
 	SpriteBatch batch;

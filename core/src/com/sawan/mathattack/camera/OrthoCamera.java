@@ -25,11 +25,11 @@
  */
 package com.sawan.mathattack.camera;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.sawan.mathattack.MAGame;
 
 /**
  * The Class OrthoCamera.
@@ -52,7 +52,7 @@ public class OrthoCamera extends OrthographicCamera {
 	 * Instantiates a new ortho camera.
 	 */
 	public OrthoCamera() {
-		this(new VirtualViewport(MAGame.WIDTH, MAGame.HEIGHT));
+		this(new VirtualViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
 	}
 	
 	/**
@@ -148,7 +148,7 @@ public class OrthoCamera extends OrthographicCamera {
 	 * Resize.
 	 */
 	public void resize() {
-		VirtualViewport virtualViewport = new VirtualViewport(MAGame.WIDTH, MAGame.HEIGHT);  
+		VirtualViewport virtualViewport = new VirtualViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());  
 		setVirtualViewport(virtualViewport);  
 		updateViewport();
 	}

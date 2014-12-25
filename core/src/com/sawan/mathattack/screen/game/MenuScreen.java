@@ -25,6 +25,10 @@
  */
 package com.sawan.mathattack.screen.game;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.camera.OrthoCamera;
 import com.sawan.mathattack.screen.Screen;
@@ -38,12 +42,20 @@ public class MenuScreen extends Screen {
 	
 	private OrthoCamera camera;
 
+	private final static String BACKGROUND = "menu_back.jpg";
+	
+	private Texture background_image;
+	
+	private Sprite sprite_background;
+	
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#create()
 	 */
 	@Override
 	public void create() {
 		camera = new OrthoCamera();
+		background_image = new Texture(BACKGROUND);
+		sprite_background = new Sprite(background_image);
 	}
 
 	/* (non-Javadoc)
@@ -51,7 +63,10 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void render(SpriteBatch sprite_batch) {
-		
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		sprite_batch.begin();
+		sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth, camera.viewportHeight);
+		sprite_batch.end();
 	}
 
 	/* (non-Javadoc)
@@ -96,7 +111,7 @@ public class MenuScreen extends Screen {
 
 	@Override
 	public void update() {
-		camera.update();
+		//camera.update();
 	}
 
 }
