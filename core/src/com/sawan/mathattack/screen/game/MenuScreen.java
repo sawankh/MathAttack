@@ -28,45 +28,68 @@ package com.sawan.mathattack.screen.game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.screen.Screen;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class MenuScreen.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class MenuScreen extends Screen {
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#create()
+	 */
 	@Override
 	public void create() {
-		
+		System.out.println("created!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#render(com.badlogic.gdx.graphics.g2d.SpriteBatch)
+	 */
 	@Override
 	public void render(SpriteBatch sprite_batch) {
-		
+		System.out.println("rendering!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
-		
+		System.out.println("resized!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
-		
+		System.out.println("disposed!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#hide()
+	 */
 	@Override
 	public void hide() {
-		
+		System.out.println("hiden!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#pause()
+	 */
 	@Override
 	public void pause() {
-		
+		System.out.println("paused!");
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.Screen#resume()
+	 */
 	@Override
 	public void resume() {
-		
+		System.out.println("resumed!");
 	}
 
 }
