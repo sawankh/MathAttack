@@ -98,21 +98,29 @@ public class MenuScreen extends Screen {
 		
 		createBasicSkin();
 		
-		final TextButton button = new TextButton("Play", skin, "default");
-
-		button.setWidth(200f);
-		button.setHeight(20f);
-		button.setPosition(Gdx.graphics.getWidth() / 2 - 100f,
+		final TextButton play_button = new TextButton("Play", skin);
+		final TextButton about_button = new TextButton("About", skin);
+		
+		play_button.setWidth(200f);
+		play_button.setHeight(20f);
+		play_button.setPosition(Gdx.graphics.getWidth() / 2 - 100f,
 				Gdx.graphics.getHeight() / 2 - 10f);
+		
+		about_button.setWidth(200f);
+		about_button.setHeight(20f);
+		about_button.setPosition(Gdx.graphics.getWidth() / 2 - 100f,
+				Gdx.graphics.getHeight() / 2 - 50f);
 
-		button.addListener(new ClickListener() {
+		play_button.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				button.setText("You clicked the button");
+				//ScreenManager.setCurrentScreen(new MenuScreen());
 			}
 		});
 
-		menu_screen_stage.addActor(button);
+		menu_screen_stage.addActor(play_button);
+		menu_screen_stage.addActor(about_button);
+		
 		Gdx.input.setInputProcessor(menu_screen_stage);
 		
 	}
@@ -129,6 +137,8 @@ public class MenuScreen extends Screen {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
+	    menu_screen_stage.act(Gdx.graphics.getDeltaTime());
+	    
 		sprite_batch.begin();
 		sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth, camera.viewportHeight);
 		sprite_batch.end();
@@ -143,7 +153,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void resize(int width, int height) {
-		camera.resize();
+		//camera.resize();
 	}
 
 	/*
@@ -153,7 +163,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void dispose() {
-
+		menu_screen_stage.dispose();
 	}
 
 	/*
