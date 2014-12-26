@@ -28,9 +28,14 @@ package com.sawan.mathattack.screen.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.sawan.mathattack.camera.OrthoCamera;
 import com.sawan.mathattack.screen.Screen;
 
@@ -49,7 +54,39 @@ public class MenuScreen extends Screen {
 	
 	private Sprite sprite_background;
 	
-	private BitmapFont font;
+	private Stage menu_screen_stage;
+	
+	
+	public class MyActor extends Actor {
+        Texture texture = new Texture(Gdx.files.internal("0.png"));
+        float actorX = 0, actorY = 0;
+        public boolean started = false;
+
+        public MyActor(){
+            setBounds(actorX,actorY,texture.getWidth(),texture.getHeight());
+            addListener(new InputListener(){
+                public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                    ((MyActor)event.getTarget()).started = true;
+                    return true;
+                }
+            });
+        }
+        
+        
+        @Override
+        public void draw(Batch batch, float alpha){
+            batch.draw(texture,actorX,actorY);
+        }
+        
+        @Override
+        public void act(float delta){
+            if(started){
+                actorX+=5;
+            }
+        }
+    }
+	
+	
 	
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#create()
@@ -59,8 +96,13 @@ public class MenuScreen extends Screen {
 		camera = new OrthoCamera();
 		background_image = new Texture(BACKGROUND);
 		sprite_background = new Sprite(background_image);
-		font = new BitmapFont();
-	}
+		menu_screen_stage = new Stage();
+		Gdx.input.setInputProcessor(menu_screen_stage);
+		
+		MyActor hero = new MyActor();
+		hero.setTouchable(Touchable.enabled);
+		menu_screen_stage.addActor(hero);
+		}
 
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#render(com.badlogic.gdx.graphics.g2d.SpriteBatch)
@@ -69,10 +111,13 @@ public class MenuScreen extends Screen {
 	public void render(SpriteBatch sprite_batch) {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		sprite_batch.begin();
-		sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth, camera.viewportHeight);
-		font.draw(sprite_batch, "Hello World!", 100, 150);
+		//sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth, camera.viewportHeight);
+	    menu_screen_stage.act(Gdx.graphics.getDeltaTime());
+	    menu_screen_stage.draw();
 		sprite_batch.end();
 	}
+
+	
 
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.screen.Screen#resize(int, int)
