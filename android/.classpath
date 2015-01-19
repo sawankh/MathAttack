@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry exported="true" kind="src" path="/MathAttack-core"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Sawan/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.5.0/97ad3f9d65b8b9ecac57547bda2fb2f7626fb8f1/gdx-backend-android-1.5.0.jar" sourcepath="C:/Users/Sawan/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.5.0/6f801e1b67e470bac10505edf78942883360483e/gdx-backend-android-1.5.0-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Sawan/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.5.0/e4272f711228f3cd214802949f18124e2eef1cbc/gdx-1.5.0.jar" sourcepath="C:/Users/Sawan/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.5.0/84a10383c3baf2d9cecdd0891e14cc580d24a555/gdx-1.5.0-sources.jar"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
