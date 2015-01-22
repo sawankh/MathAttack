@@ -111,4 +111,6 @@ public class MAGame extends ApplicationAdapter {
 			ScreenManager.getCurrentScreen().resize(width, height);
 		}
 	}
+	
+	
 }
