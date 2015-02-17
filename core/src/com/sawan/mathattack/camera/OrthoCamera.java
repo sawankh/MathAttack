@@ -34,122 +34,49 @@ import com.sawan.mathattack.MAGame;
 /**
  * The Class OrthoCamera.
  */
-public class OrthoCamera extends OrthographicCamera {
-
-	/** The tmp. */
-	Vector3 tmp = new Vector3();
-	
-	/** The origin. */
-	Vector2 origin = new Vector2();
-	
-	/** The virtual viewport. */
-	VirtualViewport virtualViewport;
-	
-	/** The pos. */
-	Vector2 pos = new Vector2();
-
-	/**
-	 * Instantiates a new ortho camera.
-	 */
-	public OrthoCamera() {
-		this(new VirtualViewport(MAGame.WIDTH, MAGame.HEIGHT));
-	}
-	
-	/**
-	 * Instantiates a new ortho camera.
-	 *
-	 * @param virtualViewport the virtual viewport
-	 */
-	public OrthoCamera(VirtualViewport virtualViewport) {
-		this(virtualViewport, 0f, 0f);
-	}
-
-	/**
-	 * Instantiates a new ortho camera.
-	 *
-	 * @param virtualViewport the virtual viewport
-	 * @param cx the cx
-	 * @param cy the cy
-	 */
-	public OrthoCamera(VirtualViewport virtualViewport, float cx, float cy) {
-		this.virtualViewport = virtualViewport;
-		this.origin.set(cx, cy);
-	}
-
-	/**
-	 * Sets the virtual viewport.
-	 *
-	 * @param virtualViewport the new virtual viewport
-	 */
-	public void setVirtualViewport(VirtualViewport virtualViewport) {
-		this.virtualViewport = virtualViewport;
-	}
-	
-	/**
-	 * Sets the position.
-	 *
-	 * @param x the x
-	 * @param y the y
-	 */
-	public void setPosition(float x, float y) {
-		position.set(x - viewportWidth * origin.x, y - viewportHeight * origin.y, 0f);
-		pos.set(x, y);
-	}
-	
-	/**
-	 * Gets the pos.
-	 *
-	 * @return the pos
-	 */
-	public Vector2 getPos() {
-		return pos;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.badlogic.gdx.graphics.OrthographicCamera#update()
-	 */
-	@Override
-	public void update() {
-		float left = zoom * -viewportWidth / 2 + virtualViewport.getVirtualWidth() * origin.x;
-		float right = zoom * viewportWidth / 2 + virtualViewport.getVirtualWidth() * origin.x;
-		float top = zoom * viewportHeight / 2 + virtualViewport.getVirtualHeight() * origin.y;
-		float bottom = zoom * -viewportHeight / 2 + virtualViewport.getVirtualHeight() * origin.y;
-
-		projection.setToOrtho(left, right, bottom, top, Math.abs(near), Math.abs(far));
-		view.setToLookAt(position, tmp.set(position).add(direction), up);
-		combined.set(projection);
-		Matrix4.mul(combined.val, view.val);
-		invProjectionView.set(combined);
-		Matrix4.inv(invProjectionView.val);
-		frustum.update(invProjectionView);
-	}
-
-	/**
-	 * This must be called in ApplicationListener.resize() in order to correctly update the camera viewport. 
-	 */
-	public void updateViewport() {
-		setToOrtho(false, virtualViewport.getWidth(), virtualViewport.getHeight());
-	}
-	
-	/**
-	 * Unproject coordinates.
-	 *
-	 * @param x the x
-	 * @param y the y
-	 * @return the vector2
-	 */
-	public Vector2 unprojectCoordinates(float x, float y) {
-        Vector3 rawtouch = new Vector3(x, y,0);
-        unproject(rawtouch); 
-        return new Vector2(rawtouch.x, rawtouch.y);
-    }
-	
-	/**
-	 * Resize.
-	 */
-	public void resize() {
-		VirtualViewport virtualViewport = new VirtualViewport(MAGame.WIDTH, MAGame.HEIGHT);  
-		setVirtualViewport(virtualViewport);  
-		updateViewport();
-	}
-}
+public class OrthoCamera extends OrthographicCamera {  
+	  
+    Vector3 tmp = new Vector3();  
+    Vector2 origin = new Vector2();  
+    VirtualViewport virtualViewport;  
+      
+    public void setVirtualViewport(VirtualViewport virtualViewport) {  
+        this.virtualViewport = virtualViewport;  
+    }  
+  
+    public OrthoCamera(VirtualViewport virtualViewport) {  
+        this(virtualViewport, 0f, 0f);  
+    }  
+  
+    public OrthoCamera(VirtualViewport virtualViewport, float cx, float cy) {  
+        this.virtualViewport = virtualViewport;  
+        this.origin.set(cx, cy);  
+    }  
+  
+    public void setPosition(float x, float y) {  
+        position.set(x - viewportWidth * origin.x, y - viewportHeight * origin.y, 0f);  
+    }  
+  
+    @Override  
+    public void update() {  
+        float left = zoom * -viewportWidth / 2 + virtualViewport.getVirtualWidth() * origin.x;  
+        float right = zoom * viewportWidth / 2 + virtualViewport.getVirtualWidth() * origin.x;  
+        float top = zoom * viewportHeight / 2 + virtualViewport.getVirtualHeight() * origin.y;  
+        float bottom = zoom * -viewportHeight / 2 + virtualViewport.getVirtualHeight() * origin.y;  
+  
+        projection.setToOrtho(left, right, bottom, top, Math.abs(near), Math.abs(far));  
+        view.setToLookAt(position, tmp.set(position).add(direction), up);  
+        combined.set(projection);  
+        Matrix4.mul(combined.val, view.val);  
+        invProjectionView.set(combined);  
+        Matrix4.inv(invProjectionView.val);  
+        frustum.update(invProjectionView);  
+    }  
+  
+    /** 
+     * This must be called in ApplicationListener.resize() in order to correctly update the camera viewport.  
+     */  
+    public void updateViewport() {  
+        setToOrtho(false, virtualViewport.getWidth(), virtualViewport.getHeight());  
+    }  
+}  
