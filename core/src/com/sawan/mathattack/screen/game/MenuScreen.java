@@ -38,7 +38,9 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.sawan.mathattack.camera.MultipleVirtualViewportBuilder;
 import com.sawan.mathattack.camera.OrthoCamera;
+import com.sawan.mathattack.camera.VirtualViewport;
 import com.sawan.mathattack.screen.Screen;
 
 /**
@@ -60,30 +62,33 @@ public class MenuScreen extends Screen {
 
 	private Skin skin;
 
-	
-	private void createBasicSkin(){
-		  //Create a font
-		  BitmapFont font = new BitmapFont();
-		  skin = new Skin();
-		  skin.add("default", font);
+	private MultipleVirtualViewportBuilder viewportBuilder;
 
-		  //Create a texture
-		  Pixmap pixmap = new Pixmap((int)Gdx.graphics.getWidth()/4,(int)Gdx.graphics.getHeight()/10, Pixmap.Format.RGB888);
-		  pixmap.setColor(Color.WHITE);
-		  pixmap.fill();
-		  skin.add("background",new Texture(pixmap));
+	private void createBasicSkin() {
+		// Create a font
+		BitmapFont font = new BitmapFont();
+		skin = new Skin();
+		skin.add("default", font);
 
-		  //Create a button style
-		  TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
-		  textButtonStyle.up = skin.newDrawable("background", Color.GRAY);
-		  textButtonStyle.down = skin.newDrawable("background", Color.DARK_GRAY);
-		  textButtonStyle.checked = skin.newDrawable("background", Color.DARK_GRAY);
-		  textButtonStyle.over = skin.newDrawable("background", Color.LIGHT_GRAY);
-		  textButtonStyle.font = skin.getFont("default");
-		  skin.add("default", textButtonStyle);
+		// Create a texture
+		Pixmap pixmap = new Pixmap((int) Gdx.graphics.getWidth() / 4,
+				(int) Gdx.graphics.getHeight() / 10, Pixmap.Format.RGB888);
+		pixmap.setColor(Color.WHITE);
+		pixmap.fill();
+		skin.add("background", new Texture(pixmap));
 
-		}
-	
+		// Create a button style
+		TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
+		textButtonStyle.up = skin.newDrawable("background", Color.GRAY);
+		textButtonStyle.down = skin.newDrawable("background", Color.DARK_GRAY);
+		textButtonStyle.checked = skin.newDrawable("background",
+				Color.DARK_GRAY);
+		textButtonStyle.over = skin.newDrawable("background", Color.LIGHT_GRAY);
+		textButtonStyle.font = skin.getFont("default");
+		skin.add("default", textButtonStyle);
+
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -91,21 +96,29 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void create() {
-		camera = new OrthoCamera();
+
+		viewportBuilder = new MultipleVirtualViewportBuilder(800, 480, 854, 600);
+		VirtualViewport virtualViewport = viewportBuilder.getVirtualViewport(
+				Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+		camera = new OrthoCamera(virtualViewport);
+
+		camera.position.set(0f, 0f, 0f);
+
 		background_image = new Texture(BACKGROUND);
 		sprite_background = new Sprite(background_image);
 		menu_screen_stage = new Stage();
-		
+
 		createBasicSkin();
-		
+
 		final TextButton play_button = new TextButton("Play", skin);
 		final TextButton about_button = new TextButton("About", skin);
-		
+
 		play_button.setWidth(200f);
 		play_button.setHeight(20f);
 		play_button.setPosition(Gdx.graphics.getWidth() / 2 - 100f,
 				Gdx.graphics.getHeight() / 2 - 10f);
-		
+
 		about_button.setWidth(200f);
 		about_button.setHeight(20f);
 		about_button.setPosition(Gdx.graphics.getWidth() / 2 - 100f,
@@ -114,15 +127,15 @@ public class MenuScreen extends Screen {
 		play_button.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				//ScreenManager.setCurrentScreen(new MenuScreen());
+				// ScreenManager.setCurrentScreen(new MenuScreen());
 			}
 		});
 
 		menu_screen_stage.addActor(play_button);
 		menu_screen_stage.addActor(about_button);
-		
+
 		Gdx.input.setInputProcessor(menu_screen_stage);
-		
+
 	}
 
 	/*
@@ -135,14 +148,15 @@ public class MenuScreen extends Screen {
 	@Override
 	public void render(SpriteBatch sprite_batch) {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
-	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		
-	    menu_screen_stage.act(Gdx.graphics.getDeltaTime());
-	    
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		menu_screen_stage.act(Gdx.graphics.getDeltaTime());
+
 		sprite_batch.begin();
-		sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth, camera.viewportHeight);
+		sprite_batch.draw(sprite_background, 0, 0, camera.viewportWidth,
+				camera.viewportHeight);
 		sprite_batch.end();
-		
+
 		menu_screen_stage.draw();
 	}
 
@@ -153,8 +167,16 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void resize(int width, int height) {
+		VirtualViewport virtualViewport = viewportBuilder
+				.getVirtualViewport(Gdx.graphics.getWidth(),
+						Gdx.graphics.getHeight());
+		camera.setVirtualViewport(virtualViewport);
+
 		camera.updateViewport();
-	}
+		// centers the camera at 0, 0 (the center of the virtual viewport)
+		camera.position.set(0f, 0f, 0f);
+
+		}
 
 	/*
 	 * (non-Javadoc)
