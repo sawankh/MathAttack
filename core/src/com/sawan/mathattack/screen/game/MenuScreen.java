@@ -153,7 +153,7 @@ public class MenuScreen extends Screen {
 	 */
 	@Override
 	public void resize(int width, int height) {
-		//camera.resize();
+		camera.updateViewport();
 	}
 
 	/*
