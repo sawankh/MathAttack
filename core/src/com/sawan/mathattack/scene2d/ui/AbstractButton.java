@@ -27,6 +27,7 @@
 package com.sawan.mathattack.scene2d.ui;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -267,5 +268,9 @@ public abstract class AbstractButton extends Button {
 
 	public void setDIPActive(boolean dIPActive) {
 		DIPActive = dIPActive;
+	}
+	
+	public void draw(SpriteBatch batch, float parentAlpha) {
+		
 	}
 }
