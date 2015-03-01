@@ -104,7 +104,7 @@ public class TableModel extends Table {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public com.badlogic.gdx.scenes.scene2d.ui.Cell<Actor> add(Actor actor, float width, float height, boolean DIPActive) {
+/**	public com.badlogic.gdx.scenes.scene2d.ui.Cell<Actor> add(Actor actor, float width, float height, boolean DIPActive) {
 		if (DIPActive) {
 			return super.add(actor).size(
 					width * AppSettings.getWorldSizeRatio(),
@@ -113,7 +113,7 @@ public class TableModel extends Table {
 			return super.add(actor);
 		}
 	}
-
+**/
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		// Then draw child actors over bg
