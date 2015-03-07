@@ -1,4 +1,4 @@
-!(/android/assets/title.png)
+![MathAttack](/android/assets/title.png)
 ==========
 
 Mathattack is a game for cross-platform such as html, android, desktop. Based for educational purposes, this games offers our new generation to learn calculus while having fun and getting completed all the levels.
