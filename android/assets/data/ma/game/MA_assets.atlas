@@ -5,169 +5,181 @@ filter: Nearest,Nearest
 repeat: none
 pause_bg
   rotate: false
-  xy: 1, 414
+  xy: 1, 408
   size: 486, 608
   orig: 486, 608
   offset: 0, 0
   index: -1
 levels_bg
   rotate: false
-  xy: 489, 602
+  xy: 489, 596
   size: 471, 420
   orig: 471, 420
   offset: 0, 0
   index: -1
-empty_bg
+title
   rotate: false
-  xy: 1, 21
-  size: 251, 391
-  orig: 251, 391
+  xy: 1, 95
+  size: 500, 311
+  orig: 500, 311
   offset: 0, 0
   index: -1
 level_completed_bg
   rotate: false
-  xy: 489, 174
+  xy: 503, 168
   size: 357, 426
   orig: 357, 426
   offset: 0, 0
   index: -1
-loader
+time_elapsed
   rotate: false
-  xy: 254, 284
-  size: 128, 128
-  orig: 128, 128
+  xy: 1, 48
+  size: 238, 45
+  orig: 238, 45
+  offset: 0, 0
+  index: -1
+restart_button
+  rotate: false
+  xy: 503, 111
+  size: 177, 55
+  orig: 177, 55
   offset: 0, 0
   index: -1
 exit_button
   rotate: false
-  xy: 848, 545
+  xy: 682, 111
   size: 175, 55
   orig: 175, 55
   offset: 0, 0
   index: -1
+loader
+  rotate: false
+  xy: 862, 466
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
 resume_button
   rotate: false
-  xy: 848, 488
+  xy: 241, 38
   size: 175, 55
   orig: 175, 55
   offset: 0, 0
   index: -1
 levels_button
   rotate: false
-  xy: 848, 431
+  xy: 503, 54
   size: 174, 55
   orig: 174, 55
   offset: 0, 0
   index: -1
 credits_button
   rotate: false
-  xy: 848, 374
+  xy: 679, 54
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
 play_button
   rotate: false
-  xy: 848, 317
+  xy: 862, 409
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
 settings_button
   rotate: false
-  xy: 848, 260
+  xy: 862, 352
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
-restart_button
-  rotate: false
-  xy: 254, 227
-  size: 177, 55
-  orig: 177, 55
-  offset: 0, 0
-  index: -1
 star_completed
   rotate: false
-  xy: 848, 188
+  xy: 862, 280
   size: 74, 70
   orig: 74, 70
   offset: 0, 0
   index: -1
 no_star
   rotate: false
-  xy: 254, 160
+  xy: 862, 213
   size: 71, 65
   orig: 71, 65
   offset: 0, 0
   index: -1
 home_icon
   rotate: false
-  xy: 384, 346
+  xy: 938, 284
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 level_button
   rotate: false
-  xy: 924, 192
+  xy: 418, 27
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 lock_disable
   rotate: false
-  xy: 254, 92
+  xy: 862, 145
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 play_icon
   rotate: false
-  xy: 254, 24
+  xy: 859, 77
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 left_button
   rotate: false
-  xy: 962, 977
+  xy: 962, 971
   size: 43, 45
   orig: 43, 45
   offset: 0, 0
   index: -1
 right_button
   rotate: false
-  xy: 327, 180
+  xy: 1, 1
   size: 43, 45
   orig: 43, 45
   offset: 0, 0
   index: -1
-time_elapsed
-  rotate: false
-  xy: 327, 127
-  size: 238, 45
-  orig: 238, 45
-  offset: 0, 0
-  index: -1
 1_satar_menu
   rotate: false
-  xy: 1, 1
+  xy: 46, 28
   size: 63, 18
   orig: 63, 18
   offset: 0, 0
   index: -1
 2_star_menu
   rotate: false
-  xy: 384, 326
+  xy: 111, 28
   size: 63, 18
   orig: 63, 18
   offset: 0, 0
   index: -1
 3_star_menu
   rotate: false
-  xy: 567, 154
+  xy: 176, 28
   size: 63, 18
   orig: 63, 18
+  offset: 0, 0
+  index: -1
+
+MA_assets2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+empty_bg
+  rotate: false
+  xy: 1, 1
+  size: 251, 391
+  orig: 251, 391
   offset: 0, 0
   index: -1
