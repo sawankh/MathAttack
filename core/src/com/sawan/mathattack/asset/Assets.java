@@ -25,10 +25,149 @@
  */
 package com.sawan.mathattack.asset;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class Assets.
  *
+ * @author Sawan
  */
 public class Assets {
 
+	/** The Constant FILE_IMAGE_ATLAS. */
+	private final static String FILE_IMAGE_ATLAS = "data/ma/game/MA_assets.atlas";
+	
+	/** The Constant FILE_UI_SKIN. */
+	private final static String FILE_UI_SKIN = "skin/uiskin.json";
+	
+	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
+	private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
+	
+	/** The atlas. */
+	public static TextureAtlas atlas;
+	
+	/** The skin. */
+	public static Skin skin;
+	
+	// Assets
+	/** The image_main_background. */
+	public static TextureRegion image_main_background;
+	
+	/** The image_main_button_play. */
+	public static TextureRegion image_main_button_play;
+	
+	/** The image_main_button_settings. */
+	public static TextureRegion image_main_button_settings;
+	
+	/** The image_main_button_credits. */
+	public static TextureRegion image_main_button_credits;
+	
+	/** The image_main_loader. */
+	public static TextureRegion image_main_loader;
+	
+	/** The image_main_title. */
+	public static TextureRegion image_main_title;
+	
+	
+	/**
+	 * Loads texture file.
+	 *
+	 * @param file the file
+	 * @return the texture
+	 */
+	public static Texture loadTexture(String file) {
+		return new Texture(Gdx.files.internal(file));
+	}
+	
+	/**
+	 * Gets the atlas. Creates a texture atlas if is not created. 
+	 *
+	 * @return the atlas
+	 */
+	public static TextureAtlas getAtlas() {
+		if (atlas == null) { 
+			atlas =  new TextureAtlas(Gdx.files.internal(FILE_IMAGE_ATLAS));
+		}
+	
+		return atlas;
+	}
+	
+	/**
+	 * Gets the skin.
+	 *
+	 * @return the skin
+	 */
+	public static Skin getSkin() {
+		if (skin == null) {
+			skin = new Skin(Gdx.files.internal(FILE_UI_SKIN));
+		}
+		
+		return skin;
+	}
+	
+	/**
+	 * Load all. Loads all the resources.
+	 */
+	public static void loadAll() {
+		relaseResources();
+		loadImages();
+		loadButtons();
+		loadFonts();
+		loadAnimations();
+		loadSoundsAndMusics();
+	}
+
+	/**
+	 * Relase resources.
+	 */
+	private static void relaseResources() {
+		skin = null;
+		atlas = null;
+	}
+
+	/**
+	 * Load images.
+	 */
+	public static void loadImages() {
+		image_main_background = new TextureRegion(new Texture(Gdx.files.internal(FILE_IMAGE_BACKGROUND_MAIN)));
+		image_main_button_play = getAtlas().findRegion("play_button");
+		image_main_button_credits = getAtlas().findRegion("credits_button");
+		image_main_button_settings = getAtlas().findRegion("settings_button");
+		image_main_loader = getAtlas().findRegion("loader");
+		image_main_title = getAtlas().findRegion("title");
+	}
+
+	/**
+	 * Load buttons.
+	 */
+	public static void loadButtons() {
+
+	}
+
+	/**
+	 * Load fonts.
+	 */
+	public static void loadFonts() {
+
+	}
+
+	/**
+	 * Load animations.
+	 */
+	public static void loadAnimations() {
+
+	}
+
+	/**
+	 * Load sounds and musics.
+	 */
+	public static void loadSoundsAndMusics() {
+	
+	}
+	
 }
