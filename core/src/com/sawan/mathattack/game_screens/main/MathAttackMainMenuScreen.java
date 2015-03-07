@@ -25,10 +25,37 @@
  */
 package com.sawan.mathattack.game_screens.main;
 
+import com.sawan.mathattack.buttons.MathAttackButton;
+import com.sawan.mathattack.game.AbstractGame;
+import com.sawan.mathattack.interfaces.IScreen;
+import com.sawan.mathattack.scene2d.ui.TableModel;
+import com.sawan.mathattack.screen.AbstractScreen;
+
 /**
  * @author Sawan
  *
  */
-public class MathAttackMainMenuScreen {
+public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen {
 
+	
+	public TableModel menu_table;
+	public MathAttackButton button_play;
+	public MathAttackButton button_settings;
+	public MathAttackButton button_credits;
+	
+	public MathAttackMainMenuScreen(AbstractGame game, String screenName) {
+		super(game, screenName);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void setUpScreenElements() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void setUpMenu() {
+		// TODO Auto-generated method stub
+		
+	}
 }
