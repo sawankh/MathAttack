@@ -28,6 +28,8 @@ package com.sawan.mathattack.game_screens.main;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.interfaces.IScreen;
+import com.sawan.mathattack.models.EmptyActor;
+import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.scene2d.ui.TableModel;
 import com.sawan.mathattack.screen.AbstractScreen;
 
@@ -38,7 +40,9 @@ import com.sawan.mathattack.screen.AbstractScreen;
 public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen {
 
 	
+	
 	public TableModel menu_table;
+	public EmptyActorLight title;
 	public MathAttackButton button_play;
 	public MathAttackButton button_settings;
 	public MathAttackButton button_credits;
