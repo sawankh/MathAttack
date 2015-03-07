@@ -5,161 +5,168 @@ filter: Nearest,Nearest
 repeat: none
 pause_bg
   rotate: false
-  xy: 1, 415
+  xy: 1, 414
   size: 486, 608
   orig: 486, 608
   offset: 0, 0
   index: -1
 levels_bg
   rotate: false
-  xy: 489, 603
+  xy: 489, 602
   size: 471, 420
   orig: 471, 420
   offset: 0, 0
   index: -1
 empty_bg
   rotate: false
-  xy: 1, 22
+  xy: 1, 21
   size: 251, 391
   orig: 251, 391
   offset: 0, 0
   index: -1
 level_completed_bg
   rotate: false
-  xy: 489, 175
+  xy: 489, 174
   size: 357, 426
   orig: 357, 426
   offset: 0, 0
   index: -1
-restart_button
+loader
   rotate: false
-  xy: 254, 358
-  size: 177, 55
-  orig: 177, 55
+  xy: 254, 284
+  size: 128, 128
+  orig: 128, 128
   offset: 0, 0
   index: -1
 exit_button
   rotate: false
-  xy: 254, 301
+  xy: 848, 545
   size: 175, 55
   orig: 175, 55
   offset: 0, 0
   index: -1
 resume_button
   rotate: false
-  xy: 254, 244
+  xy: 848, 488
   size: 175, 55
   orig: 175, 55
   offset: 0, 0
   index: -1
 levels_button
   rotate: false
-  xy: 254, 187
+  xy: 848, 431
   size: 174, 55
   orig: 174, 55
   offset: 0, 0
   index: -1
 credits_button
   rotate: false
-  xy: 254, 130
+  xy: 848, 374
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
 play_button
   rotate: false
-  xy: 254, 73
+  xy: 848, 317
   size: 154, 55
   orig: 154, 55
-  offset: 0, 0
-  index: -1
-time_elapsed
-  rotate: false
-  xy: 410, 128
-  size: 238, 45
-  orig: 238, 45
   offset: 0, 0
   index: -1
 settings_button
   rotate: false
-  xy: 410, 71
+  xy: 848, 260
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
+restart_button
+  rotate: false
+  xy: 254, 227
+  size: 177, 55
+  orig: 177, 55
+  offset: 0, 0
+  index: -1
 star_completed
   rotate: false
-  xy: 254, 1
+  xy: 848, 188
   size: 74, 70
   orig: 74, 70
   offset: 0, 0
   index: -1
 no_star
   rotate: false
-  xy: 848, 536
+  xy: 254, 160
   size: 71, 65
   orig: 71, 65
   offset: 0, 0
   index: -1
 home_icon
   rotate: false
-  xy: 330, 5
+  xy: 384, 346
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 level_button
   rotate: false
-  xy: 848, 468
+  xy: 924, 192
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 lock_disable
   rotate: false
-  xy: 848, 400
+  xy: 254, 92
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 play_icon
   rotate: false
-  xy: 848, 332
+  xy: 254, 24
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 left_button
   rotate: false
-  xy: 962, 978
+  xy: 962, 977
   size: 43, 45
   orig: 43, 45
   offset: 0, 0
   index: -1
 right_button
   rotate: false
-  xy: 433, 368
+  xy: 327, 180
   size: 43, 45
   orig: 43, 45
   offset: 0, 0
   index: -1
+time_elapsed
+  rotate: false
+  xy: 327, 127
+  size: 238, 45
+  orig: 238, 45
+  offset: 0, 0
+  index: -1
 1_satar_menu
   rotate: false
-  xy: 650, 155
+  xy: 1, 1
   size: 63, 18
   orig: 63, 18
   offset: 0, 0
   index: -1
 2_star_menu
   rotate: false
-  xy: 566, 108
+  xy: 384, 326
   size: 63, 18
   orig: 63, 18
   offset: 0, 0
   index: -1
 3_star_menu
   rotate: false
-  xy: 1, 2
+  xy: 567, 154
   size: 63, 18
   orig: 63, 18
   offset: 0, 0
