@@ -46,7 +46,7 @@ public class Assets {
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
 	
 	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
-	private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
+	//private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
 	
 	/** The atlas. */
 	public static TextureAtlas atlas;
@@ -134,7 +134,7 @@ public class Assets {
 	 * Load images.
 	 */
 	public static void loadImages() {
-		image_main_background = new TextureRegion(new Texture(Gdx.files.internal(FILE_IMAGE_BACKGROUND_MAIN)));
+		image_main_background = new TextureRegion(new TextureAtlas(Gdx.files.internal("data/ma/game/MA_main_back.atlas")).findRegion("menu_background"));
 		image_main_button_play = getAtlas().findRegion("play_button");
 		image_main_button_credits = getAtlas().findRegion("credits_button");
 		image_main_button_settings = getAtlas().findRegion("settings_button");
