@@ -127,13 +127,13 @@ public class MathAttackMainMenuButtons {
 		menuScreen.button_credits.setScale(0f);
 		
 		// Add to the table
-		menuScreen.menu_table.add(menuScreen.button_play).pad(0);
+		menuScreen.menu_table.add(menuScreen.button_play).pad(7);
 		menuScreen.menu_table.row();
 		
-		menuScreen.menu_table.add(menuScreen.button_settings).pad(0);
+		menuScreen.menu_table.add(menuScreen.button_settings).pad(7);
 		menuScreen.menu_table.row();
 		
-		menuScreen.menu_table.add(menuScreen.button_credits).pad(0);
+		menuScreen.menu_table.add(menuScreen.button_credits).pad(7);
 		
 		menuScreen.getStage().addActor(menuScreen.menu_table);
 	}
