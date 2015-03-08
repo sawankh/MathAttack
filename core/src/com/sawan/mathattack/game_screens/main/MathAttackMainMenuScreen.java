@@ -28,7 +28,6 @@ package com.sawan.mathattack.game_screens.main;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.interfaces.IScreen;
-import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.scene2d.ui.TableModel;
 import com.sawan.mathattack.screen.AbstractScreen;
