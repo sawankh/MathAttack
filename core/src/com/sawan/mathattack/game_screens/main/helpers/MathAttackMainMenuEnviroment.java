@@ -40,10 +40,10 @@ import com.sawan.mathattack.settings.AppSettings;
 public class MathAttackMainMenuEnviroment {
 	
 	/** The Constant TITLE_W. */
-	protected final static int TITLE_W = 420;
+	protected final static int TITLE_W = 600;
 	
 	/** The Constant TITLE_H. */
-	protected final static int TITLE_H = 280;
+	protected final static int TITLE_H = 374;
 	
 	/**
 	 * Sets the up game name.
@@ -56,7 +56,7 @@ public class MathAttackMainMenuEnviroment {
 		menu_screen.title.setOrigin( menu_screen.title.getWidth() / 2, menu_screen.title.getHeight() / 2);
 		menu_screen.title.setPosition( AppSettings.SCREEN_W / 2 - menu_screen.title.getWidth() / 2,
 				AppSettings.SCREEN_H + menu_screen.title.getHeight());
-
+		
 		//
 		menu_screen.getStage().addActor(menu_screen.title);
 	}
