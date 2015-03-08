@@ -170,6 +170,7 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 	 */
 	@Override
 	public void render(float delta) {
+		super.render(delta);
 		
 		// -------------------- Splash --------------------------------
 		//

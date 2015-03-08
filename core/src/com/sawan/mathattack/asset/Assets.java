@@ -26,6 +26,7 @@
 package com.sawan.mathattack.asset;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -40,7 +41,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class Assets {
 
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private final static String FILE_IMAGE_ATLAS = "data/ma/game/MA_assets.atlas";
+	private final static String FILE_IMAGE_ATLAS = "data/ma/game/MA_assets.txt";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
@@ -104,7 +105,8 @@ public class Assets {
 	 */
 	public static Skin getSkin() {
 		if (skin == null) {
-			skin = new Skin(Gdx.files.internal(FILE_UI_SKIN));
+			FileHandle skinFile = Gdx.files.internal(FILE_UI_SKIN);
+			skin = new Skin(skinFile);
 		}
 		
 		return skin;
@@ -134,7 +136,7 @@ public class Assets {
 	 * Load images.
 	 */
 	public static void loadImages() {
-		image_main_background = new TextureRegion(new TextureAtlas(Gdx.files.internal("data/ma/game/MA_main_back.atlas")).findRegion("menu_background"));
+		image_main_background = getAtlas().findRegion("menu_background");
 		image_main_button_play = getAtlas().findRegion("play_button");
 		image_main_button_credits = getAtlas().findRegion("credits_button");
 		image_main_button_settings = getAtlas().findRegion("settings_button");
