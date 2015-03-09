@@ -25,6 +25,8 @@
  */
 package com.sawan.mathattack.game_screens.main.helpers;
 
+import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.sawan.mathattack.asset.Assets;
 import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
@@ -56,6 +58,11 @@ public class MathAttackMainMenuEnviroment {
 		menu_screen.title.setOrigin( menu_screen.title.getWidth() / 2, menu_screen.title.getHeight() / 2);
 		menu_screen.title.setPosition( AppSettings.SCREEN_W / 2 - menu_screen.title.getWidth() / 2,
 				AppSettings.SCREEN_H + menu_screen.title.getHeight());
+		
+		if (Gdx.app.getType() == ApplicationType.Android) {
+			menu_screen.title.setPosition( AppSettings.SCREEN_W / 2 - menu_screen.title.getWidth() / 2,
+					AppSettings.SCREEN_H + menu_screen.title.getHeight() - 50);
+		}
 		
 		//
 		menu_screen.getStage().addActor(menu_screen.title);
