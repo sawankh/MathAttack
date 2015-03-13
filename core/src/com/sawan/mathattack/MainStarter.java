@@ -25,7 +25,7 @@
  */
 package com.sawan.mathattack;
 
-import com.sawan.mathattack.asset.Assets;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
 import com.sawan.mathattack.settings.AppSettings;
@@ -45,7 +45,7 @@ public class MainStarter extends AbstractGame {
 
 	@Override
 	public void setUpAssets() {
-		Assets.loadAll();
+		UIAssets.loadAll();
 	}
 
 	@Override

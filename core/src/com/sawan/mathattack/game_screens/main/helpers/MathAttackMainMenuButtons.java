@@ -30,7 +30,7 @@ import java.util.Random;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
-import com.sawan.mathattack.asset.Assets;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
 import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
@@ -70,7 +70,7 @@ public class MathAttackMainMenuButtons {
 		
 		//--------- Button Play ---------//
 		menuScreen.button_play = new MathAttackButton(BUTTON_W, BUTTON_H, rnd, true);
-		menuScreen.button_play.setTextureRegion(Assets.image_main_button_play, true);
+		menuScreen.button_play.setTextureRegion(UIAssets.image_main_button_play, true);
 		menuScreen.button_play.setOrigin(menuScreen.button_play.getWidth() / 2.0f, menuScreen.button_play.getHeight() / 2.0f);
 		menuScreen.button_play.addListener(new ActorGestureListener() {
 			
@@ -87,7 +87,7 @@ public class MathAttackMainMenuButtons {
 		
 		//--------- Button Settings ---------//
 		menuScreen.button_settings = new MathAttackButton(BUTTON_W, BUTTON_H, rnd, true);
-		menuScreen.button_settings.setTextureRegion(Assets.image_main_button_settings, true);
+		menuScreen.button_settings.setTextureRegion(UIAssets.image_main_button_settings, true);
 		menuScreen.button_settings.setOrigin(menuScreen.button_settings.getWidth() / 2.0f, menuScreen.button_settings.getHeight() / 2.0f);
 		menuScreen.button_settings.addListener(new ActorGestureListener() {
 			
@@ -105,7 +105,7 @@ public class MathAttackMainMenuButtons {
 		
 		//--------- Button Credits ---------//
 		menuScreen.button_credits = new MathAttackButton(BUTTON_W, BUTTON_H, rnd, true);
-		menuScreen.button_credits.setTextureRegion(Assets.image_main_button_credits, true);
+		menuScreen.button_credits.setTextureRegion(UIAssets.image_main_button_credits, true);
 		menuScreen.button_credits.setOrigin(menuScreen.button_credits.getWidth() / 2.0f, menuScreen.button_credits.getHeight() / 2.0f);
 		menuScreen.button_credits.addListener(new ActorGestureListener() {
 			

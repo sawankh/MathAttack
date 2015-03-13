@@ -26,7 +26,7 @@
 package com.sawan.mathattack.game_screens.main;
 
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.sawan.mathattack.asset.Assets;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
 import com.sawan.mathattack.game.AbstractGame;
@@ -130,7 +130,7 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 		
 		
 		// Set Background image
-		setBackgroundTexture(Assets.image_main_background);
+		setBackgroundTexture(UIAssets.image_main_background);
 		
 		// Set title animation timer
 		title_animation_timer = SPLASH_TIMER + TITLE_LOOP_ANIMATION;
@@ -141,7 +141,7 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 		
 		// Prepare splash
 		splash_loading = new EmptyActorLight(SPLASH_W, SPLASH_H, true);
-		splash_loading.setTextureRegion(Assets.image_main_loader, true);
+		splash_loading.setTextureRegion(UIAssets.image_main_loader, true);
 		splash_loading.setOrigin(splash_loading.getWidth() / 2.0f, splash_loading.getHeight() / 2.0f);
 		splash_loading.setPosition(AppSettings.SCREEN_W - splash_loading.getWidth(), AppSettings.SCREEN_H - splash_loading.getHeight());
 		

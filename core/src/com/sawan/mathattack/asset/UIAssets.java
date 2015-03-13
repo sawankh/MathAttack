@@ -38,7 +38,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
  *
  * @author Sawan
  */
-public class Assets {
+public class UIAssets {
 
 	/** The Constant FILE_IMAGE_ATLAS. */
 	private final static String FILE_IMAGE_ATLAS = "data/ma/game/MA_assets.atlas";
