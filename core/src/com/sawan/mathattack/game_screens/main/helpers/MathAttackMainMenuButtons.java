@@ -33,6 +33,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
+import com.sawan.mathattack.game_screens.levels.MathAttackLevelSelectionScreen;
 import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.TableModel;
 import com.sawan.mathattack.settings.AppSettings;
@@ -82,6 +83,7 @@ public class MathAttackMainMenuButtons {
 				menuScreen.button_play.clearActions();
 				EffectCreator.create_SC_SHK_BTN(menuScreen.button_play,
                         1.3f, 1.3f, 5f, 0, 0.05f, null, false);
+				menuScreen.getGame().setScreen(new MathAttackLevelSelectionScreen(menuScreen.getGame(), "Level Selection"));
 			}
 		});
 		
