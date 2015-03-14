@@ -25,7 +25,9 @@
  */
 package com.sawan.mathattack.buttons;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
 
 /**
@@ -34,7 +36,11 @@ import com.sawan.mathattack.scene2d.ui.AbstractButton;
  */
 public class ButtonLevel extends AbstractButton {
 
+	private TextureRegion texture_star_holder;
+	private TextureRegion texture_star;
+	
+	
 	public ButtonLevel(Drawable up, Drawable down) {
-		//super();
+		super(UIAssets.cartwheel_font, up, down);
 	}
 }
