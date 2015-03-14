@@ -28,6 +28,7 @@ package com.sawan.mathattack.asset;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -45,6 +46,8 @@ public class UIAssets {
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
+	
+	private final static String CARTWHEEL_FONT_FILE = "skin/cartwheel.fnt";
 	
 	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
 	//private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
@@ -72,6 +75,7 @@ public class UIAssets {
 	/** The image_main_title. */
 	public static TextureRegion image_main_title;
 	
+	public static BitmapFont cartwheel_font;
 	
 	/**
 	 * Loads texture file.
@@ -152,7 +156,7 @@ public class UIAssets {
 	 * Load fonts.
 	 */
 	public static void loadFonts() {
-
+		cartwheel_font = new BitmapFont(Gdx.files.internal(CARTWHEEL_FONT_FILE));
 	}
 
 	/**

@@ -25,6 +25,7 @@
  */
 package com.sawan.mathattack.buttons;
 
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
 
 /**
@@ -33,4 +34,7 @@ import com.sawan.mathattack.scene2d.ui.AbstractButton;
  */
 public class ButtonLevel extends AbstractButton {
 
+	public ButtonLevel(Drawable up, Drawable down) {
+		//super();
+	}
 }
