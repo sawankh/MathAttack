@@ -29,7 +29,7 @@ import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.sawan.mathattack.asset.UIAssets;
-import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -39,7 +39,7 @@ import com.sawan.mathattack.settings.AppSettings;
  *
  * @author Sawan
  */
-public class MathAttackMainMenuEnviroment {
+public class MAMainMenuEnviroment {
 	
 	/** The Constant TITLE_W. */
 	protected final static int TITLE_W = 600;
@@ -52,7 +52,7 @@ public class MathAttackMainMenuEnviroment {
 	 *
 	 * @param menu_screen the new up game name
 	 */
-	public void setUpGameName(final MathAttackMainMenuScreen menu_screen) {
+	public void setUpGameName(final MAMainMenuScreen menu_screen) {
 		menu_screen.title = new EmptyActorLight(TITLE_W, TITLE_H, true);
 		menu_screen.title.setTextureRegion(UIAssets.image_main_title, true);
 		menu_screen.title.setOrigin( menu_screen.title.getWidth() / 2, menu_screen.title.getHeight() / 2);
@@ -73,7 +73,7 @@ public class MathAttackMainMenuEnviroment {
 	 *
 	 * @param menu_screen the menu_screen
 	 */
-	public void sendInTitle(final MathAttackMainMenuScreen menu_screen) {
+	public void sendInTitle(final MAMainMenuScreen menu_screen) {
 		menu_screen.title.addAction(Actions.moveTo(
 				AppSettings.SCREEN_W / 2
 						- menu_screen.title.getWidth() / 2,

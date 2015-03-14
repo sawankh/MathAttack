@@ -33,9 +33,9 @@ import com.sawan.mathattack.screen.AbstractScreen;
  * @author Sawan
  *
  */
-public class MathAttackLevelSelectionScreen extends AbstractScreen implements IScreen {
+public class MALevelScreen extends AbstractScreen implements IScreen {
 
-	public MathAttackLevelSelectionScreen(AbstractGame game, String screenName) {
+	public MALevelScreen(AbstractGame game, String screenName) {
 		super(game, screenName);
 		// TODO Auto-generated constructor stub
 	}

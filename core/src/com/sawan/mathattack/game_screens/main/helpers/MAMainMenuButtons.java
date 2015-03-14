@@ -33,8 +33,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
-import com.sawan.mathattack.game_screens.levels.MathAttackLevelSelectionScreen;
-import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.TableModel;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -44,7 +44,7 @@ import com.sawan.mathattack.settings.AppSettings;
  *
  * @author Sawan
  */
-public class MathAttackMainMenuButtons {
+public class MAMainMenuButtons {
 	
 	/** The Constant Y_POSITION. */
 	protected final static int Y_POSITION = -120;
@@ -60,7 +60,7 @@ public class MathAttackMainMenuButtons {
 	 *
 	 * @param menuScreen the new up main menu buttons
 	 */
-	public void setUpMainMenuButtons(final MathAttackMainMenuScreen menuScreen) {
+	public void setUpMainMenuButtons(final MAMainMenuScreen menuScreen) {
 		
 		// Menu table for the following buttons (play. settings, credits)
 		menuScreen.menu_table = new TableModel(null, AppSettings.SCREEN_W, AppSettings.SCREEN_H);
@@ -83,7 +83,7 @@ public class MathAttackMainMenuButtons {
 				menuScreen.button_play.clearActions();
 				EffectCreator.create_SC_SHK_BTN(menuScreen.button_play,
                         1.3f, 1.3f, 5f, 0, 0.05f, null, false);
-				menuScreen.getGame().setScreen(new MathAttackLevelSelectionScreen(menuScreen.getGame(), "Level Selection"));
+				menuScreen.getGame().setScreen(new MALevelScreen(menuScreen.getGame(), "Level Selection"));
 			}
 		});
 		
@@ -146,7 +146,7 @@ public class MathAttackMainMenuButtons {
 	 * @param menu_screen the menu_screen
 	 */
 	public void sendInMainMenuButtons(
-			final MathAttackMainMenuScreen menu_screen) {
+			final MAMainMenuScreen menu_screen) {
 		EffectCreator.create_SC_BTO(menu_screen.button_play, 1.3f, 1.3f,
 				0.4f, null, false);
 
@@ -167,7 +167,7 @@ public class MathAttackMainMenuButtons {
 	 * @param menu_screen the menu_screen
 	 */
 	public void sendAwayMainMenuButtons(
-			final MathAttackMainMenuScreen menu_screen) {
+			final MAMainMenuScreen menu_screen) {
 		EffectCreator.create_SC(menu_screen.button_play, 0f, 0f, 0.4f,
 				null, false);
 		EffectCreator.create_SC(menu_screen.button_settings, 0f, 0f, 0.6f,

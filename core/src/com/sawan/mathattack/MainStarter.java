@@ -27,7 +27,7 @@ package com.sawan.mathattack;
 
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.AbstractGame;
-import com.sawan.mathattack.game_screens.main.MathAttackMainMenuScreen;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
 public class MainStarter extends AbstractGame {
@@ -35,7 +35,7 @@ public class MainStarter extends AbstractGame {
 	@Override
 	public void create() {
         super.create();
-		setScreen(new MathAttackMainMenuScreen(this, "Main Menu"));
+		setScreen(new MAMainMenuScreen(this, "Main Menu"));
 	}
 	
 	@Override

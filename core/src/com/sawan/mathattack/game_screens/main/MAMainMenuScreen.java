@@ -30,8 +30,8 @@ import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
 import com.sawan.mathattack.game.AbstractGame;
-import com.sawan.mathattack.game_screens.main.helpers.MathAttackMainMenuButtons;
-import com.sawan.mathattack.game_screens.main.helpers.MathAttackMainMenuEnviroment;
+import com.sawan.mathattack.game_screens.main.helpers.MAMainMenuButtons;
+import com.sawan.mathattack.game_screens.main.helpers.MAMainMenuEnviroment;
 import com.sawan.mathattack.interfaces.IScreen;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.scene2d.ui.TableModel;
@@ -43,7 +43,7 @@ import com.sawan.mathattack.settings.AppSettings;
  *
  * @author Sawan
  */
-public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen {
+public class MAMainMenuScreen extends AbstractScreen implements IScreen {
 
 	
 	/** The splash_loading. */
@@ -90,10 +90,10 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 	
 	// Main menu elements
 	/** The enviroment. */
-	public MathAttackMainMenuEnviroment enviroment;
+	public MAMainMenuEnviroment enviroment;
 	
 	/** The buttons. */
-	public MathAttackMainMenuButtons buttons;
+	public MAMainMenuButtons buttons;
 	
 	// Timers
 	/** The Constant SPLASH_TIMER. */
@@ -111,7 +111,7 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 	 * @param game the game
 	 * @param screenName the screen name
 	 */
-	public MathAttackMainMenuScreen(AbstractGame game, String screenName) {
+	public MAMainMenuScreen(AbstractGame game, String screenName) {
 		super(game, screenName);
 		
 		setUpScreenElements();
@@ -136,8 +136,8 @@ public class MathAttackMainMenuScreen extends AbstractScreen implements IScreen 
 		title_animation_timer = SPLASH_TIMER + TITLE_LOOP_ANIMATION;
 		
 		// Construct main menu elements
-		buttons = new MathAttackMainMenuButtons();
-		enviroment = new MathAttackMainMenuEnviroment();
+		buttons = new MAMainMenuButtons();
+		enviroment = new MAMainMenuEnviroment();
 		
 		// Prepare splash
 		splash_loading = new EmptyActorLight(SPLASH_W, SPLASH_H, true);
