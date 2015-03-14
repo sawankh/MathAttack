@@ -25,6 +25,7 @@
  */
 package com.sawan.mathattack.game_screens.levels;
 
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.interfaces.IScreen;
 import com.sawan.mathattack.screen.AbstractScreen;
@@ -34,6 +35,8 @@ import com.sawan.mathattack.screen.AbstractScreen;
  *
  */
 public class MALevelScreen extends AbstractScreen implements IScreen {
+	
+	public Table level_table;
 
 	public MALevelScreen(AbstractGame game, String screenName) {
 		super(game, screenName);

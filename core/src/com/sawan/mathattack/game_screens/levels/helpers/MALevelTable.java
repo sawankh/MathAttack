@@ -25,10 +25,31 @@
  */
 package com.sawan.mathattack.game_screens.levels.helpers;
 
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
+import com.sawan.mathattack.scene2d.ui.MenuCreator;
+
 /**
  * @author Sawan
  *
  */
 public class MALevelTable {
 
+	private final static int PADDING_VALUE = 30;
+	
+	private final static int NUM_LEVELS = 8;
+	
+	private void levelTable(final MALevelScreen levelScreen) {
+		levelScreen.level_table = MenuCreator.createTable(true, UIAssets.getSkin());
+		levelScreen.level_table.setPosition(-999, 0);
+		levelScreen.level_table.addAction(Actions.moveTo(0, 0, 0.7f));
+		levelScreen.level_table.top().left().pad(PADDING_VALUE, PADDING_VALUE, PADDING_VALUE, PADDING_VALUE);
+		levelScreen.getStage().addActor(levelScreen.level_table);
+		
+		for (int i = 0; i < NUM_LEVELS; i++) {
+			
+		}
+		
+	}
 }
