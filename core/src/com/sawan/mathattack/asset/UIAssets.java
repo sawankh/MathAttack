@@ -41,7 +41,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class UIAssets {
 
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private final static String FILE_IMAGE_ATLAS = "data/ma/game/MA_assets.atlas";
+	private final static String FILE_IMAGE_ATLAS = "data/ma/game/ui/UI_assets.atlas";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
@@ -56,8 +56,6 @@ public class UIAssets {
 	public static Skin skin;
 	
 	// Assets
-	/** The image_main_background. */
-	public static TextureRegion image_main_background;
 	
 	/** The image_main_button_play. */
 	public static TextureRegion image_main_button_play;
@@ -136,7 +134,6 @@ public class UIAssets {
 	 * Load images.
 	 */
 	public static void loadImages() {
-		image_main_background = getAtlas().findRegion("menu_background");
 		image_main_button_play = getAtlas().findRegion("play_button");
 		image_main_button_credits = getAtlas().findRegion("credits_button");
 		image_main_button_settings = getAtlas().findRegion("settings_button");

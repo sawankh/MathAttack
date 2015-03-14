@@ -26,6 +26,7 @@
 package com.sawan.mathattack.game_screens.main;
 
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
@@ -130,7 +131,7 @@ public class MAMainMenuScreen extends AbstractScreen implements IScreen {
 		
 		
 		// Set Background image
-		setBackgroundTexture(UIAssets.image_main_background);
+		setBackgroundTexture(Backgrounds.image_main_background);
 		
 		// Set title animation timer
 		title_animation_timer = SPLASH_TIMER + TITLE_LOOP_ANIMATION;
