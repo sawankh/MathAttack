@@ -56,6 +56,8 @@ public class Backgrounds {
 	/** The image_main_background. */
 	public static TextureRegion image_main_background;
 	
+	/** The image_level_background. */
+	public static TextureRegion image_level_background;
 
 	
 	
@@ -121,7 +123,7 @@ public class Backgrounds {
 	 */
 	public static void loadImages() {
 		image_main_background = getAtlas().findRegion("menu_background");
-	
+		image_level_background = getAtlas().findRegion("backgrounds2");
 	}
 
 	/**
