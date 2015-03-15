@@ -76,7 +76,7 @@ public class MALevelTable {
 			final ButtonLevel button_level = new ButtonLevel(drawable_up, drawable_down);
 			
 			// Set button level
-			button_level.setLevel_number(level_number, UIAssets.cartwheel_font);
+			button_level.setLevel_number(level_number + 1, UIAssets.cartwheel_font);
 			
 			// Set stars (get from database or text files here)
 			// Random number of stars just for testing 

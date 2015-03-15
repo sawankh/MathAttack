@@ -166,7 +166,7 @@ public class UIAssets {
 	 * Load buttons.
 	 */
 	public static void loadButtons() {
-		button_level = getAtlas().findRegion("button_level");
+		button_level = getAtlas().findRegion("level_button");
 	}
 
 	/**
