@@ -25,6 +25,8 @@
  */
 package com.sawan.mathattack.buttons;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.sawan.mathattack.asset.UIAssets;
@@ -36,11 +38,64 @@ import com.sawan.mathattack.scene2d.ui.AbstractButton;
  */
 public class ButtonLevel extends AbstractButton {
 
+	private static final int UNDEFINED_LEVEL = -999;
+	
+	// Level texture and star textures
 	private TextureRegion texture_star_holder;
 	private TextureRegion texture_star;
 	
+	// Star size and position settings
+	private float star_width;
+	private float star_height;
+	private float star_pos_x_start;
+	private float star_pos_y_start;
+	
+	// Font(for writting levels)
+	private BitmapFont font;
+	
+	private int level_number;
 	
 	public ButtonLevel(Drawable up, Drawable down) {
 		super(UIAssets.cartwheel_font, up, down);
+		star_pos_x_start = 0;
+		star_pos_y_start = 0;
+		level_number = UNDEFINED_LEVEL;
+	}
+	
+	@Override
+	public void draw(SpriteBatch batch, float parentAlpha) {
+		
+		// If level is defined and font exist then draw else draw default button
+		if (level_number !=  UNDEFINED_LEVEL && font != null) {
+			super.draw(batch, parentAlpha);
+			drawLevelNumber(batch);
+			drawText(batch);
+			drawStars(batch);
+			drawExternalTexture(batch);
+		} else {
+			super.draw(batch, parentAlpha);
+			drawText(batch);
+			drawStars(batch);
+			drawExternalTexture(batch);
+		}
+
+	}
+	
+	private void drawStars(SpriteBatch batch) {
+		if (texture_star_holder != null && texture_star != null) {
+			
+		}
+	}
+	
+	private void drawText(SpriteBatch batch) {
+		
+	}
+	
+	private void drawExternalTexture(SpriteBatch batch) {
+		
+	}
+	
+	private void drawLevelNumber(SpriteBatch batch) {
+		
 	}
 }
