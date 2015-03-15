@@ -123,7 +123,7 @@ public class Backgrounds {
 	 */
 	public static void loadImages() {
 		image_main_background = getAtlas().findRegion("menu_background");
-		image_level_background = getAtlas().findRegion("backgrounds2");
+		image_level_background = getAtlas().findRegion("backgrounds2.png");
 	}
 
 	/**
