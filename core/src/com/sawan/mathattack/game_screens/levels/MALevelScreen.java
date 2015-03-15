@@ -26,6 +26,7 @@
 package com.sawan.mathattack.game_screens.levels;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game_screens.levels.helpers.MALevelTable;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
@@ -51,6 +52,14 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 	@Override
 	public void setUpScreenElements() {
 		// TODO Auto-generated method stub
+		
+		// set background image
+		setBackgroundTexture(Backgrounds.image_level_background);
+		
+		// Set back button active
+		setBackButtonActive(true);
+		
+		// Add level table
 		levelTable = new MALevelTable();
 		levelTable.levelTable(this);
 	}
