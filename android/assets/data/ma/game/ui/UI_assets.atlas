@@ -150,34 +150,6 @@ right_button
   orig: 43, 45
   offset: 0, 0
   index: -1
-0_star_menu
-  rotate: false
-  xy: 384, 245
-  size: 63, 18
-  orig: 63, 18
-  offset: 0, 0
-  index: -1
-1_star_menu
-  rotate: false
-  xy: 344, 28
-  size: 63, 18
-  orig: 63, 18
-  offset: 0, 0
-  index: -1
-2_star_menu
-  rotate: false
-  xy: 384, 225
-  size: 63, 18
-  orig: 63, 18
-  offset: 0, 0
-  index: -1
-3_star_menu
-  rotate: false
-  xy: 344, 8
-  size: 63, 18
-  orig: 63, 18
-  offset: 0, 0
-  index: -1
 home_icon
   rotate: false
   xy: 473, 214
@@ -204,6 +176,20 @@ play_icon
   xy: 668, 192
   size: 63, 66
   orig: 63, 66
+  offset: 0, 0
+  index: -1
+no_star_level
+  rotate: false
+  xy: 1003, 1002
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+star_level
+  rotate: false
+  xy: 410, 86
+  size: 19, 17
+  orig: 19, 17
   offset: 0, 0
   index: -1
 
