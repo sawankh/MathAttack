@@ -62,7 +62,7 @@ public class MALevelTable {
 	 * @param levelScreen the level screen
 	 */
 	@SuppressWarnings("unused")
-	private void levelTable(final MALevelScreen levelScreen) {
+	public void levelTable(final MALevelScreen levelScreen) {
 		levelScreen.level_table = MenuCreator.createTable(true, UIAssets.getSkin());
 		levelScreen.level_table.setPosition(-999, 0);
 		levelScreen.level_table.addAction(Actions.moveTo(0, 0, 0.7f));
