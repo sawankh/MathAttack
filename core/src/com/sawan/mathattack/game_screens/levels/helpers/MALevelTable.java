@@ -26,6 +26,7 @@
 package com.sawan.mathattack.game_screens.levels.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
@@ -48,7 +49,8 @@ public class MALevelTable {
 		levelScreen.getStage().addActor(levelScreen.level_table);
 		
 		for (int i = 0; i < NUM_LEVELS; i++) {
-			
+			Drawable drawable_up;
+			Drawable drawable_down;
 		}
 		
 	}

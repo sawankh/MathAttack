@@ -47,6 +47,7 @@ public class UIAssets {
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
 	
+	/** The Constant CARTWHEEL_FONT_FILE. */
 	private final static String CARTWHEEL_FONT_FILE = "skin/cartwheel.fnt";
 	
 	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
@@ -75,6 +76,19 @@ public class UIAssets {
 	/** The image_main_title. */
 	public static TextureRegion image_main_title;
 	
+	/** The button_level. */
+	public static TextureRegion button_level;
+	
+	/** The image_level_table. */
+	public  static TextureRegion image_level_table;
+	
+	/** The image_level_star. */
+	public static TextureRegion image_level_star;
+	
+	/** The image_level_no_star. */
+	public static TextureRegion image_level_no_star;
+	
+	/** The cartwheel_font. */
 	public static BitmapFont cartwheel_font;
 	
 	/**
@@ -143,13 +157,16 @@ public class UIAssets {
 		image_main_button_settings = getAtlas().findRegion("settings_button");
 		image_main_loader = getAtlas().findRegion("loader");
 		image_main_title = getAtlas().findRegion("title");
+		image_level_table = getAtlas().findRegion("levels_bg");
+		image_level_star = getAtlas().findRegion("star_level");
+		image_level_no_star = getAtlas().findRegion("no_star_level");
 	}
 
 	/**
 	 * Load buttons.
 	 */
 	public static void loadButtons() {
-
+		button_level = getAtlas().findRegion("button_level");
 	}
 
 	/**
