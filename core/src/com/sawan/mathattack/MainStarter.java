@@ -26,10 +26,10 @@
 package com.sawan.mathattack;
 
 import com.sawan.mathattack.asset.Backgrounds;
+import com.sawan.mathattack.asset.Level1;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.AbstractGame;
-import com.sawan.mathattack.game_screens.levels.MALevelScreen;
-import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
+import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
 public class MainStarter extends AbstractGame {
@@ -37,7 +37,7 @@ public class MainStarter extends AbstractGame {
 	@Override
 	public void create() {
         super.create();
-		setScreen(new MALevelScreen(this, "Main Menu"));
+		setScreen(new MAGameScreen(this, "Main Menu"));
 	}
 	
 	@Override
@@ -49,6 +49,7 @@ public class MainStarter extends AbstractGame {
 	public void setUpAssets() {
 		UIAssets.loadAll();
 		Backgrounds.loadAll();
+		Level1.loadAll();
 	}
 
 	@Override
