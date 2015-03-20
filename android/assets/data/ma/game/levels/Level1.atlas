@@ -1,0 +1,31 @@
+
+Level1.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+lvl1_clouds
+  rotate: false
+  xy: 1, 453
+  size: 900, 450
+  orig: 900, 450
+  offset: 0, 0
+  index: -1
+lvl1_mountains
+  rotate: false
+  xy: 1, 1
+  size: 900, 450
+  orig: 900, 450
+  offset: 0, 0
+  index: -1
+
+Level12.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+lvl1_soil
+  rotate: false
+  xy: 1, 1
+  size: 900, 450
+  orig: 900, 450
+  offset: 0, 0
+  index: -1
