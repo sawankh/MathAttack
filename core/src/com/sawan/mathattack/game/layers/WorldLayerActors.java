@@ -25,10 +25,29 @@
  */
 package com.sawan.mathattack.game.layers;
 
+import com.sawan.mathattack.asset.HeroAssests;
+import com.sawan.mathattack.game.managers.MAGameManager;
+import com.sawan.mathattack.models.characters.Hero;
+import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
+
 /**
  * @author Sawan
  *
  */
-public class WorldLayerActors {
-
+public class WorldLayerActors extends AbstractWorldScene2d {
+	
+	private MAGameManager gameManager;
+	private Hero hero;
+	
+	public WorldLayerActors(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight) {
+		super(posX, posY, worldWidth, worldHeight);
+		this.gameManager =  gameManager;
+		setUpHero();
+	}
+	
+	public void setUpHero() {
+		hero = new Hero(gameManager.getStage().getWidth() / 2 - 48, 120, 96, 96);
+		hero.setAnimation(HeroAssests.hero_standing, true, true);
+		addActor(hero);
+	}
 }

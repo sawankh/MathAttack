@@ -39,7 +39,7 @@ import com.sawan.mathattack.animation.AnimationCreator;
  *
  * @author Sawan
  */
-public class Hero {
+public class HeroAssests {
 	/** The Constant FILE_IMAGE_ATLAS. */
 	private final static String FILE_IMAGE_ATLAS = "data/ma/game/characters/Hero.atlas";
 	
