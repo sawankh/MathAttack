@@ -70,8 +70,8 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 					soilWidth, soilHeight, true);
 			//
 			currentSoil.setTextureRegion(Level1.soil, true);
-			double posX = (i * currentSoil.getWidth())
-					- (4 * AppSettings.getWorldSizeRatio());
+			double posX = (i * currentSoil.getWidth());
+					
 			currentSoil.setPosition((float) posX, 0);
 			//
 			addActor(currentSoil);
