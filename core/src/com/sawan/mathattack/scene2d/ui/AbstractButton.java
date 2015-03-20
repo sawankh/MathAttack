@@ -269,8 +269,4 @@ public abstract class AbstractButton extends Button {
 	public void setDIPActive(boolean dIPActive) {
 		DIPActive = dIPActive;
 	}
-	
-	public void draw(SpriteBatch batch, float parentAlpha) {
-		
-	}
 }

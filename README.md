@@ -1,4 +1,4 @@
-MathAttack
+![MathAttack](/android/assets/title.png)
 ==========
 
 Mathattack is a game for cross-platform such as html, android, desktop. Based for educational purposes, this games offers our new generation to learn calculus while having fun and getting completed all the levels.
@@ -31,8 +31,8 @@ This project is under GNU license.
 
 libGDX is a game-development application framework written in the Java programming language with some C and C++ components for performance dependent code. It allows for the development of desktop and mobile games by using the same code base. It is cross-platform, supporting Windows, Linux, Mac OS X, Android, iOS, and web browsers with WebGL support.
 
-## [MorbitoTech](http://moribitotechx.blogspot.com.es/)
-Especial thanks to MorbitoTech for developing a framework called Mtx which is open source and available by clicking the following [MTX](https://github.com/moribitotech/MTX).
+## [MoribitoTech](http://moribitotechx.blogspot.com.es/)
+Especial thanks to MoribitoTechX for developing a framework called Mtx which is open source and available by clicking the following [MTX](https://github.com/moribitotech/MTX).
 
 This project has used this framework as a project template and the Math Attack team gives the whole credit to the developers of MTX. Also clearing that most of the initial code has been used from MTX and we do not take any CREDIT of creating it.
 

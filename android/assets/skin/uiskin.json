@@ -1,7 +1,8 @@
 {
 com.badlogic.gdx.graphics.g2d.BitmapFont: {
     default-font: { file: default.fnt },
-    verdana: { file: verdana39.fnt }
+    verdana: { file: verdana39.fnt },
+    cartwheel: { file: cartwheel.fnt}
 },
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },

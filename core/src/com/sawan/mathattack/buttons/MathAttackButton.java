@@ -1,9 +1,9 @@
 /**
- * File name:	AndroidLauncher.java
+ * File name:	MathAttackButton.java
  * Version:		1.0
- * Date:		@date 15:34:20
- * Author:		Sawan J. Kapai Harpalani
- * Copyright:	Copyright 200X Sawan J. Kapai Harpalani
+ * Date:		07/03/2015 20:19:41
+ * Author:		Sawan
+ * Copyright:	Copyright 200X Sawan
  *
  *				This file is part of Math Attack.
  *
@@ -23,19 +23,30 @@
  *				Public License along with Math Attack. If not, see 
  *				http://www.gnu.org/licenses/.
  */
-package com.sawan.mathattack.android;
+package com.sawan.mathattack.buttons;
 
-import android.os.Bundle;
+import java.util.Random;
 
-import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.sawan.mathattack.MainStarter;
+import com.sawan.mathattack.models.SmartActor;
 
-public class AndroidLauncher extends AndroidApplication {
-	@Override
-	protected void onCreate (Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		initialize(new MainStarter(), config);
+/**
+ * The Class MathAttackButton.
+ *
+ * @author Sawan
+ */
+public class MathAttackButton extends SmartActor {
+
+	/**
+	 * Instantiates a new math attack button.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param rnd the rnd
+	 * @param DIPActive the DIP active
+	 */
+	public MathAttackButton(float width, float height, Random rnd,
+			boolean DIPActive) {
+		super(width, height, rnd, DIPActive);
 	}
+
 }
