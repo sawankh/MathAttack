@@ -59,7 +59,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 
 	private void setUpBottomSoils() {
 		float worldWidth = gameManager.getStage().getWidth();
-		float soilWidth = 300f;
+		float soilWidth = 200f;
 		float soilHeight = 100f;
 		//
 		int numberOfSoils = (int) ((worldWidth / (soilWidth * AppSettings
@@ -70,9 +70,9 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 					soilWidth, soilHeight, true);
 			//
 			currentSoil.setTextureRegion(Level1.soil, true);
-			float posX = (i * currentSoil.getWidth())
+			double posX = (i * currentSoil.getWidth())
 					- (4 * AppSettings.getWorldSizeRatio());
-			currentSoil.setPosition(posX, 0);
+			currentSoil.setPosition((float) posX, 0);
 			//
 			addActor(currentSoil);
 		}
@@ -90,14 +90,17 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			//
 			currentCloud.setTextureRegion(Level1.clouds, true);
 			currentCloud.setPosition(-200,
-					gameManager.getStage().getHeight() / 2);
+					(gameManager.getStage().getHeight() / 2) +(gameManager.getStage().getHeight() / 4));
 			//
-			float posY = rnd.nextInt((int) gameManager.getStage().getHeight())
-					+ gameManager.getStage().getHeight() / 3;
+			//float posY = rnd.nextInt((int) gameManager.getStage().getHeight() / 10)
+				//	+ gameManager.getStage().getHeight() / 3;
+			float posY = rnd.nextInt((int) gameManager.getStage().getHeight()  - ((int) (gameManager.getStage().getHeight() / 2) + (int) (gameManager.getStage().getHeight() / 4))) + ((int) (gameManager.getStage().getHeight() / 2) + (int) (gameManager.getStage().getHeight() / 4)) ;
+			
 			//
 			currentCloud.startActionMoveSideToSideFreely(15, -200,
-					(int) gameManager.getStage().getWidth() + 200, (int) posY,
+					(int) gameManager.getStage().getWidth() + 200,(int) posY,
 					15f);
+			
 			//
 			addActor(currentCloud);
 		}
