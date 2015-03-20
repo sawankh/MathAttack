@@ -28,7 +28,7 @@ package com.sawan.mathattack.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.sawan.mathattack.MAGame;
+import com.sawan.mathattack.MainStarter;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -39,6 +39,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener getApplicationListener () {
-                return new MAGame();
+                return new MainStarter();
         }
 }

@@ -46,3 +46,6 @@ build/
 
 ## OS Specific
 .DS_Store
+/bin
+
+/local.properties

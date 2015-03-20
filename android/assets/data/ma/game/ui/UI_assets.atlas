@@ -1,0 +1,220 @@
+
+UI_assets.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+title
+  rotate: false
+  xy: 1, 396
+  size: 1000, 623
+  orig: 1000, 623
+  offset: 0, 0
+  index: -1
+empty_bg
+  rotate: false
+  xy: 1, 3
+  size: 251, 391
+  orig: 251, 391
+  offset: 0, 0
+  index: -1
+time_elapsed
+  rotate: false
+  xy: 254, 349
+  size: 238, 45
+  orig: 238, 45
+  offset: 0, 0
+  index: -1
+loader
+  rotate: false
+  xy: 254, 219
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+restart_button
+  rotate: false
+  xy: 494, 339
+  size: 177, 55
+  orig: 177, 55
+  offset: 0, 0
+  index: -1
+exit_button
+  rotate: false
+  xy: 673, 339
+  size: 175, 55
+  orig: 175, 55
+  offset: 0, 0
+  index: -1
+credits_button
+  rotate: false
+  xy: 850, 339
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
+levels_button
+  rotate: false
+  xy: 254, 162
+  size: 174, 55
+  orig: 174, 55
+  offset: 0, 0
+  index: -1
+resume_button
+  rotate: false
+  xy: 254, 105
+  size: 175, 55
+  orig: 175, 55
+  offset: 0, 0
+  index: -1
+play_button
+  rotate: false
+  xy: 254, 48
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
+star_middle_completed
+  rotate: false
+  xy: 384, 265
+  size: 87, 82
+  orig: 87, 82
+  offset: 0, 0
+  index: -1
+settings_button
+  rotate: false
+  xy: 473, 282
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
+central_no_star
+  rotate: false
+  xy: 629, 260
+  size: 85, 77
+  orig: 85, 77
+  offset: 0, 0
+  index: -1
+star_completed
+  rotate: false
+  xy: 716, 267
+  size: 74, 70
+  orig: 74, 70
+  offset: 0, 0
+  index: -1
+star_left_completed
+  rotate: false
+  xy: 716, 267
+  size: 74, 70
+  orig: 74, 70
+  offset: 0, 0
+  index: -1
+star_right_completed
+  rotate: false
+  xy: 792, 267
+  size: 73, 70
+  orig: 73, 70
+  offset: 0, 0
+  index: -1
+left_no_star
+  rotate: false
+  xy: 867, 272
+  size: 71, 65
+  orig: 71, 65
+  offset: 0, 0
+  index: -1
+no_star
+  rotate: false
+  xy: 940, 272
+  size: 71, 65
+  orig: 71, 65
+  offset: 0, 0
+  index: -1
+right_no_star
+  rotate: false
+  xy: 940, 272
+  size: 71, 65
+  orig: 71, 65
+  offset: 0, 0
+  index: -1
+left_button
+  rotate: false
+  xy: 254, 1
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+right_button
+  rotate: false
+  xy: 299, 1
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+home_icon
+  rotate: false
+  xy: 473, 214
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+level_button
+  rotate: false
+  xy: 538, 214
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+lock_disable
+  rotate: false
+  xy: 603, 192
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+play_icon
+  rotate: false
+  xy: 668, 192
+  size: 63, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+no_star_level
+  rotate: false
+  xy: 1003, 1002
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+star_level
+  rotate: false
+  xy: 410, 86
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+
+UI_assets2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pause_bg
+  rotate: false
+  xy: 1, 241
+  size: 486, 608
+  orig: 486, 608
+  offset: 0, 0
+  index: -1
+levels_bg
+  rotate: false
+  xy: 489, 429
+  size: 471, 420
+  orig: 471, 420
+  offset: 0, 0
+  index: -1
+level_completed_bg
+  rotate: false
+  xy: 489, 1
+  size: 357, 426
+  orig: 357, 426
+  offset: 0, 0
+  index: -1
