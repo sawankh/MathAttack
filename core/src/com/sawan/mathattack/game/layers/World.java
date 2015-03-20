@@ -25,10 +25,31 @@
  */
 package com.sawan.mathattack.game.layers;
 
+import com.sawan.mathattack.game.GameState;
+import com.sawan.mathattack.game.managers.MAGameManager;
+import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
+
 /**
  * @author Itop1
  *
  */
-public class World {
+public class World extends AbstractWorldScene2d {
+	MAGameManager gameManager;
 
+	public World(MAGameManager gameManager, float posX, float posY,
+			float worldWidth, float worldHeight) {
+		super(posX, posY, worldWidth, worldHeight);
+		//
+		this.gameManager = gameManager;
+	}
+
+	@Override
+	public void act(float delta) {
+		//
+		// Actors act under the world if only game state is Running
+		// ####################################################################
+		if (gameManager.getGameState() == GameState.GAME_RUNNING) {
+			super.act(delta);
+		}
+	}
 }

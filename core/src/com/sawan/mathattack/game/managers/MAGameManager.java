@@ -71,11 +71,11 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		// Layer2 - Flying enemy objects
 		// Layer3 - Snow effect
 		//
-		worldLayer_background = new WorldLayer1(this, 0, 0, AppSettings.SCREEN_W,
+		worldLayer_background = new WorldLayerBG(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		worldLayer_actors = new WorldLayer2(this, 0, 0, AppSettings.SCREEN_W,
+		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		worldLayer_other = new WorldLayer3(this, 0, 0, AppSettings.SCREEN_W,
+		worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
 
 		//
