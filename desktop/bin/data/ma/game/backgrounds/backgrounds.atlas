@@ -1,0 +1,24 @@
+
+backgrounds.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+menu_background
+  rotate: false
+  xy: 1, 1
+  size: 960, 600
+  orig: 960, 600
+  offset: 0, 0
+  index: -1
+
+backgrounds2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+level_back
+  rotate: false
+  xy: 1, 1
+  size: 900, 600
+  orig: 900, 600
+  offset: 0, 0
+  index: -1

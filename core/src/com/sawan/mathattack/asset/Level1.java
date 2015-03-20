@@ -53,6 +53,7 @@ public class Level1 {
 	public static TextureRegion clouds;
 	public static TextureRegion mountains;
 	public static TextureRegion soil;
+	public static TextureRegion sky;
 
 	
 	
@@ -117,9 +118,10 @@ public class Level1 {
 	 * Load images.
 	 */
 	public static void loadImages() {
-		clouds = getAtlas().findRegion("lvl1_clouds");
-		mountains = getAtlas().findRegion("lvl1_mountains");
-		soil = getAtlas().findRegion("lvl1_soil");
+		sky = getAtlas().findRegion("sky");
+		clouds = getAtlas().findRegion("clouds");
+		mountains = getAtlas().findRegion("mountains");
+		soil = getAtlas().findRegion("Tile");
 	}
 
 	/**
