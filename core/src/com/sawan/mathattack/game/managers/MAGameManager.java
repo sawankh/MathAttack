@@ -25,10 +25,106 @@
  */
 package com.sawan.mathattack.game.managers;
 
+import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.sawan.mathattack.game.AbstractGameManager;
+import com.sawan.mathattack.game.GameState;
+import com.sawan.mathattack.game.layers.WorldLayerActors;
+import com.sawan.mathattack.game.layers.WorldLayerBG;
+import com.sawan.mathattack.game.layers.WorldLayerOther;
+import com.sawan.mathattack.interfaces.IGameManager;
+import com.sawan.mathattack.screen.AbstractScreen;
+import com.sawan.mathattack.settings.AppSettings;
+
 /**
  * @author Sawan
  *
  */
-public class MAGameManager {
+public class MAGameManager extends AbstractGameManager implements IGameManager {
+
+	public World world;
+	public WorldLayerBG worldLayer_background;
+	public WorldLayerActors worldLayer_actors;
+	public WorldLayerOther worldLayer_other;
+
+	public MAGameManager(Stage stage, AbstractScreen screen) {
+		super(stage, screen);
+		//
+		setUpWorld();
+		//
+		setGameState(GameState.GAME_RUNNING);
+	}
+
+	@Override
+	public void setUpWorld() {
+		//
+		// Create the main world and its world layers
+		// #############################################################
+		world = new World(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
+		
+		//
+		// World layers
+		// #############################################################
+		//
+		// Layer1 - Background image, bottom soil, clouds
+		// Layer2 - Flying enemy objects
+		// Layer3 - Snow effect
+		//
+		worldLayer_background = new WorldLayer1(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
+		worldLayer_actors = new WorldLayer2(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
+		worldLayer_other = new WorldLayer3(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
+
+		//
+		// Add all layers to world
+		// #############################################################
+		world.addActor(worldLayer_background);
+		world.addActor(worldLayer_actors);
+		world.addActor(worldLayer_other);
+
+		//
+		// Add the main world to stage
+		// #############################################################
+		getStage().addActor(world);
+	}
+
+	@Override
+	public void startLevel(int levelNumber) {
+
+	}
+
+	@Override
+	public void checkGameCondition() {
+
+	}
+
+	@Override
+	public void update(float delta) {
+		checkGameCondition();
+	}
+
+	@Override
+	public void saveGame() {
+
+	}
+
+    @Override
+    public void setUpData() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void setUpPreManagers() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void setUpPostManagers() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+	
 
 }
