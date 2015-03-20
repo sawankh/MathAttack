@@ -23,7 +23,7 @@
  *				Public License along with Math Attack. If not, see 
  *				http://www.gnu.org/licenses/.
  */
-package com.sawan.mathattack.characters;
+package com.sawan.mathattack.models.characters;
 
 /**
  * @author Sawan
