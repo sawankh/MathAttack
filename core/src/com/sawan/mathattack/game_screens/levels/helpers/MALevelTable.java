@@ -61,7 +61,6 @@ public class MALevelTable {
 	 *
 	 * @param levelScreen the level screen
 	 */
-	@SuppressWarnings("unused")
 	public void levelTable(final MALevelScreen levelScreen) {
 		levelScreen.level_table = MenuCreator.createTable(true, UIAssets.getSkin());
 		levelScreen.level_table.setPosition(-999, 0);
@@ -102,7 +101,7 @@ public class MALevelTable {
 			}
 			
 			// Add to table
-			levelScreen.level_table.add(button_level).size(50, 50).pad(5, 5, 5, 5).expand();
+			levelScreen.level_table.add(button_level).size(100, 100).pad(5, 5, 5, 5).expand();
 		}
 		
 	}
