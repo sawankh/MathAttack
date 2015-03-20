@@ -25,10 +25,40 @@
  */
 package com.sawan.mathattack.models.characters;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.sawan.mathattack.scene2d.AbstractActor;
+
 /**
  * @author Sawan
  *
  */
-public class Hero {
+public class Hero extends AbstractActor {
+
+	/**
+	 * Instantiates a new hero.
+	 *
+	 * @param textureRegion the texture region
+	 * @param isTextureRegionActive the is texture region active
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
+	public Hero(TextureRegion textureRegion, boolean isTextureRegionActive,
+			float posX, float posY, float width, float height) {
+		super(textureRegion, isTextureRegionActive, posX, posY, width, height);
+	}
+	
+	/**
+	 * Instantiates a new hero.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
+	public Hero(float posX, float posY, float width, float height) {
+		super(posX, posY, width, height);
+	}
 
 }
