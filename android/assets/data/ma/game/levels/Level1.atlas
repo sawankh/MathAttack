@@ -3,18 +3,25 @@ Level1.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-lvl1_clouds
+mountains
   rotate: false
-  xy: 1, 453
+  xy: 1, 516
   size: 900, 450
   orig: 900, 450
   offset: 0, 0
   index: -1
-lvl1_mountains
+sky
   rotate: false
-  xy: 1, 1
+  xy: 1, 64
   size: 900, 450
   orig: 900, 450
+  offset: 0, 0
+  index: -1
+clouds
+  rotate: false
+  xy: 1, 1
+  size: 185, 61
+  orig: 185, 61
   offset: 0, 0
   index: -1
 
@@ -22,10 +29,10 @@ Level12.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-lvl1_soil
+Tile
   rotate: false
   xy: 1, 1
-  size: 900, 450
-  orig: 900, 450
+  size: 205, 208
+  orig: 205, 208
   offset: 0, 0
   index: -1
