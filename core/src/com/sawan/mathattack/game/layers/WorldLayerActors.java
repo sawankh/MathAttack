@@ -46,7 +46,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	}
 	
 	public void setUpHero() {
-		hero = new Hero(gameManager.getStage().getWidth() / 2 - 48, 120, 96, 96);
+		hero = new Hero(0, 120, 96, 96);
 		hero.setAnimation(HeroAssests.hero_standing, true, true);
 		addActor(hero);
 	}
