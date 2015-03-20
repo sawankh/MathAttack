@@ -28,7 +28,7 @@ package com.sawan.mathattack.game.layers;
 import java.util.Random;
 
 import com.badlogic.gdx.utils.Scaling;
-import com.sawan.jungle.assets.Assets;
+import com.sawan.mathattack.asset.Level1;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.models.SmartActor;
@@ -54,7 +54,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 	}
 
 	private void setUpBackround() {
-		setBackgroundTexture(Backgrounds, Scaling.stretch, true, false);
+		setBackgroundTexture(Level1.sky, Scaling.stretch, true, false);
 	}
 
 	private void setUpBottomSoils() {
@@ -69,7 +69,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			EmptyActorLight currentSoil = new EmptyActorLight(
 					soilWidth, soilHeight, true);
 			//
-			currentSoil.setTextureRegion(Assets.img_obj_soil_1_, true);
+			currentSoil.setTextureRegion(Level1.soil, true);
 			float posX = (i * currentSoil.getWidth())
 					- (4 * AppSettings.getWorldSizeRatio());
 			currentSoil.setPosition(posX, 0);
@@ -88,7 +88,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			SmartActor currentCloud = new SmartActor(231 * rndSizeRatio / 100,
 					128 * rndSizeRatio / 100, rnd, true);
 			//
-			currentCloud.setTextureRegion(Assets.img_obj_cloud, true);
+			currentCloud.setTextureRegion(Level1.clouds, true);
 			currentCloud.setPosition(-200,
 					gameManager.getStage().getHeight() / 2);
 			//

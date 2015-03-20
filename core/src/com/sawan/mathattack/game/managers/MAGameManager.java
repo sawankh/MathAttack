@@ -42,7 +42,7 @@ import com.sawan.mathattack.settings.AppSettings;
  */
 public class MAGameManager extends AbstractGameManager implements IGameManager {
 
-	public World world;
+	public com.sawan.mathattack.game.layers.World world;
 	public WorldLayerBG worldLayer_background;
 	public WorldLayerActors worldLayer_actors;
 	public WorldLayerOther worldLayer_other;
@@ -60,8 +60,7 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		//
 		// Create the main world and its world layers
 		// #############################################################
-		world = new World(this, 0, 0, AppSettings.SCREEN_W,
-				AppSettings.SCREEN_H);
+		world = new com.sawan.mathattack.game.layers.World(this, 0, 0, AppSettings.SCREEN_W, AppSettings.SCREEN_H);
 		
 		//
 		// World layers
@@ -73,17 +72,17 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		//
 		worldLayer_background = new WorldLayerBG(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
-				AppSettings.SCREEN_H);
-		worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
-				AppSettings.SCREEN_H);
+		//worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
+			//	AppSettings.SCREEN_H);
+		//worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
+			//	AppSettings.SCREEN_H);
 
 		//
 		// Add all layers to world
 		// #############################################################
 		world.addActor(worldLayer_background);
-		world.addActor(worldLayer_actors);
-		world.addActor(worldLayer_other);
+	//	world.addActor(worldLayer_actors);
+		//world.addActor(worldLayer_other);
 
 		//
 		// Add the main world to stage
