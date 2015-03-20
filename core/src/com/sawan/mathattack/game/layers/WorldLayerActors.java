@@ -26,7 +26,7 @@
 package com.sawan.mathattack.game.layers;
 
 /**
- * @author Itop1
+ * @author Sawan
  *
  */
 public class WorldLayerActors {
