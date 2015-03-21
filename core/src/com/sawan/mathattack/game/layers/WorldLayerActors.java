@@ -30,6 +30,7 @@ import java.util.Random;
 
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
+import com.sawan.mathattack.collision.CollisionDetector;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.characters.Hero;
 import com.sawan.mathattack.models.characters.enemies.BlueMonster;
@@ -43,8 +44,8 @@ import com.sawan.mathattack.settings.AppSettings;
 public class WorldLayerActors extends AbstractWorldScene2d {
 	
 	private MAGameManager gameManager;
-	private Hero hero;
-	private ArrayList<BlueMonster> enemies;
+	public Hero hero;
+	public ArrayList<BlueMonster> enemies;
 	
 	protected final static int NUM_ENEMIES = 20;
 	
@@ -53,6 +54,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		this.gameManager =  gameManager;
 		setUpHero();
 		setUpEnemies();
+		
 	}
 	
 	public void setUpHero() {
