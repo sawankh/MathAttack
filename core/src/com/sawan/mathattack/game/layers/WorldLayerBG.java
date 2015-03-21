@@ -42,6 +42,9 @@ import com.sawan.mathattack.settings.AppSettings;
 public class WorldLayerBG extends AbstractWorldScene2d {
 	MAGameManager gameManager;
 
+	public final float SOIL_WIDHT = 205f /3;
+	public final float SOIL_HEIGHT = 208f /3;
+	
 	public WorldLayerBG(MAGameManager gameManager, float posX, float posY,
 			float worldWidth, float worldHeight) {
 		super(posX, posY, worldWidth, worldHeight);
@@ -59,15 +62,14 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 
 	private void setUpBottomSoils() {
 		float worldWidth = gameManager.getStage().getWidth();
-		float soilWidth = 200f;
-		float soilHeight = 100f;
+		
 		//
-		int numberOfSoils = (int) ((worldWidth / (soilWidth * AppSettings
+		int numberOfSoils = (int) ((worldWidth / (SOIL_WIDHT * AppSettings
 				.getWorldSizeRatio())) + 1);
 		//
 		for (int i = 0; i < numberOfSoils; i++) {
 			EmptyActorLight currentSoil = new EmptyActorLight(
-					soilWidth, soilHeight, true);
+					SOIL_WIDHT, SOIL_HEIGHT, true);
 			//
 			currentSoil.setTextureRegion(Level1.soil, true);
 			double posX = (i * currentSoil.getWidth());

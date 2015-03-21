@@ -29,6 +29,7 @@ import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.characters.Hero;
 import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
+import com.sawan.mathattack.settings.AppSettings;
 
 /**
  * @author Sawan
@@ -46,8 +47,12 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	}
 	
 	public void setUpHero() {
-		hero = new Hero(0, 120, 96, 96);
-		hero.setAnimation(HeroAssests.hero_standing, true, true);
+		hero = new Hero(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
+		
+		
+		hero.setY(gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio());
+		hero.setX(0f * AppSettings.getWorldPositionXRatio());
+		hero.setAnimation(HeroAssests.hero_faint, true, true);
 		addActor(hero);
 	}
 }

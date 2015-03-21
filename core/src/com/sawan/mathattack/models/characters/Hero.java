@@ -49,6 +49,19 @@ public class Hero extends AbstractActor {
 		super(textureRegion, isTextureRegionActive, posX, posY, width, height);
 	}
 	
+	
+	
+	/**
+	 * @param width
+	 * @param height
+	 * @param DIPActive
+	 */
+	public Hero(float width, float height, boolean DIPActive) {
+		super(width, height, DIPActive);
+	}
+
+
+
 	/**
 	 * Instantiates a new hero.
 	 *

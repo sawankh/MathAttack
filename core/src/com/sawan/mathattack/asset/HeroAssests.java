@@ -134,10 +134,10 @@ public class HeroAssests {
 	 * Load animations.
 	 */
 	public static void loadAnimations() {
-		hero_standing = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "stand", 2, 0.065f, false, false);
-		hero_jumping = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "jump", 2, 0.065f, false, false);
-		hero_dizzy = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "dizzy", 2, 0.065f, false, false);
-		hero_faint = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "faint", 5, 0.065f, false, false);
+		hero_standing = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "stand", 2, 0.2f, false, false);
+		hero_jumping = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "jump", 2, 0.2f, false, false);
+		hero_dizzy = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "dizzy", 2, 0.2f, false, false);
+		hero_faint = AnimationCreator.getAnimationFromMultiTextures(getAtlas(), "faint", 5, 0.2f, false, false);
 	}
 
 	/**
