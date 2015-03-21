@@ -74,7 +74,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 			
 			float posY = gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio();
 			current_monster.setY(posY);
-			current_monster.setX(gameManager.getStage().getWidth() + 20);
+			current_monster.setX(gameManager.getStage().getWidth() + (i * (current_monster.getWidth() + 100)));
 			
 			current_monster.setAnimation(BlueMonsterAssets.monster_walking, true, true);
 			
