@@ -26,8 +26,10 @@
 package com.sawan.mathattack.game.layers;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.collision.CollisionDetector;
@@ -89,4 +91,14 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 			
 		}
 	}
+	
+	public static void checkCollision(Actor hero, ArrayList<BlueMonster> enemies) {
+		for (Iterator<BlueMonster> iterator = enemies.iterator(); iterator.hasNext();) {
+			BlueMonster enemy = (BlueMonster) iterator.next();
+			if (CollisionDetector.isActorsCollide(hero, enemy)) {
+				System.out.println(true);
+			}
+		}
+	}
+
 }
