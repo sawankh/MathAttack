@@ -36,10 +36,12 @@ public class BlueMonster extends AbstractActor {
 	float speed;
 	boolean isMoving;
 	boolean isLooping;
+	boolean isAlive;
 	
 	
 	public BlueMonster(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
+		isAlive = true;
 	}
 	
 	public void startMoving(float worldWidth,  float speed, boolean isMoving, boolean isLooping){
@@ -68,4 +70,20 @@ public class BlueMonster extends AbstractActor {
 			setX(worldWidth + 200);
 		}
 	}
+
+	/**
+	 * @return the isAlive
+	 */
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+	/**
+	 * @param isAlive the isAlive to set
+	 */
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+	
+	
 }
