@@ -25,7 +25,6 @@
  */
 package com.sawan.mathattack.game.managers;
 
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.sawan.mathattack.game.AbstractGameManager;
 import com.sawan.mathattack.game.GameState;
@@ -72,8 +71,8 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		//
 		worldLayer_background = new WorldLayerBG(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		//worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
-			//	AppSettings.SCREEN_H);
+		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
 		//worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
 			//	AppSettings.SCREEN_H);
 
@@ -81,7 +80,7 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		// Add all layers to world
 		// #############################################################
 		world.addActor(worldLayer_background);
-	//	world.addActor(worldLayer_actors);
+		world.addActor(worldLayer_actors);
 		//world.addActor(worldLayer_other);
 
 		//
