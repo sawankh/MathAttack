@@ -26,6 +26,7 @@
 package com.sawan.mathattack.game.layers;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
@@ -60,26 +61,30 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		
 		hero.setY(gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio());
 		hero.setX(0f * AppSettings.getWorldPositionXRatio());
-		hero.setAnimation(HeroAssests.hero_faint, true, true);
+		hero.setAnimation(HeroAssests.hero_standing, true, true);
 		addActor(hero);
 	}
 	
 	public void setUpEnemies() {
 		enemies = new ArrayList<BlueMonster>();
+		Random rnd = new Random();
 		
 		for (int i = 0; i < NUM_ENEMIES; i++) {
 			BlueMonster current_monster = new BlueMonster(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
 			
 			float posY = gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio();
 			current_monster.setY(posY);
-			current_monster.setX(gameManager.getStage().getWidth() + 200);
+			current_monster.setX(gameManager.getStage().getWidth() + 20);
 			
 			current_monster.setAnimation(BlueMonsterAssets.monster_walking, true, true);
 			
-			current_monster.startMoving(gameManager.getStage().getWidth(), 110, true);
+			float rndSpeed = rnd.nextInt(100) + 20;
+			current_monster.startMoving(gameManager.getStage().getWidth(), rndSpeed, true, false);
 			
 			enemies.add(current_monster);
 			addActor(current_monster);
+			
+			
 		}
 	}
 }

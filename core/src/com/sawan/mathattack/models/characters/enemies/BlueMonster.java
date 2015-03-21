@@ -35,16 +35,18 @@ public class BlueMonster extends AbstractActor {
 	float worldWidth;
 	float speed;
 	boolean isMoving;
+	boolean isLooping;
 	
 	
 	public BlueMonster(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 	}
 	
-	public void startMoving(float worldWidth,  float speed, boolean isMoving){
+	public void startMoving(float worldWidth,  float speed, boolean isMoving, boolean isLooping){
 		this.worldWidth = worldWidth;
 		this.speed = speed;
 		this.isMoving = isMoving;
+		this.isLooping = isLooping;
 
 	}
 	
@@ -52,7 +54,9 @@ public class BlueMonster extends AbstractActor {
 	public void act(float delta) {
 		super.act(delta);
 		//
-		checkPosition();
+		if (isLooping) {
+			checkPosition();
+		}
 		//
 		if(isMoving){
 			translateWithoutAcc(-speed, 0, delta);
