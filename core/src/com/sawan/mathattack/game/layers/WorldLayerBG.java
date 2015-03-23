@@ -25,13 +25,18 @@
  */
 package com.sawan.mathattack.game.layers;
 
+import java.util.ArrayList;
 import java.util.Random;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Scaling;
 import com.sawan.mathattack.asset.Level1;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.managers.MAGameManager;
+import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.models.SmartActor;
+import com.sawan.mathattack.models.characters.Hero;
 import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -45,6 +50,8 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 	public final float SOIL_WIDHT = 205f /3;
 	public final float SOIL_HEIGHT = 208f /3;
 	
+	private ArrayList<Actor> hearts;
+	
 	public WorldLayerBG(MAGameManager gameManager, float posX, float posY,
 			float worldWidth, float worldHeight) {
 		super(posX, posY, worldWidth, worldHeight);
@@ -54,6 +61,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		setUpBackround();
 		setUpBottomSoils();
 		setUpClouds();
+		setUpLives(Hero.NUM_LIFES);
 	}
 
 	private void setUpBackround() {
@@ -108,4 +116,25 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		}
 	}
 
+	public void setUpLives(int num_lives) {
+		hearts = new ArrayList<Actor>();
+		for (int i = 0; i < num_lives; i++) {
+			EmptyActor current_heart = new EmptyActor(25f, 25f, true);
+			current_heart.setName(Integer.toString(i));
+			
+			float posX = i * current_heart.getWidth();
+			float posY = gameManager.getStage().getHeight() / 2;
+			
+			current_heart.setPosition(posX, posY);
+			current_heart.setTextureRegion(UIAssets.image_level_star, true);
+			
+			hearts.add(current_heart);
+			addActor(current_heart);
+		}
+	}
+	
+	public void removeHeart() {
+		removeActor(hearts.get(hearts.size() - 1));
+		hearts.remove(hearts.size() - 1);
+	}
 }

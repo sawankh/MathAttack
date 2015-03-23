@@ -50,6 +50,7 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 	@Override
 	public void render(float delta) {
 		super.render(delta);
+		
 		//
 		// Update game manager, (Useful for checking game condition)
 		// ######################################################

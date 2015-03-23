@@ -49,7 +49,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public ArrayList<BlueMonster> enemies;
 	
 	protected final static int NUM_ENEMIES = 20;
-	protected final static int NUM_LIFES = 5;
+	
 	
 	public WorldLayerActors(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight) {
 		super(posX, posY, worldWidth, worldHeight);
@@ -62,8 +62,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public void setUpHero() {
 		hero = new Hero(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
 		
-		hero.setLifes(NUM_LIFES);
-		
+
 		hero.setY(gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio());
 		hero.setX(0f * AppSettings.getWorldPositionXRatio());
 		hero.setAnimation(HeroAssests.hero_standing, true, true);
@@ -96,12 +95,13 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public void checkCollision(Hero hero, ArrayList<BlueMonster> enemies) {
 		for (Iterator<BlueMonster> iterator = enemies.iterator(); iterator.hasNext();) {
 			BlueMonster enemy = (BlueMonster) iterator.next();
-			if (CollisionDetector.isActorsCollide(hero, enemy) && enemy.isAlive()) {
-				System.out.println(enemies.indexOf(enemy));
+			if (CollisionDetector.isActorsCollide(hero, enemy) && enemy.isAlive() && hero.getLifes() > 0) {
+			//	System.out.println(enemies.indexOf(enemy));
 				enemy.setAlive(false);
 				hero.setLifes(hero.getLifes() - 1);
+				hero.setLost_life(true);
 				if (hero.getLifes() > 0) {
-					System.out.println(hero.getLifes());
+					//System.out.println(hero.getLifes());
 				} else {
 					System.out.println("Hero is dead!");
 				}

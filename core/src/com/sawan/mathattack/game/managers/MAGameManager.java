@@ -25,6 +25,9 @@
  */
 package com.sawan.mathattack.game.managers;
 
+import java.util.Iterator;
+
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.sawan.mathattack.game.AbstractGameManager;
 import com.sawan.mathattack.game.GameState;
@@ -103,6 +106,12 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public void update(float delta) {
 		checkGameCondition();
 		worldLayer_actors.checkCollision(worldLayer_actors.hero, worldLayer_actors.enemies);
+		if (worldLayer_actors.hero.isLost_life()) {
+			//worldLayer_background.setUpLives(worldLayer_actors.hero.getLifes());
+			worldLayer_background.removeHeart();
+			worldLayer_actors.hero.setLost_life(false);
+		}
+		
 	}
 
 	@Override

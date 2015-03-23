@@ -35,6 +35,9 @@ import com.sawan.mathattack.scene2d.AbstractActor;
 public class Hero extends AbstractActor {
 
 	private int lifes;
+	private boolean lost_life;
+	
+	public final static int NUM_LIFES = 5;
 	
 	/**
 	 * Instantiates a new hero.
@@ -49,6 +52,8 @@ public class Hero extends AbstractActor {
 	public Hero(TextureRegion textureRegion, boolean isTextureRegionActive,
 			float posX, float posY, float width, float height) {
 		super(textureRegion, isTextureRegionActive, posX, posY, width, height);
+		lost_life = false;
+		setLifes(NUM_LIFES);
 	}
 	
 	
@@ -60,6 +65,8 @@ public class Hero extends AbstractActor {
 	 */
 	public Hero(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
+		lost_life = false;
+		setLifes(NUM_LIFES);
 	}
 
 
@@ -74,6 +81,8 @@ public class Hero extends AbstractActor {
 	 */
 	public Hero(float posX, float posY, float width, float height) {
 		super(posX, posY, width, height);
+		lost_life = false;
+		setLifes(NUM_LIFES);
 	}
 
 
@@ -92,6 +101,24 @@ public class Hero extends AbstractActor {
 	 */
 	public void setLifes(int lifes) {
 		this.lifes = lifes;
+	}
+
+
+
+	/**
+	 * @return the lost_life
+	 */
+	public boolean isLost_life() {
+		return lost_life;
+	}
+
+
+
+	/**
+	 * @param lost_life the lost_life to set
+	 */
+	public void setLost_life(boolean lost_life) {
+		this.lost_life = lost_life;
 	}
 	
 	
