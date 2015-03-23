@@ -34,6 +34,8 @@ import com.sawan.mathattack.scene2d.AbstractActor;
  */
 public class Hero extends AbstractActor {
 
+	private int lifes;
+	
 	/**
 	 * Instantiates a new hero.
 	 *
@@ -73,5 +75,25 @@ public class Hero extends AbstractActor {
 	public Hero(float posX, float posY, float width, float height) {
 		super(posX, posY, width, height);
 	}
+
+
+
+	/**
+	 * @return the lifes
+	 */
+	public int getLifes() {
+		return lifes;
+	}
+
+
+
+	/**
+	 * @param lifes the lifes to set
+	 */
+	public void setLifes(int lifes) {
+		this.lifes = lifes;
+	}
+	
+	
 
 }

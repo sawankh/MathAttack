@@ -25,10 +25,8 @@
  */
 package com.sawan.mathattack.game.screen;
 
-import com.sawan.mathattack.collision.CollisionDetector;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game.helpers.MAGameScreenMenu;
-import com.sawan.mathattack.game.layers.WorldLayerActors;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.interfaces.IGameScreen;
 import com.sawan.mathattack.interfaces.IScreen;
@@ -58,8 +56,7 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 		if(game_manager != null){
 			game_manager.update(delta);
 		}
-		WorldLayerActors.checkCollision(game_manager.worldLayer_actors.hero, game_manager.worldLayer_actors.enemies);
-		
+			
 	}
 
 	@Override

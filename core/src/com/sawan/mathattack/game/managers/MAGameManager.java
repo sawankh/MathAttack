@@ -102,6 +102,7 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	@Override
 	public void update(float delta) {
 		checkGameCondition();
+		worldLayer_actors.checkCollision(worldLayer_actors.hero, worldLayer_actors.enemies);
 	}
 
 	@Override

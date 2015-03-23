@@ -92,7 +92,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 	
-	public static void checkCollision(Actor hero, ArrayList<BlueMonster> enemies) {
+	public void checkCollision(Actor hero, ArrayList<BlueMonster> enemies) {
 		for (Iterator<BlueMonster> iterator = enemies.iterator(); iterator.hasNext();) {
 			BlueMonster enemy = (BlueMonster) iterator.next();
 			if (CollisionDetector.isActorsCollide(hero, enemy) && enemy.isAlive()) {
