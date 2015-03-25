@@ -63,7 +63,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public void setUpHero() {
 		hero = new Hero(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
 		
-
+		System.out.println(hero.getScaleX() + " " + hero.getScaleY());
 		hero.setY(gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio());
 		hero.setX(0f * AppSettings.getWorldPositionXRatio());
 		hero.setAnimation(HeroAssests.hero_standing, true, true);
@@ -126,6 +126,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 					killHero();
 				}
 				hero.setAnimationMomentary(HeroAssests.hero_dizzy, true, HeroAssests.hero_standing, true, false);
+				
 				hero.setLost_life(true);				
 			}
 		}
