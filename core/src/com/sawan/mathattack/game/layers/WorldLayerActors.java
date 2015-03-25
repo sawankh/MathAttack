@@ -32,6 +32,7 @@ import java.util.Random;
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.collision.CollisionDetector;
+import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.characters.Hero;
 import com.sawan.mathattack.models.characters.enemies.BlueMonster;
@@ -92,6 +93,24 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 	
+	public void killHero() {
+		if (hero.getLifes() <= 0) {
+			hero.setAlive(false);
+			hero.setAnimationMomentary(HeroAssests.hero_faint, true, null, true, true);
+			if (hero.isAnimationActive()) {
+				gameManager.setGameState(GameState.GAME_OVER);
+			}
+		}
+	}
+	
+	public boolean isHeroAlive() {
+		 if (hero.isAlive()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public void checkCollision(Hero hero, ArrayList<BlueMonster> enemies) {
 		for (Iterator<BlueMonster> iterator = enemies.iterator(); iterator.hasNext();) {
 			BlueMonster enemy = (BlueMonster) iterator.next();
@@ -103,12 +122,11 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 				removeActor(enemy);
 				
 				hero.setLifes(hero.getLifes() - 1);
-				hero.setLost_life(true);
-				if (hero.getLifes() > 0) {
-					//System.out.println(hero.getLifes());
-				} else {
-					System.out.println("Hero is dead!");
+				if (!isHeroAlive()) {
+					killHero();
 				}
+				hero.setAnimationMomentary(HeroAssests.hero_dizzy, true, HeroAssests.hero_standing, true, false);
+				hero.setLost_life(true);				
 			}
 		}
 	}

@@ -96,7 +96,7 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 
 	@Override
 	public void checkGameCondition() {
-
+		worldLayer_actors.isHeroAlive();
 	}
 
 	@Override

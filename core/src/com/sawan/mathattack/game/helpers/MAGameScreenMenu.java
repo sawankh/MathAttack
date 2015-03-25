@@ -26,12 +26,16 @@
 package com.sawan.mathattack.game.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
+import com.sawan.mathattack.settings.AppSettings;
 
 /**
  * @author Itop1
@@ -39,7 +43,8 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
  */
 public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
-
+	public Table quiz_table;
+	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
                 UIAssets.image_main_button_play, UIAssets.image_main_button_settings, false, 100, 100,
@@ -63,5 +68,24 @@ public class MAGameScreenMenu {
 		});
 		//
 		gameScreen.getStage().addActor(btnPlayStop);
+	}
+	
+	public void setUpMathQuiz(final MAGameScreen gameScreen) {
+		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
+		quiz_table.debug();
+		
+		float table_width = 251f;
+		float table_height = 391f;
+		quiz_table.size(table_width * AppSettings.getWorldSizeRatio(), table_height * AppSettings.getWorldSizeRatio());
+		
+		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2, gameScreen.getStage().getHeight() - quiz_table.getHeight());
+		
+		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
+		
+		quiz_table.rotate(90f);
+		quiz_table.setBackground(background_table);
+		
+		
+		gameScreen.getStage().addActor(quiz_table);
 	}
 }
