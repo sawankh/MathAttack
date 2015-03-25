@@ -36,6 +36,7 @@ public class Hero extends AbstractActor {
 
 	private int lifes;
 	private boolean lost_life;
+	private boolean alive;
 	
 	public final static int NUM_LIFES = 5;
 	
@@ -119,6 +120,24 @@ public class Hero extends AbstractActor {
 	 */
 	public void setLost_life(boolean lost_life) {
 		this.lost_life = lost_life;
+	}
+
+
+
+	/**
+	 * @return the alive
+	 */
+	public boolean isAlive() {
+		return alive;
+	}
+
+
+
+	/**
+	 * @param alive the alive to set
+	 */
+	public void setAlive(boolean alive) {
+		this.alive = alive;
 	}
 	
 	

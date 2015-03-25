@@ -98,6 +98,10 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 			if (CollisionDetector.isActorsCollide(hero, enemy) && enemy.isAlive() && hero.getLifes() > 0) {
 			//	System.out.println(enemies.indexOf(enemy));
 				enemy.setAlive(false);
+				iterator.remove();
+				enemies.remove(enemy);
+				removeActor(enemy);
+				
 				hero.setLifes(hero.getLifes() - 1);
 				hero.setLost_life(true);
 				if (hero.getLifes() > 0) {
