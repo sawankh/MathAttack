@@ -76,9 +76,9 @@ public class MAGameScreenMenu {
 		
 		float table_width = 251f;
 		float table_height = 391f;
-		quiz_table.size(table_width * AppSettings.getWorldSizeRatio(), table_height * AppSettings.getWorldSizeRatio());
+		quiz_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
 		
-		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2, gameScreen.getStage().getHeight() - quiz_table.getHeight());
+		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		
