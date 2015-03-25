@@ -25,9 +25,6 @@
  */
 package com.sawan.mathattack.game.managers;
 
-import java.util.Iterator;
-
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.sawan.mathattack.game.AbstractGameManager;
 import com.sawan.mathattack.game.GameState;
