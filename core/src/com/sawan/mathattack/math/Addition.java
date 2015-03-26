@@ -1,0 +1,86 @@
+/**
+ * File name:	Addition.java
+ * Version:		1.0
+ * Date:		26/3/2015 8:59:19
+ * Author:		Itop1
+ * Copyright:	Copyright 200X Itop1
+ *
+ *				This file is part of Math Attack.
+ *
+ *				Math Attack is free software: you can redistribute it 
+ *				and/or modify it under the terms of the GNU General
+ *				Public License as published by the Free Software 
+ *				Foundation, either version 3 of the License, 
+ *				or (at your option) any later version.
+ *
+ *				Math Attack is distributed in the hope that it will 
+ *				be useful, but WITHOUT ANY WARRANTY; without even 
+ *				the implied warranty of MERCHANTABILITY or FITNESS 
+ *				FOR A PARTICULAR PURPOSE. See the GNU General Public
+ *			    License for more details.
+ *
+ *				You should have received a copy of the GNU General 
+ *				Public License along with Math Attack. If not, see 
+ *				http://www.gnu.org/licenses/.
+ */
+package com.sawan.mathattack.math;
+
+
+/**
+ * @author Itop1
+ *
+ */
+public class Addition implements IQuestion {
+
+	private int first_number;
+	
+	private int second_number;
+	
+	private final String OPERATION_SYMBOL = "+";
+	
+	private final int NUM_ANSWER = 3;
+	
+	private String question;
+	
+	private int correct_answer;
+	
+	private int [] answers;
+	
+	/**
+	 * @param first_number
+	 * @param second_number
+	 */
+	public Addition(int first_number, int second_number) {
+		this.first_number = first_number;
+		this.second_number = second_number;
+		question = setQuestion(first_number, second_number);
+		correct_answer = getAnswer();
+		answers = new int [NUM_ANSWER];
+	}
+
+	@Override
+	public String setQuestion(int first_number, int second_number) {
+		String question = Integer.toString(first_number) + " " + OPERATION_SYMBOL + " " + Integer.toString(second_number) + " = ?";
+		return question; 
+	}
+
+	@Override
+	public int getAnswer() {
+		int result = first_number + second_number;
+		return result;
+	}
+
+	@Override
+	public void setRandomAnswers(int correct_answer) {
+		int lower_bound = (correct_answer / 10) * 10;
+		int higher_bound = lower_bound + 10;
+		
+		for (int i = 0; i < answers.length; i++) {
+			
+		}
+		
+	}
+
+	
+	
+}
