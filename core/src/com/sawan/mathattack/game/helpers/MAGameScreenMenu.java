@@ -80,10 +80,8 @@ public class MAGameScreenMenu {
 		
 		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
 		
-		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
-		
-		quiz_table.rotate(90f);
-		quiz_table.setBackground(background_table);
+		//Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
+		//quiz_table.setBackground(background_table);
 		
 		
 		gameScreen.getStage().addActor(quiz_table);
