@@ -36,4 +36,7 @@ public class QuestionsSettings {
 	
 	public final static int NUM_ANSWER = 3;
 	
+	public final static int MAX_QUIZ_VALUE = 49;
+	
+	public final static int MIN_QUIZ_VALUE = 0;
 }
