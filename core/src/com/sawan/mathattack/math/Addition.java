@@ -52,6 +52,7 @@ public class Addition implements IQuestion {
 		question = setQuestion(first_number, second_number);
 		correct_answer = getAnswer();
 		answers = new int [QuestionsSettings.NUM_ANSWER];
+		setRandomAnswers(correct_answer);
 	}
 
 	@Override
