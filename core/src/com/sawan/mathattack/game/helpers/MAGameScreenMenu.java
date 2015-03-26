@@ -90,7 +90,7 @@ public class MAGameScreenMenu {
 		quiz_table.row();
 		for (int i = 0; i < addition.getAnswers().length; i++) {
 			Label answer = new Label("", UIAssets.getSkin());
-			answer.setText(Integer.toHexString(addition.getAnswers()[i]));
+			answer.setText(Integer.toString(addition.getAnswers()[i]));
 			
 			quiz_table.add(answer);
 		}
