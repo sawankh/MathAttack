@@ -35,11 +35,7 @@ public class Addition implements IQuestion {
 	private int first_number;
 	
 	private int second_number;
-	
-	private final String OPERATION_SYMBOL = "+";
-	
-	private final int NUM_ANSWER = 3;
-	
+
 	private String question;
 	
 	private int correct_answer;
@@ -55,12 +51,12 @@ public class Addition implements IQuestion {
 		this.second_number = second_number;
 		question = setQuestion(first_number, second_number);
 		correct_answer = getAnswer();
-		answers = new int [NUM_ANSWER];
+		answers = new int [QuestionsSettings.NUM_ANSWER];
 	}
 
 	@Override
 	public String setQuestion(int first_number, int second_number) {
-		String question = Integer.toString(first_number) + " " + OPERATION_SYMBOL + " " + Integer.toString(second_number) + " = ?";
+		String question = Integer.toString(first_number) + " " + QuestionsSettings.OPERATION_SYMBOL_ADDITION + " " + Integer.toString(second_number) + " = ?";
 		return question; 
 	}
 
@@ -76,9 +72,58 @@ public class Addition implements IQuestion {
 		int higher_bound = lower_bound + 10;
 		
 		for (int i = 0; i < answers.length; i++) {
-			
+			if (i == 0) {
+				answers[i] = correct_answer;
+			}			
+			// A random integer value in the range [Lower_bound, Higher_bound] 
+			// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))
+			answers[i] = lower_bound + (int)(Math.random() * ((higher_bound - lower_bound) + 1)) ;
 		}
 		
+		// Shuffle the answers
+		QuestionsSettings.shuffleArray(answers);
+	}
+
+	/**
+	 * @return the question
+	 */
+	public String getQuestion() {
+		return question;
+	}
+
+	/**
+	 * @param question the question to set
+	 */
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	/**
+	 * @return the correct_answer
+	 */
+	public int getCorrect_answer() {
+		return correct_answer;
+	}
+
+	/**
+	 * @param correct_answer the correct_answer to set
+	 */
+	public void setCorrect_answer(int correct_answer) {
+		this.correct_answer = correct_answer;
+	}
+
+	/**
+	 * @return the answers
+	 */
+	public int[] getAnswers() {
+		return answers;
+	}
+
+	/**
+	 * @param answers the answers to set
+	 */
+	public void setAnswers(int[] answers) {
+		this.answers = answers;
 	}
 
 	
