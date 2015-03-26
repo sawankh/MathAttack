@@ -47,6 +47,7 @@ import com.sawan.mathattack.settings.AppSettings;
 public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
 	public Table quiz_table;
+	public int user_answer;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
@@ -76,9 +77,10 @@ public class MAGameScreenMenu {
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		quiz_table.debug();
-		Addition addition = new Addition(20, 30);
+		final Addition addition = new Addition(20, 30);
 		Label question = new Label("", UIAssets.getSkin());
 		question.setText(addition.getQuestion());
+		question.setFontScale(2);
 		
 		
 		float table_width = 251f;
@@ -99,7 +101,23 @@ public class MAGameScreenMenu {
 			Drawable up = new TextureRegionDrawable(UIAssets.button_level);
 			Drawable down = new TextureRegionDrawable(UIAssets.button_level);
 			final GameButton answer_button = new GameButton(up, down);
+			
+			
+			answer_button.setDIPActive(true);
 			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
+			
+			answer_button.addListener(new ActorGestureListener() {
+				@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					user_answer = answer_button.getAnswer();
+					if (user_answer == addition.getCorrect_answer()) {
+						System.out.println("Correcto!");
+					} else {
+						System.out.println("Incorrecto");
+					}
+				}
+			});
 			
 			quiz_table.add(answer_button);
 		}

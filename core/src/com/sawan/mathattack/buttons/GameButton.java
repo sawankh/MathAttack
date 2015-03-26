@@ -30,6 +30,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
+import com.sawan.mathattack.settings.AppSettings;
 
 /**
  * @author Itop1
@@ -81,13 +82,13 @@ public class GameButton extends AbstractButton {
 		// there is double numbers (9 >)
 		float singePositionArranger = 2.5f;
 		float doublePositionArranger = 2.8f;
-				
+		
 		if (answer < 10) {
-			bitMapFont.draw(batch, "" + answer, getX() + getWidth() / singePositionArranger,
-							getY() + getHeight() / 1.4f);
+			bitMapFont.draw(batch, "" + answer, ((getX() + 3 * AppSettings.getWorldSizeRatio())) + (getWidth() / singePositionArranger) - 15 * AppSettings.getWorldSizeRatio(),
+							getY() + getHeight() / 1.3f);
 		} else {
-			bitMapFont.draw(batch, "" + answer, getX() + getWidth() / doublePositionArranger,
-							getY() + getHeight() / 1.4f);
+			bitMapFont.draw(batch, "" + answer,  ((getX() + 3 * AppSettings.getWorldSizeRatio())) + (getWidth() / doublePositionArranger) - 15 * AppSettings.getWorldSizeRatio(), 
+							(getY() ) + getHeight() / 1.3f);
 				}
 		
 	}
@@ -97,4 +98,7 @@ public class GameButton extends AbstractButton {
 		this.font = font;
 	}
 	
+	public int getAnswer() {
+		return answer;
+	}
 }
