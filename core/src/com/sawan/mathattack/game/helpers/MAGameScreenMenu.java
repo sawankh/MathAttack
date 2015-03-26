@@ -26,11 +26,13 @@
 package com.sawan.mathattack.game.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
+import com.sawan.mathattack.math.Addition;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.settings.AppSettings;
@@ -71,6 +73,10 @@ public class MAGameScreenMenu {
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		quiz_table.debug();
+		Addition addition = new Addition(20, 30);
+		Label question = new Label("", UIAssets.getSkin());
+		question.setText(addition.getQuestion());
+		
 		
 		float table_width = 251f;
 		float table_height = 391f;
@@ -80,7 +86,14 @@ public class MAGameScreenMenu {
 		
 		//Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		//quiz_table.setBackground(background_table);
-		
+		quiz_table.add(question);
+		quiz_table.row();
+		for (int i = 0; i < addition.getAnswers().length; i++) {
+			Label answer = new Label("", UIAssets.getSkin());
+			answer.setText(Integer.toHexString(addition.getAnswers()[i]));
+			
+			quiz_table.add(answer);
+		}
 		
 		gameScreen.getStage().addActor(quiz_table);
 	}
