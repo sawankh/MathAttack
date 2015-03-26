@@ -75,10 +75,12 @@ public class Addition implements IQuestion {
 		for (int i = 0; i < answers.length; i++) {
 			if (i == 0) {
 				answers[i] = correct_answer;
+			} else {
+				// A random integer value in the range [Lower_bound, Higher_bound] 
+				// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))
+				answers[i] = lower_bound + (int)(Math.random() * ((higher_bound - lower_bound) + 1)) ;
 			}			
-			// A random integer value in the range [Lower_bound, Higher_bound] 
-			// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))
-			answers[i] = lower_bound + (int)(Math.random() * ((higher_bound - lower_bound) + 1)) ;
+			
 		}
 		
 		// Shuffle the answers
