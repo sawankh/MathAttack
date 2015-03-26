@@ -26,11 +26,14 @@
 package com.sawan.mathattack.game.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.GameButton;
 import com.sawan.mathattack.game.GameState;
@@ -87,7 +90,9 @@ public class MAGameScreenMenu {
 		float table_height = 391f;
 		quiz_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
 		
-		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
+		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight());
+		quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight(), 0.5f));
+		//quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
 		
 		//Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		//quiz_table.setBackground(background_table);
@@ -113,8 +118,25 @@ public class MAGameScreenMenu {
 					user_answer = answer_button.getAnswer();
 					if (user_answer == addition.getCorrect_answer()) {
 						System.out.println("Correcto!");
+						quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight(), 0.5f));
+		
+						Timer.schedule(new Task() {
+							@Override
+							public void run() {
+								setUpMathQuiz(gameScreen);
+							}
+						}, 0.6f);
+			
 					} else {
 						System.out.println("Incorrecto");
+						quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight(), 0.5f));
+						Timer.schedule(new Task() {
+							@Override
+							public void run() {
+								setUpMathQuiz(gameScreen);
+							}
+						}, 0.6f);
+			
 					}
 				}
 			});
