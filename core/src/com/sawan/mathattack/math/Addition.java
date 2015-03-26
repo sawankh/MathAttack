@@ -91,7 +91,7 @@ public class Addition implements IQuestion {
 		}
 		
 		// Shuffle the answers
-		QuestionsSettings.shuffleArray(answers);
+		QuestionsUtils.shuffleArray(answers);
 	}
 
 	/**

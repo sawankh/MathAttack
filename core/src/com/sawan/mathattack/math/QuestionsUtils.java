@@ -1,7 +1,7 @@
 /**
- * File name:	QuestionsSettings.java
+ * File name:	QuestionsUtils.java
  * Version:		1.0
- * Date:		26/3/2015 9:52:29
+ * Date:		26/3/2015 13:44:01
  * Author:		Itop1
  * Copyright:	Copyright 200X Itop1
  *
@@ -31,10 +31,20 @@ import java.util.Random;
  * @author Itop1
  *
  */
-public class QuestionsSettings {
-
-	public final static String OPERATION_SYMBOL_ADDITION = "+";
+public class QuestionsUtils {
 	
-	public final static int NUM_ANSWER = 3;
+	// Implementing Fisher–Yates shuffle
+	public static void shuffleArray(int[] ar) {
+	    Random rnd = new Random();
+	    
+	    for (int i = ar.length - 1; i > 0; i--) {
+	      int index = rnd.nextInt(i + 1);
+	    
+	      // Simple swap
+	      int a = ar[index];
+	      ar[index] = ar[i];
+	      ar[i] = a;
+	    }
+	}
 	
 }
