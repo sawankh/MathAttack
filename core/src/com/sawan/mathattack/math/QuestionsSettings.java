@@ -25,7 +25,6 @@
  */
 package com.sawan.mathattack.math;
 
-import java.util.Random;
 
 /**
  * @author Itop1

@@ -47,4 +47,10 @@ public class QuestionsUtils {
 	    }
 	}
 	
+	public static int randomNumber(int lower_bound, int higher_bound) {
+		// A random integer value in the range [Lower_bound, Higher_bound] 
+		// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))
+		int random_number = lower_bound + (int)(Math.random() * ((higher_bound - lower_bound) + 1)) ;
+		return random_number;
+	}
 }

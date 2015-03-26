@@ -76,13 +76,11 @@ public class Addition implements IQuestion {
 			if (i == 0) {
 				answers[i] = correct_answer;
 			} else {
-				// A random integer value in the range [Lower_bound, Higher_bound] 
-				// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))
 				int random_answer = 0;
 				
 				// Loop to do not generate correct answer twice
 				do {
-					random_answer = lower_bound + (int)(Math.random() * ((higher_bound - lower_bound) + 1)) ;
+					random_answer = QuestionsUtils.randomNumber(lower_bound, higher_bound);
 				} while (random_answer == correct_answer);
 				
 				answers[i] = random_answer;
