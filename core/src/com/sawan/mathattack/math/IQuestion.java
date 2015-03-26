@@ -30,9 +30,9 @@ package com.sawan.mathattack.math;
  *
  */
 public interface IQuestion {
-	public void setQuestion(int first_number, int second_number);
+	public String setQuestion(int first_number, int second_number);
 	
 	public int getAnswer();
 	
-	public void setRandomAnswers();
+	public void setRandomAnswers(int correct_answer);
 }
