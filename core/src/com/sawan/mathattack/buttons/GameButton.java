@@ -92,4 +92,9 @@ public class GameButton extends AbstractButton {
 		
 	}
 	
+	public void setAnswer(int level_number, BitmapFont font) {
+		this.answer = level_number;
+		this.font = font;
+	}
+	
 }

@@ -29,7 +29,10 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.buttons.GameButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.math.Addition;
@@ -89,10 +92,16 @@ public class MAGameScreenMenu {
 		quiz_table.add(question);
 		quiz_table.row();
 		for (int i = 0; i < addition.getAnswers().length; i++) {
-			Label answer = new Label("", UIAssets.getSkin());
+			/**Label answer = new Label("", UIAssets.getSkin());
 			answer.setText(Integer.toString(addition.getAnswers()[i]));
 			
-			quiz_table.add(answer);
+			quiz_table.add(answer);**/
+			Drawable up = new TextureRegionDrawable(UIAssets.button_level);
+			Drawable down = new TextureRegionDrawable(UIAssets.button_level);
+			final GameButton answer_button = new GameButton(up, down);
+			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
+			
+			quiz_table.add(answer_button);
 		}
 		
 		gameScreen.getStage().addActor(quiz_table);
