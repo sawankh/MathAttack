@@ -149,6 +149,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 					enemies.remove(blueMonster);
 					removeActor(bullet);
 					removeActor(blueMonster);
+					break;
 				}
 			}
 			

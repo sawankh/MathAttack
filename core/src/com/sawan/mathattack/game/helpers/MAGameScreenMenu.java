@@ -81,7 +81,7 @@ public class MAGameScreenMenu {
 	
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
-		quiz_table.debug();
+		//quiz_table.debug();
 		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		Label question = new Label("", UIAssets.getSkin());
 		question.setText(addition.getQuestion());
