@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.UIAssets;
@@ -100,9 +102,13 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		if (hero.getLifes() <= 0) {
 			hero.setAlive(false);
 			hero.setAnimationMomentary(HeroAssests.hero_faint, true, null, true, true);
-			if (hero.isAnimationActive()) {
-				gameManager.setGameState(GameState.GAME_OVER);
-			}
+			Timer.schedule(new Task() {
+				
+				@Override
+				public void run() {
+					gameManager.setGameState(GameState.GAME_OVER);
+				}
+			}, 0.9f);
 		}
 	}
 	
@@ -128,7 +134,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 				if (!isHeroAlive()) {
 					killHero();
 				}
-				hero.setAnimationMomentary(HeroAssests.hero_dizzy, true, HeroAssests.hero_standing, true, false);
+				//hero.setAnimationMomentary(HeroAssests.hero_dizzy, true, HeroAssests.hero_standing, true, false);
 				
 				hero.setLost_life(true);				
 			}

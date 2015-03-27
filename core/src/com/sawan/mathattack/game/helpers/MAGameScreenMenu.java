@@ -28,6 +28,7 @@ package com.sawan.mathattack.game.helpers;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -83,9 +84,12 @@ public class MAGameScreenMenu {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		//quiz_table.debug();
 		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
-		Label question = new Label("", UIAssets.getSkin());
+		
+		LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
+		
+		Label question = new Label("", style);
 		question.setText(addition.getQuestion());
-		question.setFontScale(2);
+		question.setFontScale(1.25f);
 		
 		
 		float table_width = 251f;
