@@ -103,6 +103,7 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public void update(float delta) {
 		checkGameCondition();
 		worldLayer_actors.checkCollision(worldLayer_actors.hero, worldLayer_actors.enemies);
+		worldLayer_actors.hitEnemy(worldLayer_actors.bullets, worldLayer_actors.enemies);
 		if (worldLayer_actors.hero.isLost_life()) {
 			//worldLayer_background.setUpLives(worldLayer_actors.hero.getLifes());
 			worldLayer_background.removeHeart();

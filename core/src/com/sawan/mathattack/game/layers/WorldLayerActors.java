@@ -135,6 +135,26 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 
+	public void hitEnemy(ArrayList<Bullet> bullets, ArrayList<BlueMonster> enemies) {
+		for (Iterator<Bullet> iterator_bullets = bullets.iterator(); iterator_bullets.hasNext();) {
+			Bullet bullet = (Bullet) iterator_bullets.next();
+			
+			for (Iterator<BlueMonster> iterator_enemies = enemies.iterator(); iterator_enemies.hasNext();) {
+				BlueMonster blueMonster = (BlueMonster) iterator_enemies.next();
+				
+				if (CollisionDetector.isActorsCollide(bullet, blueMonster)) {
+					iterator_bullets.remove();
+					iterator_enemies.remove();
+					bullets.remove(bullet);
+					enemies.remove(blueMonster);
+					removeActor(bullet);
+					removeActor(blueMonster);
+				}
+			}
+			
+		}
+	}
+	
 	public void addBullet() {
 		final Bullet bullet = new Bullet(25f, 25f, true);
 		bullet.setX(hero.getX() + hero.getWidth());
