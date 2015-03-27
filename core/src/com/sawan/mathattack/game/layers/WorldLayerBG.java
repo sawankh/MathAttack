@@ -111,6 +111,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 					(int) gameManager.getStage().getWidth() + 200,(int) posY,
 					15f);
 			
+			currentCloud.setZIndex(0);
 			//
 			addActor(currentCloud);
 		}
@@ -123,10 +124,12 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			current_heart.setName(Integer.toString(i));
 			
 			float posX = i * current_heart.getWidth();
-			float posY = gameManager.getStage().getHeight() / 2;
+			float posY = gameManager.getStage().getHeight() - current_heart.getHeight();
 			
 			current_heart.setPosition(posX, posY);
 			current_heart.setTextureRegion(UIAssets.image_level_star, true);
+			
+			current_heart.setZIndex(1);
 			
 			hearts.add(current_heart);
 			addActor(current_heart);
