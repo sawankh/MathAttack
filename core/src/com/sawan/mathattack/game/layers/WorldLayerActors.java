@@ -31,9 +31,11 @@ import java.util.Random;
 
 import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.HeroAssests;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.collision.CollisionDetector;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.managers.MAGameManager;
+import com.sawan.mathattack.models.ammunition.Bullet;
 import com.sawan.mathattack.models.characters.Hero;
 import com.sawan.mathattack.models.characters.enemies.BlueMonster;
 import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
@@ -48,6 +50,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	private MAGameManager gameManager;
 	public Hero hero;
 	public ArrayList<BlueMonster> enemies;
+	public ArrayList<Bullet> bullets;
 	
 	protected final static int NUM_ENEMIES = 20;
 	
@@ -62,8 +65,8 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	
 	public void setUpHero() {
 		hero = new Hero(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
+		bullets = new ArrayList<Bullet>();
 		
-		System.out.println(hero.getScaleX() + " " + hero.getScaleY());
 		hero.setY(gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio());
 		hero.setX(0f * AppSettings.getWorldPositionXRatio());
 		hero.setAnimation(HeroAssests.hero_standing, true, true);
@@ -132,4 +135,17 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 
+	public void addBullet() {
+		final Bullet bullet = new Bullet(25f, 25f, true);
+		bullet.setX(hero.getX() + hero.getWidth());
+		bullet.setY(gameManager.worldLayer_background.SOIL_HEIGHT);
+		bullet.setTextureRegion(UIAssets.image_level_star, true);
+		
+		bullets.add(bullet);
+		
+		bullet.startMoving(gameManager.getStage().getWidth(), 125f, true);
+		
+		addActor(bullet);
+	}
+	
 }

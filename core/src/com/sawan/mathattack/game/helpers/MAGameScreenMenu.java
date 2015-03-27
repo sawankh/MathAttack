@@ -121,7 +121,7 @@ public class MAGameScreenMenu {
 					if (user_answer == addition.getCorrect_answer()) {
 						System.out.println("Correcto!");
 						quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight(), 0.5f));
-		
+						gameScreen.game_manager.worldLayer_actors.addBullet();
 						Timer.schedule(new Task() {
 							@Override
 							public void run() {

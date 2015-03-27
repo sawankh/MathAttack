@@ -25,10 +25,41 @@
  */
 package com.sawan.mathattack.models.ammunition;
 
+import com.sawan.mathattack.scene2d.AbstractActor;
+
 /**
  * @author Itop1
  *
  */
-public class Bullet {
+public class Bullet extends AbstractActor {
+	float worldWidth;
+	float speed;
+	boolean isMoving;
+	
+	/**
+	 * @param width
+	 * @param height
+	 * @param DIPActive
+	 */
+	public Bullet(float width, float height, boolean DIPActive) {
+		super(width, height, DIPActive);	
+	}
+	
+	public void startMoving(float worldWidht, float speed, boolean isMoving) {
+		this.worldWidth = worldWidht;
+		this.speed = speed;
+		this.isMoving = isMoving;
+	}
+	
 
+	@Override
+	public void act(float delta) {
+		super.act(delta);
+		
+		if(isMoving){
+			translateWithoutAcc(speed, 0, delta);
+		}
+	}
+
+	
 }
