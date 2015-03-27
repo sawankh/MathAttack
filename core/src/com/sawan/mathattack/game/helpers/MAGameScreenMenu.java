@@ -39,6 +39,8 @@ import com.sawan.mathattack.buttons.GameButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.math.Addition;
+import com.sawan.mathattack.math.QuestionsSettings;
+import com.sawan.mathattack.math.QuestionsUtils;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.settings.AppSettings;
@@ -80,7 +82,7 @@ public class MAGameScreenMenu {
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		quiz_table.debug();
-		final Addition addition = new Addition(20, 30);
+		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		Label question = new Label("", UIAssets.getSkin());
 		question.setText(addition.getQuestion());
 		question.setFontScale(2);
