@@ -25,12 +25,14 @@
  */
 package com.sawan.mathattack.game.helpers;
 
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Timer;
@@ -82,14 +84,14 @@ public class MAGameScreenMenu {
 	
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
-		//quiz_table.debug();
+		quiz_table.debug();
 		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		
 		LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
 		
 		Label question = new Label("", style);
 		question.setText(addition.getQuestion());
-		question.setFontScale(1.25f);
+		question.setFontScale(1.25f * AppSettings.getWorldSizeRatio());
 		
 		
 		float table_width = 251f;
@@ -102,7 +104,7 @@ public class MAGameScreenMenu {
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		quiz_table.setBackground(background_table);
-		quiz_table.add(question);
+		quiz_table.add(question).padBottom(10f * AppSettings.getWorldPositionYRatio()).colspan(3);
 		quiz_table.row();
 		for (int i = 0; i < addition.getAnswers().length; i++) {
 			/**Label answer = new Label("", UIAssets.getSkin());
@@ -113,8 +115,12 @@ public class MAGameScreenMenu {
 			Drawable down = new TextureRegionDrawable(UIAssets.button_level);
 			final GameButton answer_button = new GameButton(up, down);
 			
-			
+			answer_button.setWidth(63f * AppSettings.getWorldSizeRatio());
+			answer_button.setHeight(66f * AppSettings.getWorldSizeRatio());
+			answer_button.size(63f * AppSettings.getWorldSizeRatio(), 66f * AppSettings.getWorldSizeRatio());
 			answer_button.setDIPActive(true);
+			System.out.println(answer_button.isDIPActive());
+			
 			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
 			
 			answer_button.addListener(new ActorGestureListener() {
