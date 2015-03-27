@@ -131,9 +131,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 				removeActor(enemy);
 				
 				hero.setLifes(hero.getLifes() - 1);
-				if (!isHeroAlive()) {
-					killHero();
-				}
+				
 				//hero.setAnimationMomentary(HeroAssests.hero_dizzy, true, HeroAssests.hero_standing, true, false);
 				
 				hero.setLost_life(true);				
