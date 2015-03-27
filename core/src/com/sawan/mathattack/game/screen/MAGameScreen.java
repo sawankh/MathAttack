@@ -50,12 +50,14 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 	@Override
 	public void render(float delta) {
 		super.render(delta);
+		
 		//
 		// Update game manager, (Useful for checking game condition)
 		// ######################################################
 		if(game_manager != null){
 			game_manager.update(delta);
 		}
+			
 	}
 
 	@Override
@@ -67,6 +69,7 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 	public void setUpMenu() {
 		gameScreenMenu = new MAGameScreenMenu();
 		gameScreenMenu.setUpGameScreenMenu(MAGameScreen.this);
+		gameScreenMenu.setUpMathQuiz(this);
 	}
 
 	@Override

@@ -91,6 +91,8 @@ public class UIAssets {
 	/** The cartwheel_font. */
 	public static BitmapFont cartwheel_font;
 	
+	public static TextureRegion image_empty_bg;
+	
 	/**
 	 * Loads texture file.
 	 *
@@ -160,6 +162,7 @@ public class UIAssets {
 		image_level_table = getAtlas().findRegion("levels_bg");
 		image_level_star = getAtlas().findRegion("star_level");
 		image_level_no_star = getAtlas().findRegion("no_star_level");
+		image_empty_bg = getAtlas().findRegion("empty_bg");
 	}
 
 	/**
