@@ -123,8 +123,8 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			EmptyActor current_heart = new EmptyActor(25f, 25f, true);
 			current_heart.setName(Integer.toString(i));
 			
-			float posX = i * current_heart.getWidth();
-			float posY = gameManager.getStage().getHeight() - current_heart.getHeight();
+			float posX = (i * current_heart.getWidth()) + (50f * AppSettings.getWorldPositionXRatio());
+			float posY = (gameManager.getStage().getHeight() - current_heart.getHeight()) - (50f * AppSettings.getWorldPositionYRatio());
 			
 			current_heart.setPosition(posX, posY);
 			current_heart.setTextureRegion(UIAssets.image_level_star, true);
