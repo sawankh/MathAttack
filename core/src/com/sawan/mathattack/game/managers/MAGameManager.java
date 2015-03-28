@@ -106,7 +106,11 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		}
 		
 		if (getGameState() == GameState.GAME_PAUSED) {
-			
+			worldLayer_other.quiz_table.setVisible(false);
+		}
+		
+		if (getGameState() == GameState.GAME_RUNNING) {
+			worldLayer_other.quiz_table.setVisible(true);
 		}
 	}
 
