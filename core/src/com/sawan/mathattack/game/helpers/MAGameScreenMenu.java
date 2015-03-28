@@ -33,6 +33,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
+import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.GameButton;
 import com.sawan.mathattack.game.GameState;
@@ -56,7 +57,7 @@ public class MAGameScreenMenu {
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
-                UIAssets.image_main_button_play, UIAssets.image_main_button_settings, false, 100, 100,
+                GameAssets.pause, GameAssets.pause, false, 100, 100,
                 true);
 		btnPlayStop.setPosition(gameScreen.getStage().getWidth() - btnPlayStop.getWidth(), 
 				gameScreen.getStage().getHeight() - btnPlayStop.getHeight());
