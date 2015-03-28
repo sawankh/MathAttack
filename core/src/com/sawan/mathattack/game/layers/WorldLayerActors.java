@@ -32,6 +32,7 @@ import java.util.Random;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.BlueMonsterAssets;
+import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.collision.CollisionDetector;
@@ -161,10 +162,10 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	}
 	
 	public void addBullet() {
-		final Bullet bullet = new Bullet(25f, 25f, true);
+		final Bullet bullet = new Bullet(50f, 50f, true);
 		bullet.setX(hero.getX() + hero.getWidth());
 		bullet.setY((gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldPositionYRatio()) + (hero.getHeight() / 2) - bullet.getHeight());
-		bullet.setTextureRegion(UIAssets.image_level_star, true);
+		bullet.setTextureRegion(GameAssets.loadRandomProjectile(), true);
 		
 		bullets.add(bullet);
 		
