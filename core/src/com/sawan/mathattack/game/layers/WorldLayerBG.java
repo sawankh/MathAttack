@@ -30,8 +30,8 @@ import java.util.Random;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Scaling;
+import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.Level1;
-import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
@@ -141,7 +141,8 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			float posY = (gameManager.getStage().getHeight() - current_heart.getHeight()) - (50f * AppSettings.getWorldPositionYRatio());
 			
 			current_heart.setPosition(posX, posY);
-			current_heart.setTextureRegion(UIAssets.image_level_star, true);
+			current_heart.setAnimation(GameAssets.heart, true, true);
+			
 			
 			current_heart.setZIndex(2);
 			
