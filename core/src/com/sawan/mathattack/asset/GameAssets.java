@@ -25,6 +25,9 @@
  */
 package com.sawan.mathattack.asset;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -61,6 +64,8 @@ public class GameAssets {
 	public static TextureRegion semicircle;
 	public static TextureRegion trianguler;
 	public static TextureRegion pause;
+	
+	public static ArrayList<TextureRegion> projectiles;
 	
 	/**
 	 * Loads texture file.
@@ -123,12 +128,21 @@ public class GameAssets {
 	 * Load images.
 	 */
 	public static void loadImages() {
+		projectiles = new ArrayList<TextureRegion>();
+		
 		eraser = getAtlas().findRegion("eraser");
 		pencil = getAtlas().findRegion("pencil");
 		ruler = getAtlas().findRegion("ruler");
 		scissors = getAtlas().findRegion("scissors");
 		trianguler = getAtlas().findRegion("trianguler");
 		semicircle = getAtlas().findRegion("semicircle");
+		
+		projectiles.add(eraser);
+		projectiles.add(pencil);
+		projectiles.add(ruler);
+		projectiles.add(scissors);
+		projectiles.add(trianguler);
+		projectiles.add(semicircle);
 	}
 
 	/**
@@ -159,5 +173,12 @@ public class GameAssets {
 	
 	}
 	
-	
+	public static TextureRegion loadRandomProjectile() {
+		Random rnd = new Random();
+		
+		int index = rnd.nextInt(projectiles.size());
+		TextureRegion projectile = projectiles.get(index);
+		
+		return projectile;
+	}
 }
