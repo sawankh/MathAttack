@@ -57,7 +57,7 @@ public class MAGameScreenMenu {
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
-                GameAssets.pause, GameAssets.pause, false, 100, 100,
+                GameAssets.pause, GameAssets.pause, false, 64, 64,
                 true);
 		btnPlayStop.setPosition(gameScreen.getStage().getWidth() - btnPlayStop.getWidth(), 
 				gameScreen.getStage().getHeight() - btnPlayStop.getHeight());
