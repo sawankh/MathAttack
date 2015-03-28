@@ -25,22 +25,16 @@
  */
 package com.sawan.mathattack.game.helpers;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.GameButton;
-import com.sawan.mathattack.effects.EffectCreator;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.math.Addition;
@@ -50,7 +44,6 @@ import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.settings.AppSettings;
-import com.sawan.mathattack.settings.MtxLogger;
 
 /**
  * @author Itop1
@@ -88,7 +81,7 @@ public class MAGameScreenMenu {
 	
 	public void setUpMathQuiz(final MAGameScreen gameScreen) {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
-		quiz_table.debug();
+		//quiz_table.debug();
 		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		
 		//LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
@@ -110,7 +103,7 @@ public class MAGameScreenMenu {
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		quiz_table.setBackground(background_table);
-		quiz_table.add(question).center().padBottom(50f).colspan(3);
+		quiz_table.add(question).padBottom(50f * AppSettings.getWorldPositionYRatio()).padLeft(67.5f * AppSettings.getWorldPositionXRatio()).colspan(3);
 		quiz_table.row();
 		for (int i = 0; i < addition.getAnswers().length; i++) {
 			/**Label answer = new Label("", UIAssets.getSkin());
@@ -126,11 +119,11 @@ public class MAGameScreenMenu {
 			//answer_button.setHeight(28f * AppSettings.getWorldSizeRatio());
 			//answer_button.size(10f * AppSettings.getWorldSizeRatio(), 13f * AppSettings.getWorldSizeRatio());
 			
-			Gdx.app.log("Table_w", Float.toString(quiz_table.getWidth()));
+			/**Gdx.app.log("Table_w", Float.toString(quiz_table.getWidth()));
 			Gdx.app.log("Table_h", Float.toString(quiz_table.getHeight()));
 			Gdx.app.log("Button_w", Float.toString(answer_button.getWidth()));
 			Gdx.app.log("Button_h", Float.toString(answer_button.getHeight()));
-			
+			**/
 			
 			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
 			
