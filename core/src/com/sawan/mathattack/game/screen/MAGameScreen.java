@@ -69,7 +69,6 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 	public void setUpMenu() {
 		gameScreenMenu = new MAGameScreenMenu();
 		gameScreenMenu.setUpGameScreenMenu(MAGameScreen.this);
-		gameScreenMenu.setUpMathQuiz(this);
 	}
 
 	@Override
