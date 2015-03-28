@@ -168,7 +168,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		
 		bullets.add(bullet);
 		
-		bullet.startMoving(gameManager.getStage().getWidth(), 125f, true);
+		bullet.startMoving(gameManager.getStage().getWidth(), 125f * AppSettings.getWorldPositionXRatio(), true);
 		
 		addActor(bullet);
 	}
