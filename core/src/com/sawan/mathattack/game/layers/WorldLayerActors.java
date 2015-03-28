@@ -162,7 +162,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	}
 	
 	public void addBullet() {
-		final Bullet bullet = new Bullet(50f, 50f, true);
+		final Bullet bullet = new Bullet(60f, 60f, true);
 		bullet.setX(hero.getX() + hero.getWidth());
 		bullet.setY((gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldPositionYRatio()) + (hero.getHeight() / 2) - bullet.getHeight());
 		bullet.setTextureRegion(GameAssets.loadRandomProjectile(), true);
