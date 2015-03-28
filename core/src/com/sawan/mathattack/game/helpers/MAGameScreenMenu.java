@@ -25,6 +25,7 @@
  */
 package com.sawan.mathattack.game.helpers;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -39,6 +40,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.GameButton;
+import com.sawan.mathattack.effects.EffectCreator;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.math.Addition;
@@ -46,7 +48,9 @@ import com.sawan.mathattack.math.QuestionsSettings;
 import com.sawan.mathattack.math.QuestionsUtils;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
+import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.settings.AppSettings;
+import com.sawan.mathattack.settings.MtxLogger;
 
 /**
  * @author Itop1
@@ -87,11 +91,13 @@ public class MAGameScreenMenu {
 		quiz_table.debug();
 		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		
-		LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
+		//LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
 		
-		Label question = new Label("", style);
+		//Label question = new Label("", style);
+		Text question = new Text(UIAssets.cartwheel_font, 90f * 3, 20f, true);
 		question.setText(addition.getQuestion());
-		question.setFontScale(1.25f * AppSettings.getWorldSizeRatio());
+		//question.setFontScale(1.25f);
+		question.getBitMapFont().setScale(question.getWidth(), question.getHeight());
 		
 		
 		float table_width = 251f;
@@ -104,7 +110,7 @@ public class MAGameScreenMenu {
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
 		quiz_table.setBackground(background_table);
-		quiz_table.add(question).padBottom(10f * AppSettings.getWorldPositionYRatio()).colspan(3);
+		quiz_table.add(question).center().padBottom(50f).colspan(3);
 		quiz_table.row();
 		for (int i = 0; i < addition.getAnswers().length; i++) {
 			/**Label answer = new Label("", UIAssets.getSkin());
@@ -113,13 +119,18 @@ public class MAGameScreenMenu {
 			quiz_table.add(answer);**/
 			Drawable up = new TextureRegionDrawable(UIAssets.button_level);
 			Drawable down = new TextureRegionDrawable(UIAssets.button_level);
-			final GameButton answer_button = new GameButton(up, down);
+			final GameButton answer_button = new GameButton(UIAssets.cartwheel_font, up, down, 63f, 66f, true);
 			
-			answer_button.setWidth(63f * AppSettings.getWorldSizeRatio());
-			answer_button.setHeight(66f * AppSettings.getWorldSizeRatio());
-			answer_button.size(63f * AppSettings.getWorldSizeRatio(), 66f * AppSettings.getWorldSizeRatio());
-			answer_button.setDIPActive(true);
-			System.out.println(answer_button.isDIPActive());
+			//answer_button.setDIPActive(true);
+			//answer_button.setWidth(25f * AppSettings.getWorldSizeRatio());
+			//answer_button.setHeight(28f * AppSettings.getWorldSizeRatio());
+			//answer_button.size(10f * AppSettings.getWorldSizeRatio(), 13f * AppSettings.getWorldSizeRatio());
+			
+			Gdx.app.log("Table_w", Float.toString(quiz_table.getWidth()));
+			Gdx.app.log("Table_h", Float.toString(quiz_table.getHeight()));
+			Gdx.app.log("Button_w", Float.toString(answer_button.getWidth()));
+			Gdx.app.log("Button_h", Float.toString(answer_button.getHeight()));
+			
 			
 			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
 			
@@ -153,7 +164,7 @@ public class MAGameScreenMenu {
 				}
 			});
 			
-			quiz_table.add(answer_button);
+			quiz_table.add(answer_button).size(answer_button.getWidth(), answer_button.getHeight());
 		}
 		
 		gameScreen.getStage().addActor(quiz_table);
