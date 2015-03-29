@@ -93,6 +93,8 @@ public class UIAssets {
 	
 	public static TextureRegion image_empty_bg;
 	
+	public static TextureRegion image_pause_bg;
+	
 	/**
 	 * Loads texture file.
 	 *
@@ -163,6 +165,7 @@ public class UIAssets {
 		image_level_star = getAtlas().findRegion("star_level");
 		image_level_no_star = getAtlas().findRegion("no_star_level");
 		image_empty_bg = getAtlas().findRegion("empty_bg");
+		image_pause_bg = getAtlas().findRegion("pause_bg");
 	}
 
 	/**

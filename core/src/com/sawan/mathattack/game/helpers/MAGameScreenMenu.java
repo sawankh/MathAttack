@@ -26,12 +26,18 @@
 package com.sawan.mathattack.game.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.GameAssets;
+import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
+import com.sawan.mathattack.settings.AppSettings;
 
 /**
  * @author Itop1
@@ -39,6 +45,7 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
  */
 public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
+	public Table pause_table;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
@@ -56,12 +63,35 @@ public class MAGameScreenMenu {
 				//
 				if(btnPlayStop.isToggleActive()){
 					gameScreen.game_manager.setGameState(GameState.GAME_PAUSED);
+					showPauseTable(gameScreen);
 				} else{
 					gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+					hidePauseTable(gameScreen);
 				}
 			}
 		});
 		//
 		gameScreen.getStage().addActor(btnPlayStop);
+	}
+	
+	public void showPauseTable(final MAGameScreen gameScreen) {
+		pause_table = MenuCreator.createTable(false, UIAssets.getSkin());
+		
+		float table_width = 489f;
+		float table_height = 429f;
+		pause_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
+		
+		pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
+		pause_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (pause_table.getWidth() / 2), gameScreen.getStage().getHeight() - pause_table.getHeight(), 0.5f));
+		
+		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_pause_bg);
+		pause_table.setBackground(background_table);
+		
+		gameScreen.getStage().addActor(pause_table);
+	}
+	
+	public void hidePauseTable(final MAGameScreen gameScreen) {
+		pause_table.addAction(Actions.moveTo(-999f, gameScreen.getStage().getHeight() - pause_table.getHeight(), 0.5f));
+		pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
 	}
 }
