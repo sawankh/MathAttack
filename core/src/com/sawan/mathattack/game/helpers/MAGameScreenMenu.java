@@ -81,8 +81,8 @@ public class MAGameScreenMenu {
 		float table_height = 429f;
 		pause_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
 		
-		pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
-		pause_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (pause_table.getWidth() / 2), gameScreen.getStage().getHeight() - pause_table.getHeight(), 0.5f));
+		pause_table.setPosition(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2));
+		pause_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (pause_table.getWidth() / 2), (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_pause_bg);
 		pause_table.setBackground(background_table);
