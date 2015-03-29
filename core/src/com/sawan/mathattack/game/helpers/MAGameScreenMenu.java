@@ -31,11 +31,15 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.settings.AppSettings;
@@ -65,10 +69,7 @@ public class MAGameScreenMenu {
 				if(btnPlayStop.isToggleActive()){
 					gameScreen.game_manager.setGameState(GameState.GAME_PAUSED);
 					showPauseTable(gameScreen);
-				} else{
-					gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
-					hidePauseTable(gameScreen);
-				}
+				} 
 			}
 		});
 		//
@@ -102,6 +103,48 @@ public class MAGameScreenMenu {
 		button_exit.setTextureRegion(UIAssets.button_exit, true);
 		
 		
+		button_restart.addListener(new ActorGestureListener() {
+				@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					gameScreen.getGame().setScreen(new MAGameScreen(gameScreen.getGame(), ""));
+					gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+				}
+			});
+		
+		button_resume.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				hidePauseTable(gameScreen);
+				Timer.schedule(new Task() {
+					@Override
+					public void run() {
+						gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+					}
+				}, 0.5f);
+				
+			}
+		});
+		
+		button_levels.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+				gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+			}
+		});
+		
+		button_exit.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MAMainMenuScreen(gameScreen.getGame(), ""));
+				gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+			}
+		});
+		
 		pause_table.add(button_restart).padBottom(12f * AppSettings.getWorldPositionYRatio());
 		pause_table.row();
 		pause_table.add(button_resume).padBottom(12f * AppSettings.getWorldPositionYRatio());
@@ -118,6 +161,7 @@ public class MAGameScreenMenu {
 	public void hidePauseTable(final MAGameScreen gameScreen) {
 		pause_table.addAction(Actions.moveTo(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
 		
+		btnPlayStop.setToggleSwitch();
 		btnPlayStop.setVisible(true);
 		
 		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
