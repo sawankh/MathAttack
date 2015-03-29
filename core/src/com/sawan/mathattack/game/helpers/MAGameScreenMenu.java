@@ -91,7 +91,7 @@ public class MAGameScreenMenu {
 	}
 	
 	public void hidePauseTable(final MAGameScreen gameScreen) {
-		pause_table.addAction(Actions.moveTo(-999f, gameScreen.getStage().getHeight() - pause_table.getHeight(), 0.5f));
-		pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
+		pause_table.addAction(Actions.moveTo(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
+		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
 	}
 }
