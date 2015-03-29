@@ -33,6 +33,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.buttons.GameButton;
+import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
@@ -87,11 +89,24 @@ public class MAGameScreenMenu {
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_pause_bg);
 		pause_table.setBackground(background_table);
 		
+		float button_width = 177f;
+		float button_height = 55f;
+		
+		MathAttackButton button_restart = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_resume = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_levels = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_exit = new MathAttackButton(button_width, button_height, null, true);
+		
+		btnPlayStop.setVisible(false);
+		
 		gameScreen.getStage().addActor(pause_table);
 	}
 	
 	public void hidePauseTable(final MAGameScreen gameScreen) {
 		pause_table.addAction(Actions.moveTo(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
+		
+		btnPlayStop.setVisible(true);
+		
 		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
 	}
 }
