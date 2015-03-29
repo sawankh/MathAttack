@@ -95,6 +95,14 @@ public class UIAssets {
 	
 	public static TextureRegion image_pause_bg;
 	
+	public static TextureRegion button_restart;
+	
+	public static TextureRegion button_resume;
+	
+	public static TextureRegion button_exit;
+	
+	public static TextureRegion button_back_levels;
+	
 	/**
 	 * Loads texture file.
 	 *
@@ -173,6 +181,10 @@ public class UIAssets {
 	 */
 	public static void loadButtons() {
 		button_level = getAtlas().findRegion("level_button");
+		button_restart = getAtlas().findRegion("restart_button");
+		button_resume = getAtlas().findRegion("resume_button");
+		button_exit = getAtlas().findRegion("exit_button");
+		button_back_levels = getAtlas().findRegion("levels_button");
 	}
 
 	/**
