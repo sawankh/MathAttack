@@ -33,7 +33,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.UIAssets;
-import com.sawan.mathattack.buttons.GameButton;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
@@ -96,6 +95,20 @@ public class MAGameScreenMenu {
 		MathAttackButton button_resume = new MathAttackButton(button_width, button_height, null, true);
 		MathAttackButton button_levels = new MathAttackButton(button_width, button_height, null, true);
 		MathAttackButton button_exit = new MathAttackButton(button_width, button_height, null, true);
+		
+		button_restart.setTextureRegion(UIAssets.button_restart, true);
+		button_resume.setTextureRegion(UIAssets.button_resume, true);
+		button_levels.setTextureRegion(UIAssets.button_back_levels, true);
+		button_exit.setTextureRegion(UIAssets.button_exit, true);
+		
+		
+		pause_table.add(button_restart).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_resume).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_levels).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_exit).padBottom(12f * AppSettings.getWorldPositionYRatio());
 		
 		btnPlayStop.setVisible(false);
 		
