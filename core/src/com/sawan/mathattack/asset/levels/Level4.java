@@ -119,7 +119,7 @@ public class Level4 {
 	 */
 	public static void loadImages() {
 		sky = getAtlas().findRegion("sky");
-		clouds = getAtlas().findRegion("clouds");
+		clouds = Level1.getAtlas().findRegion("clouds");
 		mountains = getAtlas().findRegion("mountains");
 		soil = getAtlas().findRegion("soil");
 	}
