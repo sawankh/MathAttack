@@ -55,6 +55,7 @@ public class MAGameScreenMenu {
 	public Table pause_table;
 	public Table game_over;
 	public Table level_complete;
+	public int number_stars;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
@@ -283,14 +284,17 @@ public class MAGameScreenMenu {
 			star_right.setTextureRegion(UIAssets.image_star_right_completed, true);
 			star_central.setTextureRegion(UIAssets.image_star_central_completed, true);
 			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+			number_stars = 3;
 		} else if (gameScreen.game_manager.worldLayer_actors.hero.getLifes() < 5 && gameScreen.game_manager.worldLayer_actors.hero.getLifes() > 2) {
 			star_right.setTextureRegion(UIAssets.image_star_right_incompleted, true);
 			star_central.setTextureRegion(UIAssets.image_star_central_completed, true);
 			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+			number_stars = 2;
 		} else {
 			star_right.setTextureRegion(UIAssets.image_star_right_incompleted, true);
 			star_central.setTextureRegion(UIAssets.image_star_central_incompleted, true);
 			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+			number_stars = 1;
 		}
 				
 		level_complete.add(star_left).padBottom(35f * AppSettings.getWorldPositionYRatio()).spaceRight(7f * AppSettings.getWorldPositionXRatio());				

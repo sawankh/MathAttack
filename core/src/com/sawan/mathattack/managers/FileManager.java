@@ -248,7 +248,7 @@ public class FileManager {
 	 *            file type for location identification
 	 * @return the file
 	 * */
-	private static FileHandle getFile(String strFile, FileType fileType) {
+	public static FileHandle getFile(String strFile, FileType fileType) {
 		FileHandle file = null;
 		if (fileType == FileType.INTERNAL_FILE) {
 			try {
@@ -273,5 +273,11 @@ public class FileManager {
 			}
 		}
 		return file;
+	}
+	
+	public static void initiateMAFile(String strFile, FileType fileType) {
+		for (int i = 0; i < 8; i++) {
+			writeLine(strFile, "0", fileType);
+		}
 	}
 }
