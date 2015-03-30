@@ -22,3 +22,15 @@ level_back
   orig: 900, 600
   offset: 0, 0
   index: -1
+
+backgrounds3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+credits
+  rotate: false
+  xy: 1, 1
+  size: 900, 568
+  orig: 900, 568
+  offset: 0, 0
+  index: -1
