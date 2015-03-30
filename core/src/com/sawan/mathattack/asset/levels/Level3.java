@@ -1,11 +1,11 @@
 /**
- * File name:	Level1.java
+ * File name:	Level3.java
  * Version:		1.0
- * Date:		20/3/2015 10:59:27
+ * Date:		30/3/2015 12:22:20
  * Author:		Itop1
  * Copyright:	Copyright 200X Itop1
  *
- *				This file is part of Foobar.
+ *				This file is part of Math Attack.
  *
  *				Math Attack is free software: you can redistribute it 
  *				and/or modify it under the terms of the GNU General
@@ -23,7 +23,7 @@
  *				Public License along with Math Attack. If not, see 
  *				http://www.gnu.org/licenses/.
  */
-package com.sawan.mathattack.asset;
+package com.sawan.mathattack.asset.levels;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -36,9 +36,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
  * @author Itop1
  *
  */
-public class Level1 {
+public class Level3 {
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private final static String FILE_IMAGE_ATLAS = "data/ma/game/levels/Level1.atlas";
+	private final static String FILE_IMAGE_ATLAS = "data/ma/game/levels/Level3.atlas";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
@@ -121,7 +121,7 @@ public class Level1 {
 		sky = getAtlas().findRegion("sky");
 		clouds = getAtlas().findRegion("clouds");
 		mountains = getAtlas().findRegion("mountains");
-		soil = getAtlas().findRegion("soil");
+		soil = getAtlas().findRegion("Tile");
 	}
 
 	/**
