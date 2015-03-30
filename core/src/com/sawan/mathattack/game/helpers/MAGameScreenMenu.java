@@ -227,10 +227,26 @@ public class MAGameScreenMenu {
 		game_over.add(button_restart).padBottom(12f * AppSettings.getWorldPositionYRatio()).padRight(23f * AppSettings.getWorldPositionXRatio());
 		game_over.add(button_levels).padBottom(12f * AppSettings.getWorldPositionYRatio());
 		
+		gameScreen.game_manager.worldLayer_other.quiz_table.setVisible(false);
+		btnPlayStop.setVisible(false);
+		
 		gameScreen.getStage().addActor(game_over);
 	}
 	
-	public void showGameWin() {
+	public void showGameWin(final MAGameScreen gameScreen) {
+		level_complete = MenuCreator.createTable(false, UIAssets.getSkin());
 		
+		float table_width = 357f;
+		float table_height = 426f;
+		level_complete.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
+		
+		level_complete.setPosition(-999f, (gameScreen.getStage().getHeight() / 2) - (level_complete.getHeight() / 2));
+		level_complete.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (level_complete.getWidth() / 2), (gameScreen.getStage().getHeight() / 2) - (level_complete.getHeight() / 2), 0.5f));
+		//quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
+		
+		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_level_complete_bg);
+		level_complete.setBackground(background_table);
+		
+		gameScreen.getStage().addActor(level_complete);
 	}
 }

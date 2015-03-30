@@ -41,14 +41,16 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 	public MAGameManager game_manager;
 	public MAGameScreenMenu gameScreenMenu;
 	public boolean game_over;
+	public boolean game_win;
 	
 	public MAGameScreen(AbstractGame game, String screenName) {
 		super(game, screenName);
 		game_over = true;
+		game_win = true;
 		//
 		setUpGameManager();
 		setUpMenu();
-		game_manager.setGameState(GameState.GAME_RUNNING);
+		game_manager.setGameState(GameState.GAME_OVER);
 	}
 	
 	@Override
@@ -65,6 +67,11 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 		if (game_manager.getGameState() == GameState.GAME_OVER && game_over == true) {
 			gameScreenMenu.showGameOver(this);
 			game_over = false;
+		}
+		
+		if (game_manager.getGameState() == GameState.GAME_LEVELWIN && game_win == true) {
+			gameScreenMenu.showGameWin(this);
+			game_win = false;
 		}
 			
 	}

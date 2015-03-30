@@ -103,6 +103,8 @@ public class UIAssets {
 	
 	public static TextureRegion button_back_levels;
 	
+	public static TextureRegion image_level_complete_bg;
+	
 	/**
 	 * Loads texture file.
 	 *
@@ -174,6 +176,7 @@ public class UIAssets {
 		image_level_no_star = getAtlas().findRegion("no_star_level");
 		image_empty_bg = getAtlas().findRegion("empty_bg");
 		image_pause_bg = getAtlas().findRegion("pause_bg");
+		image_level_complete_bg = getAtlas().findRegion("level_completed_bg");
 	}
 
 	/**
