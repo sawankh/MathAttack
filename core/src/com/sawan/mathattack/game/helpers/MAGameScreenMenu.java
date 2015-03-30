@@ -53,6 +53,7 @@ public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
 	public Table pause_table;
 	public Table game_over;
+	public Table level_complete;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
@@ -227,5 +228,9 @@ public class MAGameScreenMenu {
 		game_over.add(button_levels).padBottom(12f * AppSettings.getWorldPositionYRatio());
 		
 		gameScreen.getStage().addActor(game_over);
+	}
+	
+	public void showGameWin() {
+		
 	}
 }
