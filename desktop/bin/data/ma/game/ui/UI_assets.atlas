@@ -5,189 +5,189 @@ filter: Nearest,Nearest
 repeat: none
 title
   rotate: false
-  xy: 1, 396
+  xy: 1, 358
   size: 1000, 623
   orig: 1000, 623
   offset: 0, 0
   index: -1
 empty_bg
   rotate: false
-  xy: 1, 3
-  size: 251, 391
-  orig: 251, 391
+  xy: 1, 105
+  size: 391, 251
+  orig: 391, 251
   offset: 0, 0
   index: -1
 time_elapsed
   rotate: false
-  xy: 254, 349
+  xy: 1, 58
   size: 238, 45
   orig: 238, 45
   offset: 0, 0
   index: -1
 loader
   rotate: false
-  xy: 254, 219
+  xy: 394, 228
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 restart_button
   rotate: false
-  xy: 494, 339
+  xy: 1, 1
   size: 177, 55
   orig: 177, 55
   offset: 0, 0
   index: -1
 exit_button
   rotate: false
-  xy: 673, 339
+  xy: 524, 301
   size: 175, 55
   orig: 175, 55
-  offset: 0, 0
-  index: -1
-credits_button
-  rotate: false
-  xy: 850, 339
-  size: 154, 55
-  orig: 154, 55
-  offset: 0, 0
-  index: -1
-levels_button
-  rotate: false
-  xy: 254, 162
-  size: 174, 55
-  orig: 174, 55
   offset: 0, 0
   index: -1
 resume_button
   rotate: false
-  xy: 254, 105
+  xy: 524, 244
   size: 175, 55
   orig: 175, 55
   offset: 0, 0
   index: -1
+levels_button
+  rotate: false
+  xy: 701, 301
+  size: 174, 55
+  orig: 174, 55
+  offset: 0, 0
+  index: -1
+credits_button
+  rotate: false
+  xy: 701, 244
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
 play_button
   rotate: false
-  xy: 254, 48
+  xy: 241, 48
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
+settings_button
+  rotate: false
+  xy: 394, 171
   size: 154, 55
   orig: 154, 55
   offset: 0, 0
   index: -1
 star_middle_completed
   rotate: false
-  xy: 384, 265
+  xy: 877, 274
   size: 87, 82
   orig: 87, 82
   offset: 0, 0
   index: -1
-settings_button
-  rotate: false
-  xy: 473, 282
-  size: 154, 55
-  orig: 154, 55
-  offset: 0, 0
-  index: -1
 central_no_star
   rotate: false
-  xy: 629, 260
+  xy: 550, 165
   size: 85, 77
   orig: 85, 77
   offset: 0, 0
   index: -1
 star_completed
   rotate: false
-  xy: 716, 267
+  xy: 637, 172
   size: 74, 70
   orig: 74, 70
   offset: 0, 0
   index: -1
 star_left_completed
   rotate: false
-  xy: 716, 267
+  xy: 637, 172
   size: 74, 70
   orig: 74, 70
   offset: 0, 0
   index: -1
 star_right_completed
   rotate: false
-  xy: 792, 267
+  xy: 713, 172
   size: 73, 70
   orig: 73, 70
   offset: 0, 0
   index: -1
 left_no_star
   rotate: false
-  xy: 867, 272
+  xy: 788, 177
   size: 71, 65
   orig: 71, 65
   offset: 0, 0
   index: -1
 no_star
   rotate: false
-  xy: 940, 272
+  xy: 861, 207
   size: 71, 65
   orig: 71, 65
   offset: 0, 0
   index: -1
 right_no_star
   rotate: false
-  xy: 940, 272
+  xy: 861, 207
   size: 71, 65
   orig: 71, 65
   offset: 0, 0
   index: -1
-left_button
-  rotate: false
-  xy: 254, 1
-  size: 43, 45
-  orig: 43, 45
-  offset: 0, 0
-  index: -1
-right_button
-  rotate: false
-  xy: 299, 1
-  size: 43, 45
-  orig: 43, 45
-  offset: 0, 0
-  index: -1
 home_icon
   rotate: false
-  xy: 473, 214
+  xy: 934, 206
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 level_button
   rotate: false
-  xy: 538, 214
+  xy: 861, 139
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 lock_disable
   rotate: false
-  xy: 603, 192
+  xy: 926, 138
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
+left_button
+  rotate: false
+  xy: 180, 11
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+right_button
+  rotate: false
+  xy: 394, 124
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
 play_icon
   rotate: false
-  xy: 668, 192
+  xy: 439, 103
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 no_star_level
   rotate: false
-  xy: 1003, 1002
+  xy: 394, 105
   size: 19, 17
   orig: 19, 17
   offset: 0, 0
   index: -1
 star_level
   rotate: false
-  xy: 410, 86
+  xy: 1003, 964
   size: 19, 17
   orig: 19, 17
   offset: 0, 0
