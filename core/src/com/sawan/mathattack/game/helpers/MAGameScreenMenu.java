@@ -42,6 +42,7 @@ import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
+import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.settings.AppSettings;
 
 /**
@@ -51,6 +52,7 @@ import com.sawan.mathattack.settings.AppSettings;
 public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
 	public Table pause_table;
+	public Table game_over;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
@@ -165,5 +167,65 @@ public class MAGameScreenMenu {
 		btnPlayStop.setVisible(true);
 		
 		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
+	}
+	
+	public void showGameOver(final MAGameScreen gameScreen) {
+		game_over = MenuCreator.createTable(false, UIAssets.getSkin());
+		
+		//LabelStyle style = new LabelStyle(UIAssets.cartwheel_font, null);
+		
+		//Label question = new Label("", style);
+		Text game_over_message = new Text(UIAssets.cartwheel_font, 10f, 10f, true);
+		game_over_message.setText("GAME OVER");
+		//question.setFontScale(1.25f);
+		//game_over_message.getBitMapFont().setScale(game_over_message.getWidth(), game_over_message.getHeight());
+		
+		//game_over.debug();
+		
+		float table_width = 251f;
+		float table_height = 391f;
+		game_over.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
+		
+		game_over.setPosition(-999f, (gameScreen.getStage().getHeight() / 2) - (game_over.getHeight() / 2));
+		game_over.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (game_over.getWidth() / 2), (gameScreen.getStage().getHeight() / 2) - (game_over.getHeight() / 2), 0.5f));
+		//quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
+		
+		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
+		game_over.setBackground(background_table);
+		game_over.add(game_over_message).padBottom(50f * AppSettings.getWorldPositionYRatio()).padRight(200f * AppSettings.getWorldPositionXRatio()).colspan(3);
+		game_over.row();
+		
+		float button_width = 159.3f;
+		float button_height = 49.5f;
+		
+		MathAttackButton button_restart = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_levels = new MathAttackButton(button_width, button_height, null, true);
+		
+		button_restart.setTextureRegion(UIAssets.button_restart, true);
+		button_levels.setTextureRegion(UIAssets.button_back_levels, true);
+		
+		
+		button_restart.addListener(new ActorGestureListener() {
+				@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					gameScreen.getGame().setScreen(new MAGameScreen(gameScreen.getGame(), ""));
+				}
+			});
+		
+		
+		button_levels.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+			}
+		});
+		
+		
+		game_over.add(button_restart).padBottom(12f * AppSettings.getWorldPositionYRatio()).padRight(23f * AppSettings.getWorldPositionXRatio());
+		game_over.add(button_levels).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		
+		gameScreen.getStage().addActor(game_over);
 	}
 }

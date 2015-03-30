@@ -52,6 +52,7 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 	public MAGameManager gameManager;
 	public int user_answer;
 	public Table quiz_table;
+
 	
 	public WorldLayerOther(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight) {
 		super(posX, posY, worldWidth, worldHeight);
@@ -147,4 +148,6 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 	public void hideTable() {
 		quiz_table.addAction(Actions.moveTo(gameManager.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameManager.getStage().getHeight(), 0.5f));
 	}
+	
+	
 }

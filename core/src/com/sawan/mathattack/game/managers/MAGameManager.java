@@ -31,7 +31,6 @@ import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.layers.WorldLayerActors;
 import com.sawan.mathattack.game.layers.WorldLayerBG;
 import com.sawan.mathattack.game.layers.WorldLayerOther;
-import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.interfaces.IGameManager;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
@@ -102,7 +101,8 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public void checkGameCondition() {
 		if (!worldLayer_actors.isHeroAlive()) {
 			worldLayer_actors.killHero();
-			getScreen().getGame().setScreen(new MAMainMenuScreen(getScreen().getGame(), ""));
+			worldLayer_other.quiz_table.setVisible(false);
+			//worldLayer_other.showGameOver();
 		}
 		
 		if (getGameState() == GameState.GAME_PAUSED) {
