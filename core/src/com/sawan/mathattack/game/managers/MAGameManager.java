@@ -25,7 +25,6 @@
  */
 package com.sawan.mathattack.game.managers;
 
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.sawan.mathattack.game.AbstractGameManager;
 import com.sawan.mathattack.game.GameState;
@@ -46,9 +45,12 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public WorldLayerBG worldLayer_background;
 	public WorldLayerActors worldLayer_actors;
 	public WorldLayerOther worldLayer_other;
+	
+	
 
 	public MAGameManager(Stage stage, AbstractScreen screen) {
 		super(stage, screen);
+		
 		//
 		setUpWorld();
 		//
@@ -72,17 +74,17 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		//
 		worldLayer_background = new WorldLayerBG(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		//worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
-			//	AppSettings.SCREEN_H);
-		//worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
-			//	AppSettings.SCREEN_H);
+		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
+		worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
 
 		//
 		// Add all layers to world
 		// #############################################################
 		world.addActor(worldLayer_background);
-	//	world.addActor(worldLayer_actors);
-		//world.addActor(worldLayer_other);
+		world.addActor(worldLayer_actors);
+		world.addActor(worldLayer_other);
 
 		//
 		// Add the main world to stage
@@ -97,12 +99,34 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 
 	@Override
 	public void checkGameCondition() {
-
+		if (!worldLayer_actors.isHeroAlive()) {
+			worldLayer_actors.killHero();
+			worldLayer_other.quiz_table.setVisible(false);
+			//worldLayer_other.showGameOver();
+		}
+		
+		if (getGameState() == GameState.GAME_PAUSED) {
+			worldLayer_other.quiz_table.setVisible(false);
+		}
+		
+		if (getGameState() == GameState.GAME_RUNNING) {
+			worldLayer_other.quiz_table.setVisible(true);
+		}
+		
+		worldLayer_actors.gameWin();
 	}
 
 	@Override
 	public void update(float delta) {
 		checkGameCondition();
+		worldLayer_actors.checkCollision(worldLayer_actors.hero, worldLayer_actors.enemies);
+		worldLayer_actors.hitEnemy(worldLayer_actors.bullets, worldLayer_actors.enemies);
+		if (worldLayer_actors.hero.isLost_life()) {
+			//worldLayer_background.setUpLives(worldLayer_actors.hero.getLifes());
+			worldLayer_background.removeHeart();
+			worldLayer_actors.hero.setLost_life(false);
+		}
+		
 	}
 
 	@Override

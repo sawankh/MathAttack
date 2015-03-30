@@ -1,0 +1,135 @@
+
+Game_assets.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+eraser
+  rotate: false
+  xy: 1, 446
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+heart
+  rotate: false
+  xy: 1, 1
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 1
+heart
+  rotate: false
+  xy: 515, 515
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 2
+heart
+  rotate: false
+  xy: 515, 70
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 3
+pause
+  rotate: false
+  xy: 497, 4
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+
+Game_assets2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pencil
+  rotate: false
+  xy: 1, 446
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+heart
+  rotate: false
+  xy: 1, 1
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 4
+heart
+  rotate: false
+  xy: 515, 515
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 5
+heart
+  rotate: false
+  xy: 515, 70
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 6
+
+Game_assets3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ruler
+  rotate: false
+  xy: 1, 446
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+heart
+  rotate: false
+  xy: 1, 1
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 7
+heart
+  rotate: false
+  xy: 515, 515
+  size: 494, 443
+  orig: 494, 443
+  offset: 0, 0
+  index: 8
+
+Game_assets4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+scissors
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+Game_assets5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+semicircle
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+Game_assets6.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+trianguler
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
