@@ -30,6 +30,8 @@ import java.util.Random;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
@@ -83,7 +85,13 @@ public class MAMainMenuButtons {
 				menuScreen.button_play.clearActions();
 				EffectCreator.create_SC_SHK_BTN(menuScreen.button_play,
                         1.3f, 1.3f, 5f, 0, 0.05f, null, false);
-				menuScreen.getGame().setScreen(new MALevelScreen(menuScreen.getGame(), "Level Selection"));
+				Timer.schedule(new Task() {
+					
+					@Override
+					public void run() {
+						menuScreen.getGame().setScreen(new MALevelScreen(menuScreen.getGame(), "Level Selection"));
+					}
+				}, 0.5f);
 			}
 		});
 		
@@ -101,6 +109,13 @@ public class MAMainMenuButtons {
 				menuScreen.button_settings.clearActions();
 				EffectCreator.create_SC_SHK_BTN(menuScreen.button_settings,
                         1.3f, 1.3f, 5f, 0, 0.05f, null, false);
+				Timer.schedule(new Task() {
+					
+					@Override
+					public void run() {
+						
+					}
+				}, 0.5f);
 			}
 		});
 		
@@ -119,6 +134,13 @@ public class MAMainMenuButtons {
 				menuScreen.button_credits.clearActions();
 				EffectCreator.create_SC_SHK_BTN(menuScreen.button_credits,
                         1.3f, 1.3f, 5f, 0, 0.05f, null, false);
+				Timer.schedule(new Task() {
+					
+					@Override
+					public void run() {
+						
+					}
+				}, 0.5f);
 			}
 		});
 		
