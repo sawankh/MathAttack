@@ -50,7 +50,8 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 		//
 		setUpGameManager();
 		setUpMenu();
-		game_manager.setGameState(GameState.GAME_OVER);
+		
+		game_manager.setGameState(GameState.GAME_RUNNING);
 	}
 	
 	@Override

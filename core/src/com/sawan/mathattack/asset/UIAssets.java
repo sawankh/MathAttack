@@ -105,6 +105,19 @@ public class UIAssets {
 	
 	public static TextureRegion image_level_complete_bg;
 	
+	public static TextureRegion image_star_right_completed;
+	
+	public static TextureRegion image_star_central_completed;
+	
+	public static TextureRegion image_star_left_completed;
+
+	public static TextureRegion image_star_right_incompleted;
+	
+	public static TextureRegion image_star_central_incompleted;
+	
+	public static TextureRegion image_star_left_incompleted;
+
+	
 	/**
 	 * Loads texture file.
 	 *
@@ -177,6 +190,12 @@ public class UIAssets {
 		image_empty_bg = getAtlas().findRegion("empty_bg");
 		image_pause_bg = getAtlas().findRegion("pause_bg");
 		image_level_complete_bg = getAtlas().findRegion("level_completed_bg");
+		image_star_right_completed = getAtlas().findRegion("star_right_completed");
+		image_star_central_completed = getAtlas().findRegion("star_middle_completed");
+		image_star_left_completed = getAtlas().findRegion("star_left_completed");
+		image_star_right_incompleted = getAtlas().findRegion("right_no_star");
+		image_star_central_incompleted = getAtlas().findRegion("central_no_star");
+		image_star_left_incompleted = getAtlas().findRegion("left_no_star");
 	}
 
 	/**

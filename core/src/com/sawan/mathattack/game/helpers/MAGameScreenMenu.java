@@ -40,6 +40,7 @@ import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
+import com.sawan.mathattack.models.SmartActor;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.scene2d.ui.Text;
@@ -242,10 +243,66 @@ public class MAGameScreenMenu {
 		
 		level_complete.setPosition(-999f, (gameScreen.getStage().getHeight() / 2) - (level_complete.getHeight() / 2));
 		level_complete.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (level_complete.getWidth() / 2), (gameScreen.getStage().getHeight() / 2) - (level_complete.getHeight() / 2), 0.5f));
-		//quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
 		
 		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_level_complete_bg);
 		level_complete.setBackground(background_table);
+		
+		final SmartActor star_right = new SmartActor(74, 70, null, true);
+		final SmartActor star_central = new SmartActor(87, 82, null, true);
+		final SmartActor star_left = new SmartActor(74, 70, null, true);
+		
+		
+		float button_width = 159.3f;
+		float button_height = 49.5f;
+		
+		MathAttackButton button_restart = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_levels = new MathAttackButton(button_width, button_height, null, true);
+		
+		button_restart.setTextureRegion(UIAssets.button_restart, true);
+		button_levels.setTextureRegion(UIAssets.button_back_levels, true);
+		
+		
+		button_restart.addListener(new ActorGestureListener() {
+				@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					gameScreen.getGame().setScreen(new MAGameScreen(gameScreen.getGame(), ""));
+				}
+			});
+		
+		
+		button_levels.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+			}
+		});
+		
+		if (gameScreen.game_manager.worldLayer_actors.hero.getLifes() == 5) {
+			star_right.setTextureRegion(UIAssets.image_star_right_completed, true);
+			star_central.setTextureRegion(UIAssets.image_star_central_completed, true);
+			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+		} else if (gameScreen.game_manager.worldLayer_actors.hero.getLifes() < 5 && gameScreen.game_manager.worldLayer_actors.hero.getLifes() > 2) {
+			star_right.setTextureRegion(UIAssets.image_star_right_incompleted, true);
+			star_central.setTextureRegion(UIAssets.image_star_central_completed, true);
+			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+		} else {
+			star_right.setTextureRegion(UIAssets.image_star_right_incompleted, true);
+			star_central.setTextureRegion(UIAssets.image_star_central_incompleted, true);
+			star_left.setTextureRegion(UIAssets.image_star_left_completed, true);
+		}
+				
+		level_complete.add(star_left).padBottom(35f * AppSettings.getWorldPositionYRatio()).spaceRight(7f * AppSettings.getWorldPositionXRatio());				
+		level_complete.add(star_central).padBottom(45f * AppSettings.getWorldPositionYRatio()).spaceRight(7f * AppSettings.getWorldPositionXRatio()).spaceLeft(7f * AppSettings.getWorldPositionXRatio());
+		level_complete.add(star_right).padBottom(35f * AppSettings.getWorldPositionYRatio()).spaceLeft(7f * AppSettings.getWorldPositionXRatio());
+		level_complete.row();
+		level_complete.add(button_restart).colspan(3);
+		level_complete.row();
+		level_complete.add(button_levels).colspan(3);
+		
+		gameScreen.game_manager.worldLayer_other.quiz_table.setVisible(false);
+		btnPlayStop.setVisible(false);
 		
 		gameScreen.getStage().addActor(level_complete);
 	}
