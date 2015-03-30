@@ -1,9 +1,4 @@
-#
-<<<<<<< HEAD
-#Mon Mar 23 08:40:12 GMT 2015
-=======
 #Fri Mar 27 19:17:39 GMT 2015
->>>>>>> game-core
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.compliance=1.6
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
