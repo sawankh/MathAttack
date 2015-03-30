@@ -116,6 +116,8 @@ public class UIAssets {
 	public static TextureRegion image_star_central_incompleted;
 	
 	public static TextureRegion image_star_left_incompleted;
+	
+	public static TextureRegion image_home_icon;
 
 	
 	/**
@@ -196,6 +198,7 @@ public class UIAssets {
 		image_star_right_incompleted = getAtlas().findRegion("right_no_star");
 		image_star_central_incompleted = getAtlas().findRegion("central_no_star");
 		image_star_left_incompleted = getAtlas().findRegion("left_no_star");
+		image_home_icon = getAtlas().findRegion("home_icon");
 	}
 
 	/**

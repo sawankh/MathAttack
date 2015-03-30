@@ -36,6 +36,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.ButtonLevel;
+import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
@@ -152,6 +153,20 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			
 			
 		}
+		
+		MathAttackButton home = new MathAttackButton(63f, 66f, null, true);
+		home.setTextureRegion(UIAssets.image_home_icon, true);
+		
+		home.addListener(new ActorGestureListener() {
+			@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					getGame().setScreen(new MAMainMenuScreen(getGame(), "Main Menu"));
+				}
+			});
+		
+		level_table.row();
+		level_table.add(home).padTop(-50f * AppSettings.getWorldPositionYRatio()).padBottom(-70f * AppSettings.getWorldPositionYRatio()).colspan(4);
 		level_table.setBackground(background);
 	}
 	
