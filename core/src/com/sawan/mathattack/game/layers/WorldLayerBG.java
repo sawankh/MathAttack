@@ -53,11 +53,17 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 	
 	private ArrayList<Actor> hearts;
 	
+	public int level;
+	
 	public WorldLayerBG(MAGameManager gameManager, float posX, float posY,
-			float worldWidth, float worldHeight) {
+			float worldWidth, float worldHeight, int level) {
 		super(posX, posY, worldWidth, worldHeight);
 		//
 		this.gameManager = gameManager;
+		this.level = level;
+		
+		MALevelAssets.setFILE_IMAGE_ATLAS(level);
+		MALevelAssets.loadAll();
 		
 		//
 		setUpBackround();

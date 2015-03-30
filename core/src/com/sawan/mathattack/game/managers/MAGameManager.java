@@ -46,11 +46,11 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public WorldLayerActors worldLayer_actors;
 	public WorldLayerOther worldLayer_other;
 	
-	
+	public int level;
 
-	public MAGameManager(Stage stage, AbstractScreen screen) {
+	public MAGameManager(Stage stage, AbstractScreen screen, int level) {
 		super(stage, screen);
-		
+		this.level = level;
 		//
 		setUpWorld();
 		//
@@ -73,9 +73,9 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		// Layer3 - Snow effect
 		//
 		worldLayer_background = new WorldLayerBG(this, 0, 0, AppSettings.SCREEN_W,
-				AppSettings.SCREEN_H);
+				AppSettings.SCREEN_H, level);
 		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
-				AppSettings.SCREEN_H);
+				AppSettings.SCREEN_H, level);
 		worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
 

@@ -40,7 +40,7 @@ public class MainStarter extends AbstractGame {
 	@Override
 	public void create() {
         super.create();
-		setScreen(new MAGameScreen(this, "Main Menu"));
+		setScreen(new MAGameScreen(this, "Main Menu", 1));
 	}
 	
 	@Override

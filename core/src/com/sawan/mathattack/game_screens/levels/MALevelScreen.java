@@ -37,6 +37,7 @@ import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.ButtonLevel;
 import com.sawan.mathattack.game.AbstractGame;
+import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.interfaces.IScreen;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
@@ -133,6 +134,8 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			@Override
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
+					System.out.println(levelButton.getLevelNumber());
+					getGame().setScreen(new MAGameScreen(getGame(), "Game Screen", levelButton.getLevelNumber()));
 				}
 			});
 

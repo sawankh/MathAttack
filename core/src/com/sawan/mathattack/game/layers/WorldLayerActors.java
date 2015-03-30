@@ -56,13 +56,14 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	
 	protected final static int NUM_ENEMIES = 20;
 	
+	public int level;
 	
-	public WorldLayerActors(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight) {
+	public WorldLayerActors(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight, int level) {
 		super(posX, posY, worldWidth, worldHeight);
 		this.gameManager =  gameManager;
 		setUpHero();
 		setUpEnemies();
-		
+		this.level = level;
 	}
 	
 	public void setUpHero() {
