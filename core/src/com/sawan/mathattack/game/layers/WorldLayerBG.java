@@ -30,8 +30,8 @@ import java.util.Random;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Scaling;
+import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.Level1;
-import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
@@ -47,8 +47,9 @@ import com.sawan.mathattack.settings.AppSettings;
 public class WorldLayerBG extends AbstractWorldScene2d {
 	MAGameManager gameManager;
 
-	public final float SOIL_WIDHT = 205f /3;
+	public final float SOIL_WIDHT = 205f / 3;
 	public final float SOIL_HEIGHT = 208f /3;
+	
 	
 	private ArrayList<Actor> hearts;
 	
@@ -59,9 +60,11 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		this.gameManager = gameManager;
 		//
 		setUpBackround();
+		setUpMountains();
 		setUpBottomSoils();
 		setUpClouds();
 		setUpLives(Hero.NUM_LIFES);
+		
 	}
 
 	private void setUpBackround() {
@@ -69,23 +72,14 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 	}
 
 	private void setUpBottomSoils() {
-		float worldWidth = gameManager.getStage().getWidth();
 		
-		//
-		int numberOfSoils = (int) ((worldWidth / (SOIL_WIDHT * AppSettings
-				.getWorldSizeRatio())) + 1);
-		//
-		for (int i = 0; i < numberOfSoils; i++) {
-			EmptyActorLight currentSoil = new EmptyActorLight(
-					SOIL_WIDHT, SOIL_HEIGHT, true);
-			//
-			currentSoil.setTextureRegion(Level1.soil, true);
-			double posX = (i * currentSoil.getWidth());
-					
-			currentSoil.setPosition((float) posX, 0);
-			//
-			addActor(currentSoil);
-		}
+		EmptyActor soil = new EmptyActor(1000f, 550f, true);
+		soil.setTextureRegion(Level1.soil, true);
+		
+		soil.setPosition(0, 0);
+		
+		soil.setZIndex(2);
+		addActor(soil);
 	}
 
 	private void setUpClouds() {
@@ -111,9 +105,22 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 					(int) gameManager.getStage().getWidth() + 200,(int) posY,
 					15f);
 			
+			currentCloud.setZIndex(2);
 			//
 			addActor(currentCloud);
 		}
+	}
+	
+	public void setUpMountains() {
+		EmptyActorLight mountain = new EmptyActorLight(1000f, 900f, true);
+		
+		mountain.setTextureRegion(Level1.mountains, true);
+		mountain.setX(0);
+		mountain.setY(0);
+		
+		mountain.setZIndex(1);
+		
+		addActor(mountain);
 	}
 
 	public void setUpLives(int num_lives) {
@@ -122,11 +129,14 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			EmptyActor current_heart = new EmptyActor(25f, 25f, true);
 			current_heart.setName(Integer.toString(i));
 			
-			float posX = i * current_heart.getWidth();
-			float posY = gameManager.getStage().getHeight() / 2;
+			float posX = (i * current_heart.getWidth()) + (50f * AppSettings.getWorldPositionXRatio());
+			float posY = (gameManager.getStage().getHeight() - current_heart.getHeight()) - (50f * AppSettings.getWorldPositionYRatio());
 			
 			current_heart.setPosition(posX, posY);
-			current_heart.setTextureRegion(UIAssets.image_level_star, true);
+			current_heart.setAnimation(GameAssets.heart, true, true);
+			
+			
+			current_heart.setZIndex(2);
 			
 			hearts.add(current_heart);
 			addActor(current_heart);
@@ -137,4 +147,6 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		removeActor(hearts.get(hearts.size() - 1));
 		hearts.remove(hearts.size() - 1);
 	}
+	
+	
 }

@@ -31,6 +31,7 @@ import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.layers.WorldLayerActors;
 import com.sawan.mathattack.game.layers.WorldLayerBG;
 import com.sawan.mathattack.game.layers.WorldLayerOther;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.interfaces.IGameManager;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
@@ -45,9 +46,12 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 	public WorldLayerBG worldLayer_background;
 	public WorldLayerActors worldLayer_actors;
 	public WorldLayerOther worldLayer_other;
+	
+	
 
 	public MAGameManager(Stage stage, AbstractScreen screen) {
 		super(stage, screen);
+		
 		//
 		setUpWorld();
 		//
@@ -73,15 +77,15 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 				AppSettings.SCREEN_H);
 		worldLayer_actors = new WorldLayerActors(this, 0, 0, AppSettings.SCREEN_W,
 				AppSettings.SCREEN_H);
-		//worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
-			//	AppSettings.SCREEN_H);
+		worldLayer_other = new WorldLayerOther(this, 0, 0, AppSettings.SCREEN_W,
+				AppSettings.SCREEN_H);
 
 		//
 		// Add all layers to world
 		// #############################################################
 		world.addActor(worldLayer_background);
 		world.addActor(worldLayer_actors);
-		//world.addActor(worldLayer_other);
+		world.addActor(worldLayer_other);
 
 		//
 		// Add the main world to stage
@@ -96,7 +100,18 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 
 	@Override
 	public void checkGameCondition() {
-		worldLayer_actors.isHeroAlive();
+		if (!worldLayer_actors.isHeroAlive()) {
+			worldLayer_actors.killHero();
+			getScreen().getGame().setScreen(new MAMainMenuScreen(getScreen().getGame(), ""));
+		}
+		
+		if (getGameState() == GameState.GAME_PAUSED) {
+			worldLayer_other.quiz_table.setVisible(false);
+		}
+		
+		if (getGameState() == GameState.GAME_RUNNING) {
+			worldLayer_other.quiz_table.setVisible(true);
+		}
 	}
 
 	@Override

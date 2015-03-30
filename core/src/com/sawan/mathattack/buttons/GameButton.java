@@ -55,6 +55,36 @@ public class GameButton extends AbstractButton {
 		super(UIAssets.cartwheel_font, up, down);
 	}
 	
+	
+	
+	/**
+	 * @param bitMapFont
+	 * @param up
+	 * @param down
+	 * @param width
+	 * @param height
+	 * @param DIPActive
+	 */
+	public GameButton(BitmapFont bitMapFont, Drawable up, Drawable down,
+			float width, float height, boolean DIPActive) {
+		super(bitMapFont, up, down, width, height, DIPActive);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	/**
+	 * @param bitMapFont
+	 * @param up
+	 * @param down
+	 */
+	public GameButton(BitmapFont bitMapFont, Drawable up, Drawable down) {
+		super(bitMapFont, up, down);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	/* (non-Javadoc)
 	 * @see com.sawan.mathattack.scene2d.ui.AbstractButton#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
 	 */

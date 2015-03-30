@@ -27,20 +27,19 @@ package com.sawan.mathattack.game.helpers;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
+import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.UIAssets;
-import com.sawan.mathattack.buttons.GameButton;
+import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.screen.MAGameScreen;
-import com.sawan.mathattack.math.Addition;
-import com.sawan.mathattack.math.QuestionsSettings;
-import com.sawan.mathattack.math.QuestionsUtils;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
+import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.ButtonToggle;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.settings.AppSettings;
@@ -51,12 +50,11 @@ import com.sawan.mathattack.settings.AppSettings;
  */
 public class MAGameScreenMenu {
 	public ButtonToggle btnPlayStop;
-	public Table quiz_table;
-	public int user_answer;
+	public Table pause_table;
 	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
-                UIAssets.image_main_button_play, UIAssets.image_main_button_settings, false, 100, 100,
+                GameAssets.pause, GameAssets.pause, false, 64, 64,
                 true);
 		btnPlayStop.setPosition(gameScreen.getStage().getWidth() - btnPlayStop.getWidth(), 
 				gameScreen.getStage().getHeight() - btnPlayStop.getHeight());
@@ -70,82 +68,102 @@ public class MAGameScreenMenu {
 				//
 				if(btnPlayStop.isToggleActive()){
 					gameScreen.game_manager.setGameState(GameState.GAME_PAUSED);
-				} else{
-					gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
-				}
+					showPauseTable(gameScreen);
+				} 
 			}
 		});
 		//
 		gameScreen.getStage().addActor(btnPlayStop);
 	}
 	
-	public void setUpMathQuiz(final MAGameScreen gameScreen) {
-		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
-		quiz_table.debug();
-		final Addition addition = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
-		Label question = new Label("", UIAssets.getSkin());
-		question.setText(addition.getQuestion());
-		question.setFontScale(2);
+	public void showPauseTable(final MAGameScreen gameScreen) {
+		pause_table = MenuCreator.createTable(false, UIAssets.getSkin());
+		
+		float table_width = 489f;
+		float table_height = 429f;
+		pause_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
+		
+		pause_table.setPosition(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2));
+		pause_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (pause_table.getWidth() / 2), (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
+		
+		Drawable background_table =  new TextureRegionDrawable(UIAssets.image_pause_bg);
+		pause_table.setBackground(background_table);
+		
+		float button_width = 177f;
+		float button_height = 55f;
+		
+		MathAttackButton button_restart = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_resume = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_levels = new MathAttackButton(button_width, button_height, null, true);
+		MathAttackButton button_exit = new MathAttackButton(button_width, button_height, null, true);
+		
+		button_restart.setTextureRegion(UIAssets.button_restart, true);
+		button_resume.setTextureRegion(UIAssets.button_resume, true);
+		button_levels.setTextureRegion(UIAssets.button_back_levels, true);
+		button_exit.setTextureRegion(UIAssets.button_exit, true);
 		
 		
-		float table_width = 251f;
-		float table_height = 391f;
-		quiz_table.size(table_height * AppSettings.getWorldSizeRatio(), table_width * AppSettings.getWorldSizeRatio());
-		
-		quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight());
-		quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight(), 0.5f));
-		//quiz_table.setPosition(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight() - quiz_table.getHeight());
-		
-		//Drawable background_table =  new TextureRegionDrawable(UIAssets.image_empty_bg);
-		//quiz_table.setBackground(background_table);
-		quiz_table.add(question);
-		quiz_table.row();
-		for (int i = 0; i < addition.getAnswers().length; i++) {
-			/**Label answer = new Label("", UIAssets.getSkin());
-			answer.setText(Integer.toString(addition.getAnswers()[i]));
-			
-			quiz_table.add(answer);**/
-			Drawable up = new TextureRegionDrawable(UIAssets.button_level);
-			Drawable down = new TextureRegionDrawable(UIAssets.button_level);
-			final GameButton answer_button = new GameButton(up, down);
-			
-			
-			answer_button.setDIPActive(true);
-			answer_button.setAnswer(addition.getAnswers()[i], UIAssets.cartwheel_font);
-			
-			answer_button.addListener(new ActorGestureListener() {
+		button_restart.addListener(new ActorGestureListener() {
 				@Override
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
-					user_answer = answer_button.getAnswer();
-					if (user_answer == addition.getCorrect_answer()) {
-						System.out.println("Correcto!");
-						quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight(), 0.5f));
-						gameScreen.game_manager.worldLayer_actors.addBullet();
-						Timer.schedule(new Task() {
-							@Override
-							public void run() {
-								setUpMathQuiz(gameScreen);
-							}
-						}, 0.6f);
-			
-					} else {
-						System.out.println("Incorrecto");
-						quiz_table.addAction(Actions.moveTo(gameScreen.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameScreen.getStage().getHeight(), 0.5f));
-						Timer.schedule(new Task() {
-							@Override
-							public void run() {
-								setUpMathQuiz(gameScreen);
-							}
-						}, 0.6f);
-			
-					}
+					gameScreen.getGame().setScreen(new MAGameScreen(gameScreen.getGame(), ""));
+					gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
 				}
 			});
-			
-			quiz_table.add(answer_button);
-		}
 		
-		gameScreen.getStage().addActor(quiz_table);
+		button_resume.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				hidePauseTable(gameScreen);
+				Timer.schedule(new Task() {
+					@Override
+					public void run() {
+						gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+					}
+				}, 0.5f);
+				
+			}
+		});
+		
+		button_levels.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+				gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+			}
+		});
+		
+		button_exit.addListener(new ActorGestureListener() {
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				super.touchUp(event, x, y, pointer, button);
+				gameScreen.getGame().setScreen(new MAMainMenuScreen(gameScreen.getGame(), ""));
+				gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
+			}
+		});
+		
+		pause_table.add(button_restart).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_resume).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_levels).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		pause_table.row();
+		pause_table.add(button_exit).padBottom(12f * AppSettings.getWorldPositionYRatio());
+		
+		btnPlayStop.setVisible(false);
+		
+		gameScreen.getStage().addActor(pause_table);
+	}
+	
+	public void hidePauseTable(final MAGameScreen gameScreen) {
+		pause_table.addAction(Actions.moveTo(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
+		
+		btnPlayStop.setToggleSwitch();
+		btnPlayStop.setVisible(true);
+		
+		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
 	}
 }
