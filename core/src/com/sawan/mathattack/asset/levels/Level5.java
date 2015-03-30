@@ -121,7 +121,7 @@ public class Level5 {
 		sky = getAtlas().findRegion("sky");
 		clouds = getAtlas().findRegion("clouds");
 		mountains = getAtlas().findRegion("mountains");
-		soil = getAtlas().findRegion("Tile");
+		soil = getAtlas().findRegion("soil");
 	}
 
 	/**
