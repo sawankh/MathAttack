@@ -130,7 +130,6 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			//4. Set stars or any other achievements (get from database or text files here)
 			// I just made a random number of earned stars 
 			//Random rnd = new Random();
-			System.out.println(FileManager.readLine("profile.data", i, FileType.LOCAL_FILE));
 			levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("profile.data", i, FileType.LOCAL_FILE)));
 			
 			//5. Add  listener
