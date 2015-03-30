@@ -30,7 +30,7 @@ import com.sawan.mathattack.asset.BlueMonsterAssets;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.UIAssets;
-import com.sawan.mathattack.asset.levels.Level1;
+import com.sawan.mathattack.asset.levels.MALevelAssets;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.settings.AppSettings;
@@ -52,7 +52,7 @@ public class MainStarter extends AbstractGame {
 	public void setUpAssets() {
 		UIAssets.loadAll();
 		Backgrounds.loadAll();
-		Level1.loadAll();
+		MALevelAssets.loadAll();
 		HeroAssests.loadAll();
 		BlueMonsterAssets.loadAll();
 		GameAssets.loadAll();

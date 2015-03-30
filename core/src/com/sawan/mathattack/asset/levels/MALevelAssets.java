@@ -1,11 +1,11 @@
 /**
- * File name:	Level8.java
+ * File name:	Level1.java
  * Version:		1.0
- * Date:		30/3/2015 12:25:43
+ * Date:		20/3/2015 10:59:27
  * Author:		Itop1
  * Copyright:	Copyright 200X Itop1
  *
- *				This file is part of Math Attack.
+ *				This file is part of Foobar.
  *
  *				Math Attack is free software: you can redistribute it 
  *				and/or modify it under the terms of the GNU General
@@ -36,9 +36,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
  * @author Itop1
  *
  */
-public class Level8 {
+public class MALevelAssets {
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private final static String FILE_IMAGE_ATLAS = "data/ma/game/levels/Level8.atlas";
+	public static String FILE_IMAGE_ATLAS = "data/ma/game/levels/Level1.atlas";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
@@ -109,7 +109,7 @@ public class Level8 {
 	/**
 	 * Relase resources.
 	 */
-	private static void relaseResources() {
+	public static void relaseResources() {
 		skin = null;
 		atlas = null;
 	}
@@ -119,7 +119,7 @@ public class Level8 {
 	 */
 	public static void loadImages() {
 		sky = getAtlas().findRegion("sky");
-		clouds = Level1.getAtlas().findRegion("clouds");
+		clouds = new TextureRegion(new TextureAtlas(Gdx.files.internal("data/ma/game/levels/Level1.atlas")).findRegion("clouds"));
 		mountains = getAtlas().findRegion("mountains");
 		soil = getAtlas().findRegion("soil");
 	}
@@ -151,4 +151,12 @@ public class Level8 {
 	public static void loadSoundsAndMusics() {
 	
 	}
+
+	/**
+	 * @param fILE_IMAGE_ATLAS the fILE_IMAGE_ATLAS to set
+	 */
+	public static void setFILE_IMAGE_ATLAS(int level) {
+		FILE_IMAGE_ATLAS = "data/ma/game/levels/Level" + Integer.toString(level) + ".atlas";
+	}
+	
 }

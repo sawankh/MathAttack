@@ -31,7 +31,7 @@ import java.util.Random;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Scaling;
 import com.sawan.mathattack.asset.GameAssets;
-import com.sawan.mathattack.asset.levels.Level1;
+import com.sawan.mathattack.asset.levels.MALevelAssets;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
@@ -58,23 +58,24 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		super(posX, posY, worldWidth, worldHeight);
 		//
 		this.gameManager = gameManager;
+		
 		//
 		setUpBackround();
 		setUpMountains();
 		setUpBottomSoils();
-		setUpClouds();
+		//setUpClouds();
 		setUpLives(Hero.NUM_LIFES);
 		
 	}
 
 	private void setUpBackround() {
-		setBackgroundTexture(Level1.sky, Scaling.stretch, true, false);
+		setBackgroundTexture(MALevelAssets.sky, Scaling.stretch, true, false);
 	}
 
 	private void setUpBottomSoils() {
 		
 		EmptyActor soil = new EmptyActor(1000f, 550f, true);
-		soil.setTextureRegion(Level1.soil, true);
+		soil.setTextureRegion(MALevelAssets.soil, true);
 		
 		soil.setPosition(0, 0);
 		
@@ -92,7 +93,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 			SmartActor currentCloud = new SmartActor(231 * rndSizeRatio / 100,
 					128 * rndSizeRatio / 100, rnd, true);
 			//
-			currentCloud.setTextureRegion(Level1.clouds, true);
+			currentCloud.setTextureRegion(MALevelAssets.clouds, true);
 			currentCloud.setPosition(-200,
 					(gameManager.getStage().getHeight() / 2) +(gameManager.getStage().getHeight() / 4));
 			//
@@ -114,7 +115,7 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 	public void setUpMountains() {
 		EmptyActorLight mountain = new EmptyActorLight(1000f, 900f, true);
 		
-		mountain.setTextureRegion(Level1.mountains, true);
+		mountain.setTextureRegion(MALevelAssets.mountains, true);
 		mountain.setX(0);
 		mountain.setY(0);
 		
@@ -147,6 +148,5 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		removeActor(hearts.get(hearts.size() - 1));
 		hearts.remove(hearts.size() - 1);
 	}
-	
 	
 }
