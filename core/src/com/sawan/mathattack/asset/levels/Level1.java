@@ -23,7 +23,7 @@
  *				Public License along with Math Attack. If not, see 
  *				http://www.gnu.org/licenses/.
  */
-package com.sawan.mathattack.asset;
+package com.sawan.mathattack.asset.levels;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;

@@ -5,23 +5,16 @@ filter: Nearest,Nearest
 repeat: none
 mountains
   rotate: false
-  xy: 1, 516
+  xy: 1, 453
   size: 900, 450
   orig: 900, 450
   offset: 0, 0
   index: -1
 sky
   rotate: false
-  xy: 1, 64
+  xy: 1, 1
   size: 900, 450
   orig: 900, 450
-  offset: 0, 0
-  index: -1
-clouds
-  rotate: false
-  xy: 1, 1
-  size: 185, 61
-  orig: 185, 61
   offset: 0, 0
   index: -1
 
@@ -29,10 +22,17 @@ Level12.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-Tile
+soil
+  rotate: false
+  xy: 1, 331
+  size: 900, 450
+  orig: 900, 450
+  offset: 0, 0
+  index: -1
+clouds
   rotate: false
   xy: 1, 1
-  size: 205, 208
-  orig: 205, 208
+  size: 990, 328
+  orig: 990, 328
   offset: 0, 0
   index: -1

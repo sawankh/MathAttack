@@ -30,8 +30,8 @@ import java.util.Random;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Scaling;
-import com.sawan.mathattack.asset.Level1;
 import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.asset.levels.Level1;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.EmptyActor;
 import com.sawan.mathattack.models.EmptyActorLight;
