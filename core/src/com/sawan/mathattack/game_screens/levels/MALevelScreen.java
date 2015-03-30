@@ -93,7 +93,7 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 	    level_table.addAction(Actions.moveTo((getStage().getWidth() / 2) - (level_table.getWidth() / 2), (getStage().getHeight() / 2) - (level_table.getHeight() / 2), 0.7f));
 		//level_table.top().left().pad(30, 30, 30, 30);
 		Drawable background = new TextureRegionDrawable(UIAssets.image_level_table);
-		level_table.debug();
+		//level_table.debug();
 		
 		
 		// Add to stage
@@ -104,7 +104,7 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		// Normally get this number from textfiles or database
 		// ######################################################################
 		int numberOfLevels = 8;
-		int row_number = 0;
+		
 		
 		// Create buttons with a loop
 		for (int i = 0; i < numberOfLevels; i++){
@@ -139,11 +139,10 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			//6. Add row after each 5 level button to go down or how many do you need
 			if(i % 4 == 0){
 				level_table.row();
-				row_number++;
 			}
 			
 			
-			level_table.add(levelButton).padBottom(43f * AppSettings.getWorldPositionYRatio()).padLeft(30f).padRight(5f);
+			level_table.add(levelButton).padBottom(43f * AppSettings.getWorldPositionYRatio()).padRight(16f * AppSettings.getWorldPositionXRatio()).padLeft(12f * AppSettings.getWorldPositionXRatio());
 			
 			
 		}
