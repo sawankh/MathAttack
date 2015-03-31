@@ -39,7 +39,7 @@ import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.models.ammunition.Bullet;
 import com.sawan.mathattack.models.characters.Hero;
-import com.sawan.mathattack.models.characters.enemies.BlueMonster;
+import com.sawan.mathattack.models.characters.enemies.MAMonster;
 import com.sawan.mathattack.scene2d.AbstractWorldScene2d;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -51,7 +51,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	
 	private MAGameManager gameManager;
 	public Hero hero;
-	public ArrayList<BlueMonster> enemies;
+	public ArrayList<MAMonster> enemies;
 	public ArrayList<Bullet> bullets;
 	
 	protected final static int NUM_ENEMIES = 2;
@@ -78,11 +78,11 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	}
 	
 	public void setUpEnemies() {
-		enemies = new ArrayList<BlueMonster>();
+		enemies = new ArrayList<MAMonster>();
 		Random rnd = new Random();
 		
 		for (int i = 0; i < NUM_ENEMIES; i++) {
-			BlueMonster current_monster = new BlueMonster(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
+			MAMonster current_monster = new MAMonster(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);
 			
 			float posY = gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldSizeRatio();
 			current_monster.setY(posY);
@@ -126,9 +126,9 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 	
-	public void checkCollision(Hero hero, ArrayList<BlueMonster> enemies) {
-		for (Iterator<BlueMonster> iterator = enemies.iterator(); iterator.hasNext();) {
-			BlueMonster enemy = (BlueMonster) iterator.next();
+	public void checkCollision(Hero hero, ArrayList<MAMonster> enemies) {
+		for (Iterator<MAMonster> iterator = enemies.iterator(); iterator.hasNext();) {
+			MAMonster enemy = (MAMonster) iterator.next();
 			if (CollisionDetector.isActorsCollide(hero, enemy) && enemy.isAlive() && hero.getLifes() > 0) {
 			//	System.out.println(enemies.indexOf(enemy));
 				enemy.setAlive(false);
@@ -148,12 +148,12 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 		}
 	}
 
-	public void hitEnemy(ArrayList<Bullet> bullets, ArrayList<BlueMonster> enemies) {
+	public void hitEnemy(ArrayList<Bullet> bullets, ArrayList<MAMonster> enemies) {
 		for (Iterator<Bullet> iterator_bullets = bullets.iterator(); iterator_bullets.hasNext();) {
 			Bullet bullet = (Bullet) iterator_bullets.next();
 			
-			for (Iterator<BlueMonster> iterator_enemies = enemies.iterator(); iterator_enemies.hasNext();) {
-				BlueMonster blueMonster = (BlueMonster) iterator_enemies.next();
+			for (Iterator<MAMonster> iterator_enemies = enemies.iterator(); iterator_enemies.hasNext();) {
+				MAMonster blueMonster = (MAMonster) iterator_enemies.next();
 				
 				if (CollisionDetector.isActorsCollide(bullet, blueMonster)) {
 					iterator_bullets.remove();

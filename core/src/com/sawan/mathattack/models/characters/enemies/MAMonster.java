@@ -31,7 +31,7 @@ import com.sawan.mathattack.scene2d.AbstractActor;
  * @author Sawan
  *
  */
-public class BlueMonster extends AbstractActor {
+public class MAMonster extends AbstractActor {
 	float worldWidth;
 	float speed;
 	boolean isMoving;
@@ -39,7 +39,7 @@ public class BlueMonster extends AbstractActor {
 	boolean isAlive;
 	
 	
-	public BlueMonster(float width, float height, boolean DIPActive) {
+	public MAMonster(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 		isAlive = true;
 	}
