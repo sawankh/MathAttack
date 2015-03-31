@@ -26,6 +26,7 @@
 package com.sawan.mathattack;
 
 import com.sawan.mathattack.asset.Backgrounds;
+import com.sawan.mathattack.asset.ChaptersAssets;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.MonsterAssets;
@@ -66,6 +67,7 @@ public class MainStarter extends AbstractGame {
 		HeroAssests.loadAll();
 		MonsterAssets.loadAll();
 		GameAssets.loadAll();
+		ChaptersAssets.loadAll();
 	}
 
 	@Override
