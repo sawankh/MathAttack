@@ -1,0 +1,24 @@
+
+monster4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+walking
+  rotate: false
+  xy: 1, 1
+  size: 828, 896
+  orig: 828, 896
+  offset: 0, 0
+  index: 1
+
+monster42.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+walking
+  rotate: false
+  xy: 1, 1
+  size: 828, 896
+  orig: 828, 896
+  offset: 0, 0
+  index: 2
