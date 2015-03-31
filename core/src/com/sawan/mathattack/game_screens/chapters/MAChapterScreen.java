@@ -47,7 +47,7 @@ import com.sawan.mathattack.settings.AppSettings;
  */
 public class MAChapterScreen extends AbstractScreen implements IScreen {
 Table chapters;
-	
+public int chapter;	
 	
 	/**
 	 * @param game
@@ -57,6 +57,7 @@ Table chapters;
 		super(game, screenName);
 		setUpScreenElements();
 		setUpChapters();
+		chapter = 0;
 	}
 
 	@Override
@@ -100,6 +101,7 @@ Table chapters;
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
 					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+					chapter = 1;
 				}
 			});
 	    
@@ -108,6 +110,7 @@ Table chapters;
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
 					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+					chapter = 2;
 				}
 			});
 	    
@@ -116,6 +119,7 @@ Table chapters;
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
 					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+					chapter = 3;
 				}
 			});
 	    
