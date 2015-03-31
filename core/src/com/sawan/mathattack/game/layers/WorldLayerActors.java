@@ -61,9 +61,10 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public WorldLayerActors(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight, int level) {
 		super(posX, posY, worldWidth, worldHeight);
 		this.gameManager =  gameManager;
+		this.level = level;
 		setUpHero();
 		setUpEnemies();
-		this.level = level;
+		
 	}
 	
 	public void setUpHero() {
@@ -80,6 +81,9 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public void setUpEnemies() {
 		enemies = new ArrayList<MAMonster>();
 		Random rnd = new Random();
+		
+		MonsterAssets.setFILE_IMAGE_ATLAS(level);
+		MonsterAssets.loadAll();
 		
 		for (int i = 0; i < NUM_ENEMIES; i++) {
 			MAMonster current_monster = new MAMonster(gameManager.worldLayer_background.SOIL_WIDHT, gameManager.worldLayer_background.SOIL_HEIGHT, true);

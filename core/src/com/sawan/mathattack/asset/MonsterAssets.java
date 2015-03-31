@@ -39,7 +39,7 @@ import com.sawan.mathattack.animation.AnimationCreator;
  */
 public class MonsterAssets {
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private static String FILE_IMAGE_ATLAS = "data/ma/game/characters/blue_monster.atlas";
+	private static String FILE_IMAGE_ATLAS = "data/ma/game/characters/monster1.atlas";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
