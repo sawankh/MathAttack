@@ -86,7 +86,7 @@ Table chapters;
 		//Drawable background = new TextureRegionDrawable(UIAssets.image_empty_bg);
 		//chapters.setBackground(background);
 		
-	    EmptyActorLight add = new EmptyActorLight(250f, 150f, true);
+	    EmptyActorLight add = new EmptyActorLight(400f, 200f, true);
 	    EmptyActorLight sub = new EmptyActorLight(250f, 150f, true);
 	    EmptyActorLight mult = new EmptyActorLight(250f, 150f, true);
 		

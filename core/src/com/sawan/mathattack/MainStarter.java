@@ -33,6 +33,7 @@ import com.sawan.mathattack.asset.MonsterAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.asset.levels.MALevelAssets;
 import com.sawan.mathattack.game.AbstractGame;
+import com.sawan.mathattack.game_screens.chapters.MAChapterScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.managers.FileManager;
 import com.sawan.mathattack.managers.FileManager.FileType;
@@ -44,7 +45,7 @@ public class MainStarter extends AbstractGame {
 	@Override
 	public void create() {
         super.create();
-		setScreen(new MAMainMenuScreen(this, "Main Menu"));
+		setScreen(new MAChapterScreen(this, "Main Menu"));
 	}
 	
 	@Override
