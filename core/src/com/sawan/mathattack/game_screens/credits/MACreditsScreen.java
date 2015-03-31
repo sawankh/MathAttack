@@ -99,7 +99,7 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		credits = MenuCreator.createTable(false, UIAssets.getSkin());
 		credits.setSize(MAConstants.CREDITS_WIDTH * AppSettings.getWorldSizeRatio(), MAConstants.CREDITS_HEIGHT * AppSettings.getWorldSizeRatio());
 	    credits.setPosition((getStage().getWidth() / 2) - (credits.getWidth() / 2), -credits.getHeight());
-	    //level_table.align(Align.center);
+	    //credits.debug();
 	    credits.addAction(Actions.moveTo((getStage().getWidth() / 2) - (credits.getWidth() / 2), (getStage().getHeight() / 2) - (credits.getHeight() / 2), 2.5f));
 		//level_table.top().left().pad(30, 30, 30, 30);
 		Drawable background = new TextureRegionDrawable(UIAssets.image_empty_bg);
@@ -116,7 +116,7 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		credits.row();
 		credits.add(credits_text_name).padBottom(50f * AppSettings.getWorldPositionYRatio()).padRight(400f * AppSettings.getWorldPositionXRatio());
 		
-		MathAttackButton home = new MathAttackButton(MAConstants.SMALL_BUTTON_WIDTH, MAConstants.CHAPTER_HEIGHT, null, true);
+		MathAttackButton home = new MathAttackButton(MAConstants.SMALL_BUTTON_WIDTH, MAConstants.SMALL_BUTTON_HEIGHT, null, true);
 		home.setTextureRegion(UIAssets.image_home_icon, true);
 		
 		home.addListener(new ActorGestureListener() {

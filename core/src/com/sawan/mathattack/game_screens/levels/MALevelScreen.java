@@ -25,10 +25,8 @@
  */
 package com.sawan.mathattack.game_screens.levels;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -55,13 +53,6 @@ import com.sawan.mathattack.settings.AppSettings;
  * @author Sawan
  */
 public class MALevelScreen extends AbstractScreen implements IScreen {
-	
-	/** The lbl fps. */
-	private Label lblFps;
-	
-	/** The lbl screen time. */
-	private Label lblScreenTime;
-	
 	/** The chapter. */
 	public static int chapter;
 	
@@ -170,7 +161,7 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			}
 			
 			
-			level_table.add(levelButton).padBottom(43f * AppSettings.getWorldPositionYRatio()).padRight(16f * AppSettings.getWorldPositionXRatio()).padLeft(12f * AppSettings.getWorldPositionXRatio());
+			level_table.add(levelButton).padBottom(43f * AppSettings.getWorldPositionYRatio()).padRight(16f * AppSettings.getWorldPositionXRatio()).padLeft(12f * AppSettings.getWorldPositionXRatio()).size(levelButton.getWidth(), levelButton.getHeight());
 			
 			
 		}
@@ -206,8 +197,6 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		lblScreenTime.setText(getScreenTime());
-		lblFps.setText("Fps: " + Gdx.graphics.getFramesPerSecond());
 	}
 
 	/* (non-Javadoc)
