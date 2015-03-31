@@ -54,13 +54,15 @@ import com.sawan.mathattack.settings.AppSettings;
 public class MALevelScreen extends AbstractScreen implements IScreen {
 	private Label lblFps;
 	private Label lblScreenTime;
+	public static int chapter;
 	
 	
 	//
 	Table level_table;
 	
-	public MALevelScreen(AbstractGame game, String screenName) {
+	public MALevelScreen(AbstractGame game, String screenName, int chapter) {
 		super(game, screenName);
+		this.chapter = chapter;
         setUpScreenElements();
 		setUpLevelsScreen();
 	}
@@ -131,7 +133,13 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			//4. Set stars or any other achievements (get from database or text files here)
 			// I just made a random number of earned stars 
 			//Random rnd = new Random();
-			levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("profile.data", i, FileType.LOCAL_FILE)));
+			if (chapter == 1) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("add.data", i, FileType.LOCAL_FILE)));
+			} else if (chapter == 2) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("sub.data", i, FileType.LOCAL_FILE)));
+			} else if (chapter == 3) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("mult.data", i, FileType.LOCAL_FILE)));
+			}
 			
 			//5. Add  listener
 			//Add button listener to go to a level (gamascreen)

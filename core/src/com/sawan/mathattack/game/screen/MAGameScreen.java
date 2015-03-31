@@ -29,6 +29,7 @@ import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game.GameState;
 import com.sawan.mathattack.game.helpers.MAGameScreenMenu;
 import com.sawan.mathattack.game.managers.MAGameManager;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.interfaces.IGameScreen;
 import com.sawan.mathattack.interfaces.IScreen;
 import com.sawan.mathattack.managers.FileManager;
@@ -77,8 +78,18 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 		if (game_manager.getGameState() == GameState.GAME_LEVELWIN && game_win == true) {
 			gameScreenMenu.showGameWin(this);
 			game_win = false;
-			if (gameScreenMenu.number_stars > Integer.parseInt(FileManager.readLine("profile.data", level - 1, FileType.LOCAL_FILE))) {
-				FileManager.writeExistingLine("profile.data", level - 1, Integer.toString(gameScreenMenu.number_stars), FileType.LOCAL_FILE);
+			
+			String file = "";
+			if (MALevelScreen.chapter == 1) {
+				file = "add.data";
+			} else if (MALevelScreen.chapter == 2) {
+				file = "sub.data";
+			} else if (MALevelScreen.chapter == 3) {
+				file = "mult.data";
+			}
+			
+			if (gameScreenMenu.number_stars > Integer.parseInt(FileManager.readLine(file, level - 1, FileType.LOCAL_FILE))) {
+				FileManager.writeExistingLine(file, level - 1, Integer.toString(gameScreenMenu.number_stars), FileType.LOCAL_FILE);
 			}
 			
 		}

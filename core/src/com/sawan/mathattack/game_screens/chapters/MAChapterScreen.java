@@ -100,8 +100,8 @@ public int chapter;
 			@Override
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
-					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
 					chapter = 1;
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu", chapter));
 				}
 			});
 	    
@@ -109,8 +109,8 @@ public int chapter;
 			@Override
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
-					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
 					chapter = 2;
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu", chapter));
 				}
 			});
 	    
@@ -118,8 +118,8 @@ public int chapter;
 			@Override
 				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 					super.touchUp(event, x, y, pointer, button);
-					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
 					chapter = 3;
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu", chapter));
 				}
 			});
 	    

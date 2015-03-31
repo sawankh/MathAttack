@@ -136,7 +136,7 @@ public class MAGameScreenMenu {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 				super.touchUp(event, x, y, pointer, button);
-				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), "", MALevelScreen.chapter));
 				gameScreen.game_manager.setGameState(GameState.GAME_RUNNING);
 			}
 		});
@@ -221,7 +221,7 @@ public class MAGameScreenMenu {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 				super.touchUp(event, x, y, pointer, button);
-				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), "", MALevelScreen.chapter));
 			}
 		});
 		
@@ -276,7 +276,7 @@ public class MAGameScreenMenu {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 				super.touchUp(event, x, y, pointer, button);
-				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), ""));
+				gameScreen.getGame().setScreen(new MALevelScreen(gameScreen.getGame(), "", MALevelScreen.chapter));
 			}
 		});
 		

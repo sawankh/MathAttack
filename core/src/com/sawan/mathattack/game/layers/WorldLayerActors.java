@@ -54,7 +54,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public ArrayList<MAMonster> enemies;
 	public ArrayList<Bullet> bullets;
 	
-	protected final static int NUM_ENEMIES = 20;
+	protected final static int NUM_ENEMIES = 2;
 	
 	public int level;
 	

@@ -35,8 +35,8 @@ import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.effects.EffectCreator;
+import com.sawan.mathattack.game_screens.chapters.MAChapterScreen;
 import com.sawan.mathattack.game_screens.credits.MACreditsScreen;
-import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.scene2d.ui.TableModel;
 import com.sawan.mathattack.settings.AppSettings;
@@ -90,7 +90,7 @@ public class MAMainMenuButtons {
 					
 					@Override
 					public void run() {
-						menuScreen.getGame().setScreen(new MALevelScreen(menuScreen.getGame(), "Level Selection"));
+						menuScreen.getGame().setScreen(new MAChapterScreen(menuScreen.getGame(), "Level Selection"));
 					}
 				}, 0.5f);
 			}
