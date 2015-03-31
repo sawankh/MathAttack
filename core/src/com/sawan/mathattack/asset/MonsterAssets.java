@@ -39,7 +39,7 @@ import com.sawan.mathattack.animation.AnimationCreator;
  */
 public class MonsterAssets {
 	/** The Constant FILE_IMAGE_ATLAS. */
-	private final static String FILE_IMAGE_ATLAS = "data/ma/game/characters/blue_monster.atlas";
+	private static String FILE_IMAGE_ATLAS = "data/ma/game/characters/blue_monster.atlas";
 	
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
@@ -133,4 +133,12 @@ public class MonsterAssets {
 	public static void loadSoundsAndMusics() {
 	
 	}
+	
+	/**
+	 * @param fILE_IMAGE_ATLAS the fILE_IMAGE_ATLAS to set
+	 */
+	public static void setFILE_IMAGE_ATLAS(int level) {
+		FILE_IMAGE_ATLAS = "data/ma/game/characters/monster" + Integer.toString(level) + ".atlas";
+	}
+	
 }
