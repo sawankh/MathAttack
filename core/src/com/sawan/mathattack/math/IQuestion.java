@@ -25,20 +25,55 @@
  */
 package com.sawan.mathattack.math;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Interface IQuestion.
  *
+ * @author Itop1
  */
 public interface IQuestion {
+	
+	/**
+	 * Sets the question.
+	 *
+	 * @param first_number the first_number
+	 * @param second_number the second_number
+	 * @return the string
+	 */
 	public String setQuestion(int first_number, int second_number);
 	
+	/**
+	 * Gets the answer.
+	 *
+	 * @return the answer
+	 */
 	public int getAnswer();
 	
+	/**
+	 * Sets the random answers.
+	 *
+	 * @param correct_answer the new random answers
+	 */
 	public void setRandomAnswers(int correct_answer);
 	
+	/**
+	 * Gets the question.
+	 *
+	 * @return the question
+	 */
 	public String getQuestion();
 
+	/**
+	 * Gets the correct_answer.
+	 *
+	 * @return the correct_answer
+	 */
 	int getCorrect_answer();
 
+	/**
+	 * Gets the answers.
+	 *
+	 * @return the answers
+	 */
 	int[] getAnswers();
 }

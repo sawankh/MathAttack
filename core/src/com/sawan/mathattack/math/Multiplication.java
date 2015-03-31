@@ -25,24 +25,34 @@
  */
 package com.sawan.mathattack.math;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class Multiplication.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class Multiplication implements IQuestion {
+
+/** The first_number. */
 private int first_number;
 	
+	/** The second_number. */
 	private int second_number;
 
+	/** The question. */
 	private String question;
 	
+	/** The correct_answer. */
 	private int correct_answer;
 	
+	/** The answers. */
 	private int [] answers;
 	
 	/**
-	 * @param first_number
-	 * @param second_number
+	 * Instantiates a new multiplication.
+	 *
+	 * @param first_number the first_number
+	 * @param second_number the second_number
 	 */
 	public Multiplication(int first_number, int second_number) {
 		this.first_number = first_number;
@@ -53,18 +63,27 @@ private int first_number;
 		setRandomAnswers(correct_answer);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#setQuestion(int, int)
+	 */
 	@Override
 	public String setQuestion(int first_number, int second_number) {
 		String question = Integer.toString(first_number) + " " + QuestionsSettings.OPERATION_SYMBOL_MULTIPLICATION + " " + Integer.toString(second_number) + " = ?";
 		return question; 
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#getAnswer()
+	 */
 	@Override
 	public int getAnswer() {
 		int result = first_number * second_number;
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#setRandomAnswers(int)
+	 */
 	@Override
 	public void setRandomAnswers(int correct_answer) {
 		int lower_bound = (correct_answer / 10) * 10;
@@ -91,6 +110,8 @@ private int first_number;
 	}
 
 	/**
+	 * Gets the question.
+	 *
 	 * @return the question
 	 */
 	@Override
@@ -99,6 +120,8 @@ private int first_number;
 	}
 
 	/**
+	 * Sets the question.
+	 *
 	 * @param question the question to set
 	 */
 	public void setQuestion(String question) {
@@ -106,6 +129,8 @@ private int first_number;
 	}
 
 	/**
+	 * Gets the correct_answer.
+	 *
 	 * @return the correct_answer
 	 */
 	@Override
@@ -114,6 +139,8 @@ private int first_number;
 	}
 
 	/**
+	 * Sets the correct_answer.
+	 *
 	 * @param correct_answer the correct_answer to set
 	 */
 	public void setCorrect_answer(int correct_answer) {
@@ -121,6 +148,8 @@ private int first_number;
 	}
 
 	/**
+	 * Gets the answers.
+	 *
 	 * @return the answers
 	 */
 	@Override
@@ -129,6 +158,8 @@ private int first_number;
 	}
 
 	/**
+	 * Sets the answers.
+	 *
 	 * @param answers the answers to set
 	 */
 	public void setAnswers(int[] answers) {

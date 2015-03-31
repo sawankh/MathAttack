@@ -32,9 +32,11 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class Backgrounds.
  *
+ * @author Sawan
  */
 public class Backgrounds {
 	/** The Constant FILE_IMAGE_ATLAS. */
@@ -59,6 +61,7 @@ public class Backgrounds {
 	/** The image_level_background. */
 	public static TextureRegion image_level_background;
 
+	/** The image_credits_background. */
 	public static TextureRegion image_credits_background;
 	
 	

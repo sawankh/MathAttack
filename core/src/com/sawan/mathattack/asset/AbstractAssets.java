@@ -34,49 +34,100 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractAssets.
+ */
 public abstract class AbstractAssets implements AssetErrorListener {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxAssetsLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 	//
+	/** The asset manager. */
 	private AssetManager assetManager;
+	
+	/** The texture atlas. */
 	private TextureAtlas textureAtlas;
+	
+	/** The skin. */
 	private Skin skin;
 
+	/**
+	 * Instantiates a new abstract assets.
+	 */
 	public AbstractAssets() {
 		assetManager = new AssetManager();
 		skin = new Skin();
 	}
 
+	/**
+	 * Gets the asset manager.
+	 *
+	 * @return the asset manager
+	 */
 	public AssetManager getAssetManager() {
 		return assetManager;
 	}
 
+	/**
+	 * Sets the asset manager.
+	 *
+	 * @param assetManager the new asset manager
+	 */
 	public void setAssetManager(AssetManager assetManager) {
 		this.assetManager = assetManager;
 	}
 
+	/**
+	 * Gets the texture atlas.
+	 *
+	 * @return the texture atlas
+	 */
 	public TextureAtlas getTextureAtlas() {
 		return textureAtlas;
 	}
 
+	/**
+	 * Sets the texture atlas.
+	 *
+	 * @param textureAtlas the new texture atlas
+	 */
 	public void setTextureAtlas(TextureAtlas textureAtlas) {
 		this.textureAtlas = textureAtlas;
 	}
 
+	/**
+	 * Gets the skin.
+	 *
+	 * @return the skin
+	 */
 	public Skin getSkin() {
 		return skin;
 	}
 
+	/**
+	 * Sets the skin.
+	 *
+	 * @param skin the new skin
+	 */
 	public void setSkin(Skin skin) {
 		this.skin = skin;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.assets.AssetErrorListener#error(com.badlogic.gdx.assets.AssetDescriptor, java.lang.Throwable)
+	 */
 	@Override
     public void error (AssetDescriptor asset, Throwable throwable) {
 		Gdx.app.error("AssetManager", "couldn't load asset '" + asset.fileName);
 	}
 
+	/**
+	 * Log asset manager progress.
+	 */
 	public void logAssetManagerProgress() {
 		MtxLogger.log(logActive, true, logTag, "Assets Loading: "
 				+ getAssetManager().getProgress());

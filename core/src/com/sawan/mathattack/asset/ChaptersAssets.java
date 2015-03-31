@@ -32,9 +32,11 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class ChaptersAssets.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class ChaptersAssets {
 	/** The Constant FILE_IMAGE_ATLAS. */
@@ -43,10 +45,6 @@ public class ChaptersAssets {
 	/** The Constant FILE_UI_SKIN. */
 	private final static String FILE_UI_SKIN = "skin/uiskin.json";
 	
-	
-	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
-	//private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
-	
 	/** The atlas. */
 	public static TextureAtlas atlas;
 	
@@ -54,10 +52,13 @@ public class ChaptersAssets {
 	public static Skin skin;
 	
 	// Assets
+	/** The image_chapter_add. */
 	public static TextureRegion image_chapter_add;
 	
+	/** The image_chapter_sub. */
 	public static TextureRegion image_chapter_sub;
 	
+	/** The image_chapter_mult. */
 	public static TextureRegion image_chapter_mult;
 	/**
 	 * Loads texture file.

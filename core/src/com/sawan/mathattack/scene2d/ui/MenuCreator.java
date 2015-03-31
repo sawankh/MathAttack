@@ -34,13 +34,36 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MenuCreator.
+ */
 public class MenuCreator {
+	
+	/**
+	 * Creates the table.
+	 *
+	 * @param fillParent the fill parent
+	 * @param skin the skin
+	 * @return the table
+	 */
 	public static Table createTable(boolean fillParent, Skin skin) {
 		Table table = new Table(skin);
 		table.setFillParent(fillParent);
 		return table;
 	}
 
+	/**
+	 * Creates the custom game button.
+	 *
+	 * @param bitmapFont the bitmap font
+	 * @param up the up
+	 * @param down the down
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 * @return the button game
+	 */
 	public static ButtonGame createCustomGameButton(BitmapFont bitmapFont,
 			TextureRegion up, TextureRegion down, float width, float height,
 			boolean DIPActive) {
@@ -49,6 +72,14 @@ public class MenuCreator {
 		return new ButtonGame(bitmapFont, dUp, dDown, width, height, true);
 	}
 
+	/**
+	 * Creates the custom game button.
+	 *
+	 * @param bitmapFont the bitmap font
+	 * @param up the up
+	 * @param down the down
+	 * @return the button game
+	 */
 	public static ButtonGame createCustomGameButton(BitmapFont bitmapFont,
 			TextureRegion up, TextureRegion down) {
 		Drawable dUp = new TextureRegionDrawable(up);
@@ -56,6 +87,15 @@ public class MenuCreator {
 		return new ButtonGame(bitmapFont, dUp, dDown);
 	}
 
+	/**
+	 * Creates the custom toggle button.
+	 *
+	 * @param bitmapFont the bitmap font
+	 * @param tOn the t on
+	 * @param tOff the t off
+	 * @param isToggleActive the is toggle active
+	 * @return the button toggle
+	 */
 	public static ButtonToggle createCustomToggleButton(BitmapFont bitmapFont,
 			TextureRegion tOn, TextureRegion tOff, boolean isToggleActive) {
 		Drawable dUp = new TextureRegionDrawable(tOn);
@@ -64,6 +104,18 @@ public class MenuCreator {
 				isToggleActive);
 	}
 
+	/**
+	 * Creates the custom toggle button.
+	 *
+	 * @param bitmapFont the bitmap font
+	 * @param tOn the t on
+	 * @param tOff the t off
+	 * @param isToggleActive the is toggle active
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 * @return the button toggle
+	 */
 	public static ButtonToggle createCustomToggleButton(BitmapFont bitmapFont,
 			TextureRegion tOn, TextureRegion tOff, boolean isToggleActive,
 			float width, float height, boolean DIPActive) {
@@ -73,6 +125,20 @@ public class MenuCreator {
 				isToggleActive, width, height, DIPActive);
 	}
 
+	/**
+	 * Creates the custom slider.
+	 *
+	 * @param tBackground the t background
+	 * @param tKnob the t knob
+	 * @param isVertical the is vertical
+	 * @param min the min
+	 * @param max the max
+	 * @param stepSize the step size
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 * @return the button slider
+	 */
 	public static ButtonSlider createCustomSlider(TextureRegion tBackground,
 			TextureRegion tKnob, boolean isVertical, float min, float max,
 			float stepSize, float width, float height, boolean DIPActive) {

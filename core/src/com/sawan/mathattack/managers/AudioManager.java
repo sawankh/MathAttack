@@ -29,8 +29,15 @@ package com.sawan.mathattack.managers;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AudioManager.
+ */
 public class AudioManager {
 
+	/**
+	 * Instantiates a new audio manager.
+	 */
 	public AudioManager() {
 	}
 

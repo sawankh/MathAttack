@@ -34,45 +34,92 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class AbstractActor.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public abstract class AbstractActor extends Actor {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxAbstractActorLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	// Texture Region for actor (Not mandatory)
+	/** The texture region. */
 	private TextureRegion textureRegion;
+	
+	/** The is texture region active. */
 	private boolean isTextureRegionActive = false;
 
 	// Animation for actor (Not mandatory)
+	/** The animation. */
 	private Animation animation;
+	
+	/** The animation momentary. */
 	private Animation animationMomentary;
+	
+	/** The is animation active. */
 	private boolean isAnimationActive = false;
+	
+	/** The is animation momentary active. */
 	private boolean isAnimationMomentaryActive = false;
+	
+	/** The is animation momentary finished. */
 	private boolean isAnimationMomentaryFinished = true;
+	
+	/** The is animation looping. */
 	private boolean isAnimationLooping = false;
+	
+	/** The kill all animations. */
 	private boolean killAllAnimations = false;
 
 	// Animation timer
+	/** The state time. */
 	private float stateTime = 0.0f;
 
 	// Particle
+	/** The particle effect. */
 	private ParticleEffect particleEffect;
+	
+	/** The particle pos x. */
 	private float particlePosX = 0.0f;
+	
+	/** The particle pos y. */
 	private float particlePosY = 0.0f;
+	
+	/** The is particle effect active. */
 	private boolean isParticleEffectActive;
 
 	// Actor second counter (1 second tick)
+	/** The start time. */
 	private long startTime = System.nanoTime();
+	
+	/** The seconds time. */
 	private long secondsTime = 0L;
 
 	// Original position
+	/** The Xoriginal. */
 	private float Xoriginal;
+	
+	/** The Yoriginal. */
 	private float Yoriginal;
 
+	/**
+	 * Instantiates a new abstract actor.
+	 *
+	 * @param textureRegion the texture region
+	 * @param isTextureRegionActive the is texture region active
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param orgnX the orgn x
+	 * @param orgnY the orgn y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractActor(TextureRegion textureRegion,
 			boolean isTextureRegionActive, float posX, float posY, float orgnX,
 			float orgnY, float width, float height) {
@@ -85,6 +132,16 @@ public abstract class AbstractActor extends Actor {
 		setOrigin(orgnX, orgnY);
 	}
 
+	/**
+	 * Instantiates a new abstract actor.
+	 *
+	 * @param textureRegion the texture region
+	 * @param isTextureRegionActive the is texture region active
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractActor(TextureRegion textureRegion,
 			boolean isTextureRegionActive, float posX, float posY, float width,
 			float height) {
@@ -96,6 +153,14 @@ public abstract class AbstractActor extends Actor {
 		setSize(width, height);
 	}
 
+	/**
+	 * Instantiates a new abstract actor.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractActor(float posX, float posY, float width, float height) {
 		super();
 		setBounds(posX, posY, width, height);
@@ -103,6 +168,13 @@ public abstract class AbstractActor extends Actor {
 		setSize(width, height);
 	}
 
+	/**
+	 * Instantiates a new abstract actor.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public AbstractActor(float width, float height, boolean DIPActive) {
 		super();
 		if (DIPActive) {
@@ -113,10 +185,16 @@ public abstract class AbstractActor extends Actor {
 		}
 	}
 
+	/**
+	 * Instantiates a new abstract actor.
+	 */
 	public AbstractActor() {
 		super();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.Actor#act(float)
+	 */
 	@Override
 	public void act(float delta) {
 		super.act(delta);
@@ -130,6 +208,9 @@ public abstract class AbstractActor extends Actor {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.Actor#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+	 */
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
@@ -219,24 +300,21 @@ public abstract class AbstractActor extends Actor {
 	}
 
 	/**
-	 * Get textureRegion of the actor
-	 * 
+	 * Get textureRegion of the actor.
+	 *
 	 * @return TextureRegion
-	 * 
-	 * */
+	 */
 	public TextureRegion getTextureRegion() {
 		return textureRegion;
 	}
 
 	/**
 	 * Set texture region for the actor, it will be drawn only if texture region
-	 * is set and active
-	 * 
-	 * @param textureRegion
-	 *            texture region of the actor
-	 * @param isTextureRegionActive
-	 *            set texture region active to be drawn or not
-	 * */
+	 * is set and active.
+	 *
+	 * @param textureRegion            texture region of the actor
+	 * @param isTextureRegionActive            set texture region active to be drawn or not
+	 */
 	public void setTextureRegion(TextureRegion textureRegion,
 			boolean isTextureRegionActive) {
 		this.textureRegion = textureRegion;
@@ -244,25 +322,21 @@ public abstract class AbstractActor extends Actor {
 	}
 
 	/**
-	 * Get animation of the actor
-	 * 
+	 * Get animation of the actor.
+	 *
 	 * @return animation
-	 * 
-	 * */
+	 */
 	public Animation getAnimation() {
 		return animation;
 	}
 
 	/**
-	 * Set animation of the actor
-	 * 
-	 * @param animation
-	 *            set animation
-	 * @param isAnimationActive
-	 *            set animation active to be drawn or not
-	 * @param isAnimationLooping
-	 *            set animation to loop or not
-	 * */
+	 * Set animation of the actor.
+	 *
+	 * @param animation            set animation
+	 * @param isAnimationActive            set animation active to be drawn or not
+	 * @param isAnimationLooping            set animation to loop or not
+	 */
 	public void setAnimation(Animation animation, boolean isAnimationActive,
 			boolean isAnimationLooping) {
 		this.animation = animation;
@@ -271,6 +345,11 @@ public abstract class AbstractActor extends Actor {
 		//
 	}
 
+	/**
+	 * Gets the animation momentary.
+	 *
+	 * @return the animation momentary
+	 */
 	public Animation getAnimationMomentary() {
 		return animationMomentary;
 	}
@@ -348,33 +427,29 @@ public abstract class AbstractActor extends Actor {
 	}
 
 	/**
-	 * Get animation is active or not
-	 * 
+	 * Get animation is active or not.
+	 *
 	 * @return boolean value
-	 * 
-	 * */
+	 */
 	public boolean isAnimationActive() {
 		return isAnimationActive;
 	}
 
 	/**
 	 * Set animation active, animation only be drawn if the animation is setted
-	 * and active
-	 * 
-	 * @param isAnimationActive
-	 *            value to set animation active or not
-	 * 
-	 * */
+	 * and active.
+	 *
+	 * @param isAnimationActive            value to set animation active or not
+	 */
 	public void setAnimationActive(boolean isAnimationActive) {
 		this.isAnimationActive = isAnimationActive;
 	}
 
 	/**
-	 * Get the animation is looping or not
-	 * 
+	 * Get the animation is looping or not.
+	 *
 	 * @return boolean value
-	 * 
-	 * */
+	 */
 	public boolean isAnimationLooping() {
 		return isAnimationLooping;
 	}
@@ -392,25 +467,28 @@ public abstract class AbstractActor extends Actor {
 	}
 
 	/**
-	 * Returns the state time for this actor, it can be used in animations
-	 * 
+	 * Returns the state time for this actor, it can be used in animations.
+	 *
 	 * @return state time (delta added)
-	 * 
-	 * */
+	 */
 	public float getStateTime() {
 		return stateTime;
 	}
 
 	/**
-	 * Set state time
+	 * Set state time.
+	 *
+	 * @param stateTime the new state time
 	 */
 	public void setStateTime(float stateTime) {
 		this.stateTime = stateTime;
 	}
 
 	/**
-	 * Get if killAllAnimation active
-	 * */
+	 * Get if killAllAnimation active.
+	 *
+	 * @return true, if is kill all animations
+	 */
 	public boolean isKillAllAnimations() {
 		return killAllAnimations;
 	}
@@ -418,36 +496,49 @@ public abstract class AbstractActor extends Actor {
 	/**
 	 * Set killAllAnimations. If is true, after animations completed it wont be
 	 * visible anymore
-	 * */
+	 *
+	 * @param killAllAnimations the new kill all animations
+	 */
 	public void setKillAllAnimations(boolean killAllAnimations) {
 		this.killAllAnimations = killAllAnimations;
 	}
 
 	/**
-	 * Get seconds from the moment this actor created
-	 * */
+	 * Get seconds from the moment this actor created.
+	 *
+	 * @return the seconds time
+	 */
 	public long getSecondsTime() {
 		return secondsTime;
 	}
 
 	/**
-	 * Set seconds, it can be used the reset seconds for this actor
-	 * */
+	 * Set seconds, it can be used the reset seconds for this actor.
+	 *
+	 * @param secondsTime the new seconds time
+	 */
 	public void setSecondsTime(long secondsTime) {
 		this.secondsTime = secondsTime;
 	}
 
 	/**
-	 * Get particle for this actor
-	 * */
+	 * Get particle for this actor.
+	 *
+	 * @return the particle effect
+	 */
 	public ParticleEffect getParticleEffect() {
 		return particleEffect;
 	}
 
 	/**
 	 * Set particle for this actor, centerPosition is used to center the
-	 * particle on this actor sizes
-	 * */
+	 * particle on this actor sizes.
+	 *
+	 * @param particleEffect the particle effect
+	 * @param isParticleEffectActive the is particle effect active
+	 * @param isStart the is start
+	 * @param centerPosition the center position
+	 */
 	public void setParticleEffect(ParticleEffect particleEffect,
 			boolean isParticleEffectActive, boolean isStart,
 			boolean centerPosition) {
@@ -468,43 +559,73 @@ public abstract class AbstractActor extends Actor {
 	}
 
 	/**
-	 * Set particle position
-	 * */
+	 * Set particle position.
+	 *
+	 * @param x the x
+	 * @param y the y
+	 */
 	public void setParticlePositionXY(float x, float y) {
 		particlePosX = x;
 		particlePosY = y;
 	}
 
 	/**
-	 * Check if particle active
-	 * */
+	 * Check if particle active.
+	 *
+	 * @return true, if is particle effect active
+	 */
 	public boolean isParticleEffectActive() {
 		return isParticleEffectActive;
 	}
 
 	/**
-	 * Set particle active to draw or not
-	 * */
+	 * Set particle active to draw or not.
+	 *
+	 * @param isParticleEffectActive the new particle effect active
+	 */
 	public void setParticleEffectActive(boolean isParticleEffectActive) {
 		this.isParticleEffectActive = isParticleEffectActive;
 	}
 
+	/**
+	 * Gets the xoriginal.
+	 *
+	 * @return the xoriginal
+	 */
 	public float getXoriginal() {
 		return Xoriginal;
 	}
 
+	/**
+	 * Sets the xoriginal.
+	 *
+	 * @param xoriginal the new xoriginal
+	 */
 	public void setXoriginal(float xoriginal) {
 		Xoriginal = xoriginal;
 	}
 
+	/**
+	 * Gets the yoriginal.
+	 *
+	 * @return the yoriginal
+	 */
 	public float getYoriginal() {
 		return Yoriginal;
 	}
 
+	/**
+	 * Sets the yoriginal.
+	 *
+	 * @param yoriginal the new yoriginal
+	 */
 	public void setYoriginal(float yoriginal) {
 		Yoriginal = yoriginal;
 	}
 
+	/**
+	 * Sets the original position.
+	 */
 	public void setOriginalPosition() {
 		Xoriginal = getX();
 		Yoriginal = getY();

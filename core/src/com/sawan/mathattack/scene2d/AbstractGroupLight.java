@@ -31,15 +31,37 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractGroupLight.
+ */
 public abstract class AbstractGroupLight extends Group {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxActorLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	// Texture Region for actor (Not mandatory)
+	/** The texture region. */
 	private TextureRegion textureRegion;
+	
+	/** The is texture region active. */
 	private boolean isTextureRegionActive = false;
 
+	/**
+	 * Instantiates a new abstract group light.
+	 *
+	 * @param textureRegion the texture region
+	 * @param isTextureRegionActive the is texture region active
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param orgnX the orgn x
+	 * @param orgnY the orgn y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractGroupLight(TextureRegion textureRegion,
 			boolean isTextureRegionActive, float posX, float posY, float orgnX,
 			float orgnY, float width, float height) {
@@ -52,6 +74,16 @@ public abstract class AbstractGroupLight extends Group {
 		setOrigin(orgnX, orgnY);
 	}
 
+	/**
+	 * Instantiates a new abstract group light.
+	 *
+	 * @param textureRegion the texture region
+	 * @param isTextureRegionActive the is texture region active
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractGroupLight(TextureRegion textureRegion,
 			boolean isTextureRegionActive, float posX, float posY, float width,
 			float height) {
@@ -63,6 +95,14 @@ public abstract class AbstractGroupLight extends Group {
 		setSize(width, height);
 	}
 
+	/**
+	 * Instantiates a new abstract group light.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public AbstractGroupLight(float posX, float posY, float width, float height) {
 		super();
 		setBounds(posX, posY, width, height);
@@ -70,6 +110,13 @@ public abstract class AbstractGroupLight extends Group {
 		setSize(width, height);
 	}
 
+	/**
+	 * Instantiates a new abstract group light.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public AbstractGroupLight(float width, float height, boolean DIPActive) {
 		super();
 		if (DIPActive) {
@@ -81,10 +128,16 @@ public abstract class AbstractGroupLight extends Group {
 
 	}
 
+	/**
+	 * Instantiates a new abstract group light.
+	 */
 	public AbstractGroupLight() {
 		super();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.Group#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+	 */
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
@@ -118,34 +171,41 @@ public abstract class AbstractGroupLight extends Group {
 	}
 
 	/**
-	 * Get textureRegion of the actor
-	 * 
+	 * Get textureRegion of the actor.
+	 *
 	 * @return TextureRegion
-	 * 
-	 * */
+	 */
 	public TextureRegion getTextureRegion() {
 		return textureRegion;
 	}
 
 	/**
 	 * Set texture region for the actor, it will be drawn only if texture region
-	 * is set and active
-	 * 
-	 * @param textureRegion
-	 *            texture region of the actor
-	 * @param isTextureRegionActive
-	 *            set texture region active to be drawn or not
-	 * */
+	 * is set and active.
+	 *
+	 * @param textureRegion            texture region of the actor
+	 * @param isTextureRegionActive            set texture region active to be drawn or not
+	 */
 	public void setTextureRegion(TextureRegion textureRegion,
 			boolean isTextureRegionActive) {
 		this.textureRegion = textureRegion;
 		this.isTextureRegionActive = isTextureRegionActive;
 	}
 
+	/**
+	 * Checks if is texture region active.
+	 *
+	 * @return true, if is texture region active
+	 */
 	public boolean isTextureRegionActive() {
 		return isTextureRegionActive;
 	}
 
+	/**
+	 * Sets the texture region active.
+	 *
+	 * @param isTextureRegionActive the new texture region active
+	 */
 	public void setTextureRegionActive(boolean isTextureRegionActive) {
 		this.isTextureRegionActive = isTextureRegionActive;
 	}

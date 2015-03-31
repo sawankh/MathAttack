@@ -27,17 +27,25 @@
 package com.sawan.mathattack.interfaces;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface IGame.
+ */
 public interface IGame {
 
-	/** FIRST THING TO DO - Set up app settings for Stage and World sizes */
+	/**
+	 *  FIRST THING TO DO - Set up app settings for Stage and World sizes.
+	 */
 	public void setUpAppSettings();
 
 	/**
 	 * Start loading AssetManager, first load the loading screen asset and
-	 * background music asset
+	 * background music asset.
 	 */
 	public void setUpAssets();
 
-	/** Set loading screen */
+	/**
+	 *  Set loading screen.
+	 */
 	public void setUpLoadingScreen();
 }

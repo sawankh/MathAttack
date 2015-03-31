@@ -28,24 +28,56 @@ package com.sawan.mathattack.utils;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsPositioner.
+ */
 public class UtilsPositioner {
+	
+	/**
+	 * The Enum Position.
+	 */
 	public enum Position {
-		SAME, CENTER, LEFT, TOP_LEFT, TOP_LEFT_CENTER, TOP_RIGHT, TOP_RIGHT_CENTER, BOTTOM_CENTER, BOTTOM_LEFT, BOTTOM_LEFT_CENTER, BOTTOM_RIGHT, BOTTOM_RIGHT_CENTER, RIGHT_CENTER, TOP_CENTER
+		
+		/** The same. */
+		SAME, 
+ /** The center. */
+ CENTER, 
+ /** The left. */
+ LEFT, 
+ /** The top left. */
+ TOP_LEFT, 
+ /** The top left center. */
+ TOP_LEFT_CENTER, 
+ /** The top right. */
+ TOP_RIGHT, 
+ /** The top right center. */
+ TOP_RIGHT_CENTER, 
+ /** The bottom center. */
+ BOTTOM_CENTER, 
+ /** The bottom left. */
+ BOTTOM_LEFT, 
+ /** The bottom left center. */
+ BOTTOM_LEFT_CENTER, 
+ /** The bottom right. */
+ BOTTOM_RIGHT, 
+ /** The bottom right center. */
+ BOTTOM_RIGHT_CENTER, 
+ /** The right center. */
+ RIGHT_CENTER, 
+ /** The top center. */
+ TOP_CENTER
 	}
 
 	/**
 	 * Set position of an actor due to another actor's position, , since actors
 	 * are complex objects, its variables pointing same reference with copies,
-	 * so the position will be set in original object
-	 * 
-	 * 
-	 * @param actorToBePositioned
-	 *            actor to be positioned
-	 * @param actorStable
-	 *            actor to get position data
-	 * @param position
-	 *            the position to set, comes from Position enum class
-	 * */
+	 * so the position will be set in original object.
+	 *
+	 * @param actorToBePositioned            actor to be positioned
+	 * @param actorStable            actor to get position data
+	 * @param position            the position to set, comes from Position enum class
+	 */
 	public static void setActorPoisiton(Actor actorToBePositioned,
 			Actor actorStable, Position position) {
 
@@ -90,7 +122,18 @@ public class UtilsPositioner {
 				as_YH, position);
 	}
 
-	/** Advanced positioner */
+	/**
+	 *  Advanced positioner.
+	 *
+	 * @param actorToBePositioned the actor to be positioned
+	 * @param atp_W the atp_ w
+	 * @param atp_H the atp_ h
+	 * @param as_X the as_ x
+	 * @param as_Y the as_ y
+	 * @param as_XW the as_ xw
+	 * @param as_YH the as_ yh
+	 * @param position the position
+	 */
 	private static void setPosition(Actor actorToBePositioned, float atp_W,
 			float atp_H, float as_X, float as_Y, float as_XW, float as_YH,
 			Position position) {

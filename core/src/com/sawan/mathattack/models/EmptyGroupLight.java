@@ -28,12 +28,31 @@ package com.sawan.mathattack.models;
 
 import com.sawan.mathattack.scene2d.AbstractGroupLight;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmptyGroupLight.
+ */
 public class EmptyGroupLight extends AbstractGroupLight {
 
+	/**
+	 * Instantiates a new empty group light.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public EmptyGroupLight(float posX, float posY, float width, float height) {
 		super(posX, posY, width, height);
 	}
 
+	/**
+	 * Instantiates a new empty group light.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public EmptyGroupLight(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 	}

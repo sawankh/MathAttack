@@ -30,33 +30,56 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SettingsManager.
+ */
 public class SettingsManager {
 	//
+	/** The Constant logTag. */
 	private static final String logTag = "MtxSettingsManagerLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	// Public values
+	/** The Constant PREFS_FILE_NAME. */
 	public static final String PREFS_FILE_NAME = "MyPreferences";
+	
+	/** The Constant prefs. */
 	public static final Preferences prefs = Gdx.app
 			.getPreferences(PREFS_FILE_NAME);
 
 	// Sound, Music, Vibration
+	/** The is sound on. */
 	private static boolean isSoundOn = false;
+	
+	/** The is music on. */
 	private static boolean isMusicOn = false;
+	
+	/** The is vibration on. */
 	private static boolean isVibrationOn = false;
 
 	// First Launch
+	/** The Constant KEY_FIRST_LAUNCH_DONE. */
 	private static final String KEY_FIRST_LAUNCH_DONE = "firstLaunch";
 
 	// General Settings
+	/** The Constant KEY_MUSIC. */
 	private static final String KEY_MUSIC = "musicSetting";
+	
+	/** The Constant KEY_SOUND. */
 	private static final String KEY_SOUND = "soundEffectSetting";
+	
+	/** The Constant KEY_VIBRATION. */
 	private static final String KEY_VIBRATION = "vibrationSetting";
 
 	/**
 	 * Set music on/off, it sets to android preferences and isMusicOn in
-	 * SettingManager
-	 * */
+	 * SettingManager.
+	 *
+	 * @param isMusicActive the new music
+	 */
 	public static void setMusic(boolean isMusicActive) {
 		if (isMusicActive) {
 			setBooleanPrefValue(KEY_MUSIC, true);
@@ -68,24 +91,30 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get music if on/off
-	 * */
+	 * Get music if on/off.
+	 *
+	 * @return true, if is music on
+	 */
 	public static boolean isMusicOn() {
 		return isMusicOn;
 	}
 
 	/**
 	 * Get music if on/off from preferences, do not use this in game, you would
-	 * not want to access android preferences many times during the game
-	 * */
+	 * not want to access android preferences many times during the game.
+	 *
+	 * @return true, if is music on from preferences
+	 */
 	public static boolean isMusicOnFromPreferences() {
 		return getBooleanPrefValue(KEY_MUSIC, false);
 	}
 
 	/**
 	 * Set sound on/off, it sets to android preferences and isSoundOn in
-	 * SettingManager
-	 * */
+	 * SettingManager.
+	 *
+	 * @param isSoundActive the new sound
+	 */
 	public static void setSound(boolean isSoundActive) {
 		if (isSoundActive) {
 			setBooleanPrefValue(KEY_SOUND, true);
@@ -97,24 +126,30 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get sound if on/off
-	 * */
+	 * Get sound if on/off.
+	 *
+	 * @return true, if is sound on
+	 */
 	public static boolean isSoundOn() {
 		return isSoundOn;
 	}
 
 	/**
 	 * Get sound if on/off from preferences, do not use this in game, you would
-	 * not want to access android preferences many times during the game
-	 * */
+	 * not want to access android preferences many times during the game.
+	 *
+	 * @return true, if is sound on from preferences
+	 */
 	public static boolean isSoundOnFromPreferences() {
 		return getBooleanPrefValue(KEY_SOUND, false);
 	}
 
 	/**
 	 * Set vibration on/off, it sets to android preferences and isVibrationOn in
-	 * SettingManager
-	 * */
+	 * SettingManager.
+	 *
+	 * @param isVibrationActive the new vibration
+	 */
 	public static void setVibration(boolean isVibrationActive) {
 		if (isVibrationActive) {
 			setBooleanPrefValue(KEY_VIBRATION, true);
@@ -126,16 +161,20 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get vibration if on/off
-	 * */
+	 * Get vibration if on/off.
+	 *
+	 * @return true, if is vibration on
+	 */
 	public static boolean isVibrationOn() {
 		return isVibrationOn;
 	}
 
 	/**
 	 * Get vibration if on/off from preferences, do not use this in game, you
-	 * would not want to access android preferences many times during the game
-	 * */
+	 * would not want to access android preferences many times during the game.
+	 *
+	 * @return true, if is vibration on from preferences
+	 */
 	public static boolean isVibrationOnFromPreferences() {
 		return getBooleanPrefValue(KEY_VIBRATION, false);
 	}
@@ -144,8 +183,8 @@ public class SettingsManager {
 	 * Set static variables due to android preferences (isSoundOn, isMusicOn,
 	 * isVibrationOn) This method also called in resume() of "AbstractGame" for
 	 * %100 guarantee of static variables are set correctly after pause/resume
-	 * of the game
-	 * */
+	 * of the game.
+	 */
 	public static void setSettings() {
 		if (isMusicOnFromPreferences()) {
 			isMusicOn = true;
@@ -189,9 +228,10 @@ public class SettingsManager {
 	 * first launch files which should be created once. It can be checked in
 	 * every game launch. To set as first launch use the "setFirstLaunchDone"
 	 * method
-	 * 
+	 *
+	 * @return true, if is first launch done
 	 * @see setFirstLaunchDone(boolean isFirstLaunchDone);
-	 * */
+	 */
 	public static boolean isFirstLaunchDone() {
 		boolean isFirstLaunchDone = getBooleanPrefValue(KEY_FIRST_LAUNCH_DONE,
 				false);
@@ -206,8 +246,12 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get a android preferences, if it is not set it returns def value
-	 * */
+	 * Get a android preferences, if it is not set it returns def value.
+	 *
+	 * @param key the key
+	 * @param defValue the def value
+	 * @return the string pref value
+	 */
 	public static String getStringPrefValue(String key, String defValue) {
 		String value = prefs.getString(key, defValue);
 		MtxLogger.log(logActive, true, logTag, "Pref (Key: " + key + "): "
@@ -217,8 +261,12 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get a android preferences, if it is not set it returns def value
-	 * */
+	 * Get a android preferences, if it is not set it returns def value.
+	 *
+	 * @param key the key
+	 * @param defValue the def value
+	 * @return the boolean pref value
+	 */
 	public static Boolean getBooleanPrefValue(String key, boolean defValue) {
 		boolean value = prefs.getBoolean(key, defValue);
 		MtxLogger.log(logActive, true, logTag, "Pref (Key: " + key + "): "
@@ -227,8 +275,12 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Get a android preferences, if it is not set it returns def value
-	 * */
+	 * Get a android preferences, if it is not set it returns def value.
+	 *
+	 * @param key the key
+	 * @param defValue the def value
+	 * @return the integer pref value
+	 */
 	public static int getIntegerPrefValue(String key, int defValue) {
 		int value = prefs.getInteger(key, defValue);
 		MtxLogger.log(logActive, true, logTag, "Pref (Key: " + key + "): "
@@ -237,24 +289,33 @@ public class SettingsManager {
 	}
 
 	/**
-	 * Set an android preference (boolean)
-	 * */
+	 * Set an android preference (boolean).
+	 *
+	 * @param key the key
+	 * @param value the value
+	 */
 	public static void setBooleanPrefValue(String key, boolean value) {
 		prefs.putBoolean(key, value);
 		prefs.flush();
 	}
 
 	/**
-	 * Set an android preference (String)
-	 * */
+	 * Set an android preference (String).
+	 *
+	 * @param key the key
+	 * @param value the value
+	 */
 	public static void setStringPrefValue(String key, String value) {
 		prefs.putString(key, value);
 		prefs.flush();
 	}
 
 	/**
-	 * Set an android preference (Integer)
-	 * */
+	 * Set an android preference (Integer).
+	 *
+	 * @param key the key
+	 * @param value the value
+	 */
 	public static void setIntegerPrefValue(String key, int value) {
 		prefs.putInteger(key, value);
 		prefs.flush();

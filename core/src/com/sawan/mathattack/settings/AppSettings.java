@@ -28,42 +28,72 @@ package com.sawan.mathattack.settings;
 
 import com.badlogic.gdx.Gdx;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AppSettings.
+ */
 public class AppSettings {
+	
+	/** The Constant LOG_TAG. */
 	public final static String LOG_TAG = "MtxAppSettings";
+	
+	/** The Log_ active. */
 	public static boolean Log_Active = true;
 
 	//
+	/** The screen w. */
 	public static float SCREEN_W = 0.0f;
+	
+	/** The screen h. */
 	public static float SCREEN_H = 0.0f;
+	
+	/** The world target width. */
 	public static float WORLD_TARGET_WIDTH = 0.0f;
+	
+	/** The world target height. */
 	public static float WORLD_TARGET_HEIGHT = 0.0f;
+	
+	/** The W t_ width_ portrait. */
 	private static float WT_Width_Portrait = 0.0f;
+	
+	/** The W t_ height_ portrait. */
 	private static float WT_Height_Portrait = 0.0f;
+	
+	/** The W t_ width_ landscape. */
 	private static float WT_Width_Landscape = 0.0f;
+	
+	/** The W t_ height_ landscape. */
 	private static float WT_Height_Landscape = 0.0f;
+	
+	/** The world width. */
 	public static float WORLD_WIDTH = 0.0f;
+	
+	/** The world height. */
 	public static float WORLD_HEIGHT = 0.0f;
 
 	//
+	/** The is app setting set. */
 	public static boolean isAppSettingSet = false;
 
+	/**
+	 * The Enum Orientation.
+	 */
 	public enum Orientation {
-		LANDSCAPE, PORTRAIT
+		
+		/** The landscape. */
+		LANDSCAPE, 
+ /** The portrait. */
+ PORTRAIT
 	}
 
 	/**
-	 * Manual app settings, not using DIPActive
-	 * 
-	 * @param screenWidth
-	 *            sets SCREEN_W for AbstractScreen Stage width
-	 * @param screenHeight
-	 *            sets SCREEN_H for AbstractScreen Stage height
-	 * @param worldWidth
-	 *            sets WORLD_WIDTH
-	 * @param worldHeight
-	 *            sets WORLD_HEIGHT
-	 * 
-	 * */
+	 * Manual app settings, not using DIPActive.
+	 *
+	 * @param screenWidth            sets SCREEN_W for AbstractScreen Stage width
+	 * @param screenHeight            sets SCREEN_H for AbstractScreen Stage height
+	 * @param worldWidth            sets WORLD_WIDTH
+	 * @param worldHeight            sets WORLD_HEIGHT
+	 */
 	public static void setUp(float screenWidth, float screenHeight,
 			float worldWidth, float worldHeight) {
 		reset();
@@ -84,22 +114,15 @@ public class AppSettings {
 	}
 
 	/**
-	 * Manual app settings, using DIPActive
-	 * 
-	 * @param screenWidth
-	 *            sets SCREEN_W for AbstractScreen Stage width
-	 * @param screenHeight
-	 *            sets SCREEN_H for AbstractScreen Stage height
-	 * @param worldWidth
-	 *            sets WORLD_WIDTH
-	 * @param worldHeight
-	 *            sets WORLD_HEIGHT
-	 * @param worldTargetWidth
-	 *            sets WORLD_TARGET_WIDTH for DIPActive calculations
-	 * @param worldHeight
-	 *            sets WORLD_TARGET_HEIGHT for DIPActive calculations
-	 * 
-	 * */
+	 * Manual app settings, using DIPActive.
+	 *
+	 * @param screenWidth            sets SCREEN_W for AbstractScreen Stage width
+	 * @param screenHeight            sets SCREEN_H for AbstractScreen Stage height
+	 * @param worldWidth            sets WORLD_WIDTH
+	 * @param worldHeight            sets WORLD_TARGET_HEIGHT for DIPActive calculations
+	 * @param worldTargetWidth            sets WORLD_TARGET_WIDTH for DIPActive calculations
+	 * @param worldTargetHeight the world target height
+	 */
 	public static void setUp(float screenWidth, float screenHeight,
 			float worldWidth, float worldHeight, float worldTargetWidth,
 			float worldTargetHeight) {
@@ -182,13 +205,14 @@ public class AppSettings {
 
 	// SCREEN ORIENTATION
 	// - Check if screen portrait or landscape
+	/** The is portrait. */
 	public static boolean IS_PORTRAIT;
 
 	/**
 	 * Check and set screen orientation, sets WORLD SIZES and WORLD TARGET SIZES
 	 * <p>
-	 * - Switch world width and height
-	 * */
+	 * - Switch world width and height.
+	 */
 	public static void setUpOrientaion() {
 		// Useful for live wallpaper
 		if (Gdx.graphics.getWidth() <= Gdx.graphics.getHeight()) {
@@ -230,8 +254,10 @@ public class AppSettings {
 	}
 
 	/**
-	 * Check orientation
-	 * */
+	 * Check orientation.
+	 *
+	 * @return true, if is orientation portrait
+	 */
 	public static boolean isOrientationPortrait() {
 		if (Gdx.graphics.getWidth() <= Gdx.graphics.getHeight()) {
 			return true;
@@ -247,7 +273,9 @@ public class AppSettings {
 	 * if WORLD_TARGET_WIDTH = 480, and WORLD_WIDTH = 480, there wont be scaling
 	 * for DIPactive actors, but if WORLD_WIDTH = 960, so actors will be scaled
 	 * by 2.0f to get best fitting for different resolution devices
-	 * */
+	 *
+	 * @return the world size ratio
+	 */
 	public static float getWorldSizeRatio() {
 		
 		//Return the more restrictive ratio
@@ -284,7 +312,9 @@ public class AppSettings {
 	 * designed this for 480 WORLD_WIDTH, but a device with 960 width,
 	 * WORLD_WIDTH will be 960, so new position should be 40 in this world, so
 	 * position ratio is 2.0f
-	 * */
+	 *
+	 * @return the world position x ratio
+	 */
 	public static float getWorldPositionXRatio() {
 		float ratioX = 0.0f;
 
@@ -309,7 +339,9 @@ public class AppSettings {
 	 * designed this for 480 WORLD_HEIGHT, but a device with 960 height,
 	 * WORLD_HEIGHT will be 960, so new position should be 40 in this world, so
 	 * position ratio is 2.0f
-	 * */
+	 *
+	 * @return the world position y ratio
+	 */
 	public static float getWorldPositionYRatio() {
 		float ratioY = 0.0f;
 
@@ -326,6 +358,9 @@ public class AppSettings {
 		return ratioY;
 	}
 
+	/**
+	 * Reset.
+	 */
 	private static void reset() {
 		SCREEN_W = 0.0f;
 		SCREEN_H = 0.0f;

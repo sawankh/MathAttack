@@ -32,9 +32,11 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class MALevelAssets.
  *
+ * @author Itop1
  */
 public class MALevelAssets {
 	/** The Constant FILE_IMAGE_ATLAS. */
@@ -50,9 +52,16 @@ public class MALevelAssets {
 	public static Skin skin;
 	
 	// Assets
+	/** The clouds. */
 	public static TextureRegion clouds;
+	
+	/** The mountains. */
 	public static TextureRegion mountains;
+	
+	/** The soil. */
 	public static TextureRegion soil;
+	
+	/** The sky. */
 	public static TextureRegion sky;
 
 	
@@ -153,7 +162,9 @@ public class MALevelAssets {
 	}
 
 	/**
-	 * @param fILE_IMAGE_ATLAS the fILE_IMAGE_ATLAS to set
+	 * Sets the file image atlas.
+	 *
+	 * @param level the new file image atlas
 	 */
 	public static void setFILE_IMAGE_ATLAS(int level) {
 		FILE_IMAGE_ATLAS = "data/ma/game/levels/Level" + Integer.toString(level) + ".atlas";

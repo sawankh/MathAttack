@@ -35,19 +35,36 @@ import com.sawan.mathattack.interfaces.IGameManager;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class MAGameManager.
  *
+ * @author Sawan
  */
 public class MAGameManager extends AbstractGameManager implements IGameManager {
 
+	/** The world. */
 	public com.sawan.mathattack.game.layers.World world;
+	
+	/** The world layer_background. */
 	public WorldLayerBG worldLayer_background;
+	
+	/** The world layer_actors. */
 	public WorldLayerActors worldLayer_actors;
+	
+	/** The world layer_other. */
 	public WorldLayerOther worldLayer_other;
 	
+	/** The level. */
 	public int level;
 
+	/**
+	 * Instantiates a new MA game manager.
+	 *
+	 * @param stage the stage
+	 * @param screen the screen
+	 * @param level the level
+	 */
 	public MAGameManager(Stage stage, AbstractScreen screen, int level) {
 		super(stage, screen);
 		this.level = level;
@@ -57,6 +74,9 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		setGameState(GameState.GAME_RUNNING);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameManager#setUpWorld()
+	 */
 	@Override
 	public void setUpWorld() {
 		//
@@ -92,11 +112,17 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		getStage().addActor(world);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameManager#startLevel(int)
+	 */
 	@Override
 	public void startLevel(int levelNumber) {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameManager#checkGameCondition()
+	 */
 	@Override
 	public void checkGameCondition() {
 		if (!worldLayer_actors.isHeroAlive()) {
@@ -116,6 +142,9 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		worldLayer_actors.gameWin();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameManager#update(float)
+	 */
 	@Override
 	public void update(float delta) {
 		checkGameCondition();
@@ -129,21 +158,33 @@ public class MAGameManager extends AbstractGameManager implements IGameManager {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameManager#saveGame()
+	 */
 	@Override
 	public void saveGame() {
 
 	}
 
+    /* (non-Javadoc)
+     * @see com.sawan.mathattack.interfaces.IGameManager#setUpData()
+     */
     @Override
     public void setUpData() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    /* (non-Javadoc)
+     * @see com.sawan.mathattack.interfaces.IGameManager#setUpPreManagers()
+     */
     @Override
     public void setUpPreManagers() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    /* (non-Javadoc)
+     * @see com.sawan.mathattack.interfaces.IGameManager#setUpPostManagers()
+     */
     @Override
     public void setUpPostManagers() {
         //To change body of implemented methods use File | Settings | File Templates.

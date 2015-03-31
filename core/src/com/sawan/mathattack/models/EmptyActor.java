@@ -28,12 +28,31 @@ package com.sawan.mathattack.models;
 
 import com.sawan.mathattack.scene2d.AbstractActor;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmptyActor.
+ */
 public class EmptyActor extends AbstractActor {
 	
+	/**
+	 * Instantiates a new empty actor.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public EmptyActor(float posX, float posY, float width, float height) {
 		super(posX, posY, width, height);
 	}
 
+	/**
+	 * Instantiates a new empty actor.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public EmptyActor(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 	}

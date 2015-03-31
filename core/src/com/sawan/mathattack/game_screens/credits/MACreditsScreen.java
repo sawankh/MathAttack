@@ -43,21 +43,28 @@ import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class MACreditsScreen.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class MACreditsScreen extends AbstractScreen implements IScreen {
 
+	/** The credits. */
 	Table credits;
 	
+	/** The Constant TEXT_WIDTH. */
 	protected final static float TEXT_WIDTH = 270f;
 	
+	/** The Constant TEXT_HEIGHT. */
 	protected final static float TEXT_HEIGHT = 90f;
 	
 	/**
-	 * @param game
-	 * @param screenName
+	 * Instantiates a new MA credits screen.
+	 *
+	 * @param game the game
+	 * @param screenName the screen name
 	 */
 	public MACreditsScreen(AbstractGame game, String screenName) {
 		super(game, screenName);
@@ -65,6 +72,9 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		setUpcredits();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpScreenElements()
+	 */
 	@Override
 	public void setUpScreenElements() {
 		// TODO Auto-generated method stub
@@ -73,12 +83,18 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		setBackButtonActive(true);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpMenu()
+	 */
 	@Override
 	public void setUpMenu() {
 		// TODO Auto-generated method stub
 		
 	}
 	
+	/**
+	 * Sets the upcredits.
+	 */
 	public void setUpcredits() {
 		credits = MenuCreator.createTable(false, UIAssets.getSkin());
 		credits.setSize(MAConstants.CREDITS_WIDTH * AppSettings.getWorldSizeRatio(), MAConstants.CREDITS_HEIGHT * AppSettings.getWorldSizeRatio());
@@ -117,6 +133,9 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		getStage().addActor(credits);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.AbstractScreen#keyBackPressed()
+	 */
 	@Override
 	public void keyBackPressed() {
 		super.keyBackPressed();

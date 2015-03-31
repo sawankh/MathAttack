@@ -46,19 +46,37 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class MAGameScreenMenu.
  *
+ * @author Itop1
  */
 public class MAGameScreenMenu {
+	
+	/** The btn play stop. */
 	public ButtonToggle btnPlayStop;
+	
+	/** The pause_table. */
 	public Table pause_table;
+	
+	/** The game_over. */
 	public Table game_over;
+	
+	/** The level_complete. */
 	public Table level_complete;
+	
+	/** The number_stars. */
 	public int number_stars;
 	
+	/** The Constant PAUSE_SIZE. */
 	protected final static float PAUSE_SIZE = 64f;
 	
+	/**
+	 * Sets the up game screen menu.
+	 *
+	 * @param gameScreen the new up game screen menu
+	 */
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
                 GameAssets.pause, GameAssets.pause, false, PAUSE_SIZE, PAUSE_SIZE,
@@ -83,6 +101,11 @@ public class MAGameScreenMenu {
 		gameScreen.getStage().addActor(btnPlayStop);
 	}
 	
+	/**
+	 * Show pause table.
+	 *
+	 * @param gameScreen the game screen
+	 */
 	public void showPauseTable(final MAGameScreen gameScreen) {
 		pause_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		
@@ -165,6 +188,11 @@ public class MAGameScreenMenu {
 		gameScreen.getStage().addActor(pause_table);
 	}
 	
+	/**
+	 * Hide pause table.
+	 *
+	 * @param gameScreen the game screen
+	 */
 	public void hidePauseTable(final MAGameScreen gameScreen) {
 		pause_table.addAction(Actions.moveTo(-999f, (gameScreen.getStage().getHeight() / 2) - (pause_table.getHeight() / 2), 0.5f));
 		
@@ -174,6 +202,11 @@ public class MAGameScreenMenu {
 		//pause_table.setPosition(-999f, gameScreen.getStage().getHeight());
 	}
 	
+	/**
+	 * Show game over.
+	 *
+	 * @param gameScreen the game screen
+	 */
 	public void showGameOver(final MAGameScreen gameScreen) {
 		game_over = MenuCreator.createTable(false, UIAssets.getSkin());
 		
@@ -237,6 +270,11 @@ public class MAGameScreenMenu {
 		gameScreen.getStage().addActor(game_over);
 	}
 	
+	/**
+	 * Show game win.
+	 *
+	 * @param gameScreen the game screen
+	 */
 	public void showGameWin(final MAGameScreen gameScreen) {
 		level_complete = MenuCreator.createTable(false, UIAssets.getSkin());
 		

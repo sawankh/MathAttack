@@ -28,22 +28,42 @@ package com.sawan.mathattack.managers;
 
 import com.badlogic.gdx.Gdx;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class VibrationManager.
+ */
 public class VibrationManager {
 	// Milliseconds (Mostly from MORSE CODE)
+	/** The Constant BUZZ. */
 	public static final int BUZZ = 50;
+	
+	/** The Constant DOT. */
 	public static final int DOT = 100;
+	
+	/** The Constant DASH. */
 	public static final int DASH = 500;
+	
+	/** The Constant SHORT_GAP. */
 	public static final int SHORT_GAP = 200;
+	
+	/** The Constant MEDIUM_GAP. */
 	public static final int MEDIUM_GAP = 500;
+	
+	/** The Constant LONG_GAP. */
 	public static final int LONG_GAP = 1000;
 
+	/**
+	 * Instantiates a new vibration manager.
+	 */
 	public VibrationManager() {
 	}
 
 	/**
 	 * Vibrate, it only vibrates if SettingsManager.isVibrationOn(), 1000ms is 1
 	 * second, also requires "android.permission.VIBRATE" in android manifest
-	 * */
+	 *
+	 * @param milliseconds the milliseconds
+	 */
 	public void vibrate(int milliseconds) {
 		if (SettingsManager.isVibrationOn()) {
 			Gdx.input.vibrate(milliseconds);
@@ -54,7 +74,10 @@ public class VibrationManager {
 	 * Vibrate with a pattern, it only vibrates if
 	 * SettingsManager.isVibrationOn(), 1000ms is 1 second, also requires
 	 * "android.permission.VIBRATE" in android manifest
-	 * */
+	 *
+	 * @param pattern the pattern
+	 * @param repeat the repeat
+	 */
 	public void vibrate(long[] pattern, int repeat) {
 		if (SettingsManager.isVibrationOn()) {
 			Gdx.input.vibrate(pattern, repeat);
@@ -62,8 +85,8 @@ public class VibrationManager {
 	}
 
 	/**
-	 * Cancel vibration
-	 * */
+	 * Cancel vibration.
+	 */
 	public void cancel() {
 		Gdx.input.cancelVibrate();
 	}

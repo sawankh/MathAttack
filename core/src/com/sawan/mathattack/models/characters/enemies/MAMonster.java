@@ -27,23 +27,50 @@ package com.sawan.mathattack.models.characters.enemies;
 
 import com.sawan.mathattack.scene2d.AbstractActor;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class MAMonster.
  *
+ * @author Sawan
  */
 public class MAMonster extends AbstractActor {
+	
+	/** The world width. */
 	float worldWidth;
+	
+	/** The speed. */
 	float speed;
+	
+	/** The is moving. */
 	boolean isMoving;
+	
+	/** The is looping. */
 	boolean isLooping;
+	
+	/** The is alive. */
 	boolean isAlive;
 	
 	
+	/**
+	 * Instantiates a new MA monster.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public MAMonster(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 		isAlive = true;
 	}
 	
+	/**
+	 * Start moving.
+	 *
+	 * @param worldWidth the world width
+	 * @param speed the speed
+	 * @param isMoving the is moving
+	 * @param isLooping the is looping
+	 */
 	public void startMoving(float worldWidth,  float speed, boolean isMoving, boolean isLooping){
 		this.worldWidth = worldWidth;
 		this.speed = speed;
@@ -52,6 +79,9 @@ public class MAMonster extends AbstractActor {
 
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.scene2d.AbstractActor#act(float)
+	 */
 	@Override
 	public void act(float delta) {
 		super.act(delta);
@@ -65,6 +95,9 @@ public class MAMonster extends AbstractActor {
 		}
 	}
 
+	/**
+	 * Check position.
+	 */
 	private void checkPosition() {
 		if(getX() < -200){
 			setX(worldWidth + 200);
@@ -72,6 +105,8 @@ public class MAMonster extends AbstractActor {
 	}
 
 	/**
+	 * Checks if is alive.
+	 *
 	 * @return the isAlive
 	 */
 	public boolean isAlive() {
@@ -79,6 +114,8 @@ public class MAMonster extends AbstractActor {
 	}
 
 	/**
+	 * Sets the alive.
+	 *
 	 * @param isAlive the isAlive to set
 	 */
 	public void setAlive(boolean isAlive) {

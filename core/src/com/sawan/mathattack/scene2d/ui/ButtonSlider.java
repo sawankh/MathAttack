@@ -28,8 +28,24 @@ package com.sawan.mathattack.scene2d.ui;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ButtonSlider.
+ */
 public class ButtonSlider extends Slider {
 
+	/**
+	 * Instantiates a new button slider.
+	 *
+	 * @param min the min
+	 * @param max the max
+	 * @param stepSize the step size
+	 * @param vertical the vertical
+	 * @param style the style
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public ButtonSlider(float min, float max, float stepSize, boolean vertical,
 			SliderStyle style, float width, float height, boolean DIPActive) {
 		super(min, max, stepSize, vertical, style);

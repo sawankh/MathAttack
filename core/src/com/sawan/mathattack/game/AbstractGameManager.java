@@ -33,18 +33,40 @@ import com.badlogic.gdx.utils.Timer;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractGameManager.
+ */
 public abstract class AbstractGameManager {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxGameManagerLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	// Game manager helpers
+	/** The game state. */
 	private GameState gameState;
+	
+	/** The stage. */
 	private Stage stage;
+	
+	/** The screen. */
 	private AbstractScreen screen;
+	
+	/** The random. */
 	private Random random;
+	
+	/** The timer. */
 	private Timer timer;
 
+	/**
+	 * Instantiates a new abstract game manager.
+	 *
+	 * @param stage the stage
+	 * @param screen the screen
+	 */
 	public AbstractGameManager(Stage stage, AbstractScreen screen) {
 		this.stage = stage;
 		this.screen = screen;
@@ -52,44 +74,94 @@ public abstract class AbstractGameManager {
 		timer = new Timer();
 	}
 
+	/**
+	 * Gets the game state.
+	 *
+	 * @return the game state
+	 */
 	public GameState getGameState() {
 		return gameState;
 	}
 
+	/**
+	 * Sets the game state.
+	 *
+	 * @param gameState the new game state
+	 */
 	public void setGameState(GameState gameState) {
 		this.gameState = gameState;
 		MtxLogger.log(logActive, true, logTag,
 				"Game State: " + gameState.toString());
 	}
 
+	/**
+	 * Gets the stage.
+	 *
+	 * @return the stage
+	 */
 	public Stage getStage() {
 		return stage;
 	}
 
+	/**
+	 * Sets the stage.
+	 *
+	 * @param stage the new stage
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
 
+	/**
+	 * Gets the screen.
+	 *
+	 * @return the screen
+	 */
 	public AbstractScreen getScreen() {
 		return screen;
 	}
 
+	/**
+	 * Sets the screen.
+	 *
+	 * @param screen the new screen
+	 */
 	public void setScreen(AbstractScreen screen) {
 		this.screen = screen;
 	}
 
+	/**
+	 * Gets the random.
+	 *
+	 * @return the random
+	 */
 	public Random getRandom() {
 		return random;
 	}
 
+	/**
+	 * Sets the random.
+	 *
+	 * @param random the new random
+	 */
 	public void setRandom(Random random) {
 		this.random = random;
 	}
 
+	/**
+	 * Gets the timer.
+	 *
+	 * @return the timer
+	 */
 	public Timer getTimer() {
 		return timer;
 	}
 
+	/**
+	 * Sets the timer.
+	 *
+	 * @param timer the new timer
+	 */
 	public void setTimer(Timer timer) {
 		this.timer = timer;
 	}

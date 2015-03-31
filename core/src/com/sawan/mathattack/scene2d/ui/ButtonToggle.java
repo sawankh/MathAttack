@@ -32,12 +32,31 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ButtonToggle.
+ */
 public class ButtonToggle extends AbstractButton {
 	// Toggle textures & condition
+	/** The texture toggle on. */
 	private TextureRegion textureToggleOn;
+	
+	/** The texture toggle off. */
 	private TextureRegion textureToggleOff;
+	
+	/** The is toggle active. */
 	private boolean isToggleActive = false;
 
+	/**
+	 * Instantiates a new button toggle.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
+	 * @param toggleOn the toggle on
+	 * @param toggleOff the toggle off
+	 * @param isToggleActive the is toggle active
+	 */
 	public ButtonToggle(BitmapFont bitMapFont, Drawable up, Drawable down,
 			TextureRegion toggleOn, TextureRegion toggleOff,
 			boolean isToggleActive) {
@@ -48,6 +67,19 @@ public class ButtonToggle extends AbstractButton {
 		this.isToggleActive = isToggleActive;
 	}
 
+	/**
+	 * Instantiates a new button toggle.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
+	 * @param toggleOn the toggle on
+	 * @param toggleOff the toggle off
+	 * @param isToggleActive the is toggle active
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public ButtonToggle(BitmapFont bitMapFont, Drawable up, Drawable down,
 			TextureRegion toggleOn, TextureRegion toggleOff,
 			boolean isToggleActive, float width, float height, boolean DIPActive) {
@@ -58,6 +90,9 @@ public class ButtonToggle extends AbstractButton {
 		this.isToggleActive = isToggleActive;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.ui.Button#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+	 */
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		// If button locked
@@ -84,6 +119,9 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.scene2d.ui.AbstractButton#hit(float, float, boolean)
+	 */
 	@Override
 	public Actor hit(float x, float y, boolean t) {
 		if (!isLockActive) {
@@ -100,6 +138,11 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
+	/**
+	 * Draw toggle.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawToggle(SpriteBatch batch) {
 		if (isToggleActive) {
 			batch.draw(textureToggleOn, getX(), getY(), getWidth(), getHeight());
@@ -110,6 +153,11 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
+	/**
+	 * Draw external texture.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawExternalTexture(SpriteBatch batch) {
 		if (isExternalTextureActive && textureExternal != null) {
 			batch.draw(textureExternal, getX() + externalTexturePosX, getY()
@@ -118,38 +166,81 @@ public class ButtonToggle extends AbstractButton {
 		}
 	}
 
+	/**
+	 * Draw locked.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawLocked(SpriteBatch batch) {
 		batch.draw(textureLocked, getX(), getY(), getWidth(), getHeight());
 	}
 
+	/**
+	 * Draw text.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawText(SpriteBatch batch) {
 		bitMapFont.draw(batch, text, getX() + textPosX, getY() + textPosY);
 	}
 
+	/**
+	 * Gets the texture toggle on.
+	 *
+	 * @return the texture toggle on
+	 */
 	public TextureRegion getTextureToggleOn() {
 		return textureToggleOn;
 	}
 
+	/**
+	 * Sets the texture toggle on.
+	 *
+	 * @param textureToggleOn the new texture toggle on
+	 */
 	public void setTextureToggleOn(TextureRegion textureToggleOn) {
 		this.textureToggleOn = textureToggleOn;
 	}
 
+	/**
+	 * Gets the texture toggle off.
+	 *
+	 * @return the texture toggle off
+	 */
 	public TextureRegion getTextureToggleOff() {
 		return textureToggleOff;
 	}
 
+	/**
+	 * Sets the texture toggle off.
+	 *
+	 * @param textureToggleOff the new texture toggle off
+	 */
 	public void setTextureToggleOff(TextureRegion textureToggleOff) {
 		this.textureToggleOff = textureToggleOff;
 	}
 
+	/**
+	 * Checks if is toggle active.
+	 *
+	 * @return true, if is toggle active
+	 */
 	public boolean isToggleActive() {
 		return isToggleActive;
 	}
 
+	/**
+	 * Sets the toggle active.
+	 *
+	 * @param isToggleActive the new toggle active
+	 */
 	public void setToggleActive(boolean isToggleActive) {
 		this.isToggleActive = isToggleActive;
 	}
 
+	/**
+	 * Sets the toggle switch.
+	 */
 	public void setToggleSwitch() {
 		if (isToggleActive) {
 			isToggleActive = false;

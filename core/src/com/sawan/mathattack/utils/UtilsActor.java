@@ -30,18 +30,29 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsActor.
+ */
 public class UtilsActor {
+	
 	/**
-	 * Get the rectangle of an actor from its current position and size
-	 * */
+	 * Get the rectangle of an actor from its current position and size.
+	 *
+	 * @param actor the actor
+	 * @return the rectangle of actor
+	 */
 	public static Rectangle getRectangleOfActor(Actor actor) {
 		return new Rectangle(actor.getX(), actor.getY(), actor.getWidth(),
 				actor.getHeight());
 	}
 
 	/**
-	 * Set touchable for multiple actors at once
-	 * */
+	 * Set touchable for multiple actors at once.
+	 *
+	 * @param touchable the touchable
+	 * @param actors the actors
+	 */
 	public static void setTouchable(Touchable touchable, Actor... actors) {
 		for (Actor a : actors) {
 			a.setTouchable(touchable);
@@ -49,8 +60,11 @@ public class UtilsActor {
 	}
 
 	/**
-	 * Set visible for multiple actors at once
-	 * */
+	 * Set visible for multiple actors at once.
+	 *
+	 * @param isVisible the is visible
+	 * @param actors the actors
+	 */
 	public static void setVisible(boolean isVisible, Actor... actors) {
 		for (Actor a : actors) {
 			a.setVisible(isVisible);
@@ -58,8 +72,12 @@ public class UtilsActor {
 	}
 
 	/**
-	 * Set scale of multiple actors at once
-	 * */
+	 * Set scale of multiple actors at once.
+	 *
+	 * @param sx the sx
+	 * @param sy the sy
+	 * @param actors the actors
+	 */
 	public static void setScale(float sx, float sy, Actor... actors) {
 		for (Actor a : actors) {
 			a.setScale(sx, sy);
@@ -67,8 +85,12 @@ public class UtilsActor {
 	}
 
 	/**
-	 * Set size for multiple actors at once
-	 * */
+	 * Set size for multiple actors at once.
+	 *
+	 * @param w the w
+	 * @param h the h
+	 * @param actors the actors
+	 */
 	public static void setSize(float w, float h, Actor... actors) {
 		for (Actor a : actors) {
 			a.setSize(w, h);

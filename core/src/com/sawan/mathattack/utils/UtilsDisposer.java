@@ -39,13 +39,24 @@ import com.sawan.mathattack.scene2d.AbstractActorLight;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsDisposer.
+ */
 public class UtilsDisposer {
+	
+	/** The Constant logTag. */
 	protected final static String logTag = "MtxUtilsDisposerLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	/**
-	 * Dispose actor from a group
-	 * */
+	 * Dispose actor from a group.
+	 *
+	 * @param group the group
+	 * @param actorToBeDisposed the actor to be disposed
+	 */
 	public static void disposeActor(Group group, Actor actorToBeDisposed) {
 		if (group != null && actorToBeDisposed != null) {
 			try {
@@ -59,8 +70,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose group from a group
-	 * */
+	 * Dispose group from a group.
+	 *
+	 * @param group the group
+	 * @param groupToBeDisposed the group to be disposed
+	 */
 	public static void disposeGroup(Group group, Group groupToBeDisposed) {
 		if (group != null && groupToBeDisposed != null) {
 			try {
@@ -74,8 +88,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose empty actor from a group
-	 * */
+	 * Dispose empty actor from a group.
+	 *
+	 * @param group the group
+	 * @param emptyActor the empty actor
+	 */
 	public static void disposeEmptyActor(Group group, EmptyActor emptyActor) {
 		if (group != null && emptyActor != null) {
 			try {
@@ -89,8 +106,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose empty actor light from a group
-	 * */
+	 * Dispose empty actor light from a group.
+	 *
+	 * @param group the group
+	 * @param emptyActorLight the empty actor light
+	 */
 	public static void disposeEmptyActorLight(Group group,
 			EmptyActorLight emptyActorLight) {
 		if (group != null && emptyActorLight != null) {
@@ -105,8 +125,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose abstract actor list from a group
-	 * */
+	 * Dispose abstract actor list from a group.
+	 *
+	 * @param group the group
+	 * @param list the list
+	 */
 	public static void disposeAbstractActorList(Group group,
 			ArrayList<AbstractActor> list) {
 		if (group != null && list != null) {
@@ -126,8 +149,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose abstract actor light list from a group
-	 * */
+	 * Dispose abstract actor light list from a group.
+	 *
+	 * @param group the group
+	 * @param list the list
+	 */
 	public static void disposeAbstractActorLightList(Group group,
 			ArrayList<AbstractActorLight> list) {
 		if (group != null && list != null) {
@@ -147,8 +173,11 @@ public class UtilsDisposer {
 	}
 
 	/**
-	 * Dispose smart model list from a group
-	 * */
+	 * Dispose smart model list from a group.
+	 *
+	 * @param group the group
+	 * @param list the list
+	 */
 	public static void disposeSmartModelList(Group group,
 			ArrayList<SmartActor> list) {
 		if (group != null && list != null) {
@@ -170,8 +199,10 @@ public class UtilsDisposer {
 	/**
 	 * Dispose screen, at the end sets screen as "null"
 	 * <p>
-	 * - Disposing stage<br>
-	 * */
+	 * - Disposing stage<br>.
+	 *
+	 * @param screen the screen
+	 */
 	public static void disposeScreen(AbstractScreen screen) {
 		if (screen.getStage() != null) {
 			screen.getStage().dispose();
@@ -185,8 +216,10 @@ public class UtilsDisposer {
 	 * Dispose game
 	 * <p>
 	 * - Disposing asset manager<br>
-	 * - Disposing skin<br>
-	 * */
+	 * - Disposing skin<br>.
+	 *
+	 * @param game the game
+	 */
 	public static void disposeGame(AbstractGame game) {
 		if (game.getAssets().getAssetManager() != null) {
 			game.getAssets().getAssetManager().dispose();
@@ -199,7 +232,12 @@ public class UtilsDisposer {
 		}
 	}
 
-	/** Easy logger */
+	/**
+	 *  Easy logger.
+	 *
+	 * @param msj the msj
+	 * @param actor the actor
+	 */
 	private static void log(String msj, Actor actor) {
 		MtxLogger.log(logActive, true, logTag,
 				msj + " (Actor Name: " + actor.getName() + ")");

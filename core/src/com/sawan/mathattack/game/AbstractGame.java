@@ -40,24 +40,41 @@ import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.MtxLogger;
 import com.sawan.mathattack.utils.UtilsDisposer;
 
+// TODO: Auto-generated Javadoc
 /**
- * Extends Game, implements IGame
- * */
+ * Extends Game, implements IGame.
+ */
 public abstract class AbstractGame extends Game implements IGame {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxAbstractGame";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	//
+	/** The assets. */
 	private AbstractAssets assets;
+	
+	/** The music manager. */
 	private MusicManager musicManager;
+	
+	/** The android object. */
 	private IAndroidObject androidObject;
 
 	//
+	/** The is initial screen set. */
 	private boolean isInitialScreenSet;
+	
+	/** The previous screen to dispose. */
 	private AbstractScreen previousScreenToDispose;
+	
+	/** The is dispose screen. */
 	private boolean isDisposeScreen = false;
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.ApplicationListener#create()
+	 */
 	@Override
 	public void create() {
 		isInitialScreenSet = false;
@@ -70,6 +87,9 @@ public abstract class AbstractGame extends Game implements IGame {
 		SettingsManager.setSettings();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.Game#resume()
+	 */
 	@Override
 	public void resume() {
 		super.resume();
@@ -77,51 +97,65 @@ public abstract class AbstractGame extends Game implements IGame {
 	}
 
 	/**
-	 * Get android object from android backend
-	 * */
+	 * Get android object from android backend.
+	 *
+	 * @return the android object
+	 */
 	public IAndroidObject getAndroidObject() {
 		return androidObject;
 	}
 
 	/**
-	 * Set android object from android backend
-	 * */
+	 * Set android object from android backend.
+	 *
+	 * @param androidObject the new android object
+	 */
 	public void setAndroidObject(IAndroidObject androidObject) {
 		this.androidObject = androidObject;
 	}
 
 	/**
-	 * Get assets
-	 * */
+	 * Get assets.
+	 *
+	 * @return the assets
+	 */
 	public AbstractAssets getAssets() {
 		return assets;
 	}
 
 	/**
-	 * Set assets
-	 * */
+	 * Set assets.
+	 *
+	 * @param assets the new assets
+	 */
 	public void setAssets(AbstractAssets assets) {
 		this.assets = assets;
 	}
 
 	/**
-	 * Get true/false if initial screen is set
-	 * */
+	 * Get true/false if initial screen is set.
+	 *
+	 * @return true, if is initial screen set
+	 */
 	public boolean isInitialScreenSet() {
 		return isInitialScreenSet;
 	}
 
 	/**
-	 * Set true/false if initial screen is set
-	 * */
+	 * Set true/false if initial screen is set.
+	 *
+	 * @param isInitialScreenSet the new initial screen set
+	 */
 	public void setInitialScreenSet(boolean isInitialScreenSet) {
 		this.isInitialScreenSet = isInitialScreenSet;
 	}
 
 	/**
 	 * Get music manager, it uses "AudioManager" and communicates with
-	 * "SettingsManager"
-	 * */
+	 * "SettingsManager".
+	 *
+	 * @return the music manager
+	 */
 	public MusicManager getMusicManager() {
 		return musicManager;
 	}
@@ -135,19 +169,14 @@ public abstract class AbstractGame extends Game implements IGame {
 	 * <p>
 	 * 
 	 * WARNING! Do not use dispose anywhere else for stage/screen, if dispose
-	 * true here
-	 * 
-	 * @param currentScreen
-	 *            the screen currently set
-	 * @param actionCurrent
-	 *            Scene2D action to be applied to current screen stage
-	 * @param nextScreen
-	 *            the next screen to be set
-	 * @param actionNext
-	 *            Scene2D action to be applied to next screen stage
-	 * @param disposeScreen
-	 *            dispose current screen after transition completed
-	 * */
+	 * true here.
+	 *
+	 * @param currentScreen            the screen currently set
+	 * @param actionCurrent            Scene2D action to be applied to current screen stage
+	 * @param nextScreen            the next screen to be set
+	 * @param actionNext            Scene2D action to be applied to next screen stage
+	 * @param disposeScreen            dispose current screen after transition completed
+	 */
 	public void setScreenWithTransition(final AbstractScreen currentScreen,
 			final Action actionCurrent, final AbstractScreen nextScreen,
 			final Action actionNext, final boolean disposeScreen) {
@@ -190,6 +219,9 @@ public abstract class AbstractGame extends Game implements IGame {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.Game#render()
+	 */
 	@Override
 	public void render() {
 		super.render();

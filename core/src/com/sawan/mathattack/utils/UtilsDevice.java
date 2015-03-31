@@ -28,10 +28,17 @@ package com.sawan.mathattack.utils;
 
 import com.badlogic.gdx.Gdx;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsDevice.
+ */
 public class UtilsDevice {
+	
 	/**
-	 * Check if device portrait or landscape, square screens counted as portrait
-	 * */
+	 * Check if device portrait or landscape, square screens counted as portrait.
+	 *
+	 * @return true, if is orientation portrait
+	 */
 	public static boolean isOrientationPortrait() {
 		if (Gdx.graphics.getWidth() <= Gdx.graphics.getHeight())
 			return true;

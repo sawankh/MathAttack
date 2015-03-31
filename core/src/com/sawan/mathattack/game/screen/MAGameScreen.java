@@ -36,17 +36,36 @@ import com.sawan.mathattack.managers.FileManager;
 import com.sawan.mathattack.managers.FileManager.FileType;
 import com.sawan.mathattack.screen.AbstractScreen;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class MAGameScreen.
  *
+ * @author Itop1
  */
 public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen {
+	
+	/** The game_manager. */
 	public MAGameManager game_manager;
+	
+	/** The game screen menu. */
 	public MAGameScreenMenu gameScreenMenu;
+	
+	/** The game_over. */
 	public boolean game_over;
+	
+	/** The game_win. */
 	public boolean game_win;
+	
+	/** The level. */
 	public int level;
 	
+	/**
+	 * Instantiates a new MA game screen.
+	 *
+	 * @param game the game
+	 * @param screenName the screen name
+	 * @param level_number the level_number
+	 */
 	public MAGameScreen(AbstractGame game, String screenName, int level_number) {
 		super(game, screenName);
 		game_over = true;
@@ -59,6 +78,9 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 		game_manager.setGameState(GameState.GAME_RUNNING);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.AbstractScreen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -96,22 +118,34 @@ public class MAGameScreen extends AbstractScreen implements IScreen, IGameScreen
 			
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpScreenElements()
+	 */
 	@Override
 	public void setUpScreenElements() {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpMenu()
+	 */
 	@Override
 	public void setUpMenu() {
 		gameScreenMenu = new MAGameScreenMenu();
 		gameScreenMenu.setUpGameScreenMenu(MAGameScreen.this);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameScreen#setUpGameManager()
+	 */
 	@Override
 	public void setUpGameManager() {
 		game_manager = new MAGameManager(getStage(), this, level);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IGameScreen#setUpGameMenu()
+	 */
 	@Override
 	public void setUpGameMenu() {
 		

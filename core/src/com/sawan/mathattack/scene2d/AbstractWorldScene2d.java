@@ -35,18 +35,37 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Scaling;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractWorldScene2d.
+ */
 public class AbstractWorldScene2d extends Group {
 	//
+	/** The log tag. */
 	protected final String logTag = "MtxWorldLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 
 	// World background image
+	/** The image background. */
 	private Image imageBackground;
 
 	// World second counter (1 second tick)
+	/** The start time. */
 	private long startTime = System.nanoTime();
+	
+	/** The seconds time. */
 	private long secondsTime = 0L;
 
+	/**
+	 * Instantiates a new abstract world scene2d.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param worldWidth the world width
+	 * @param worldHeight the world height
+	 */
 	public AbstractWorldScene2d(float posX, float posY, float worldWidth,
 			float worldHeight) {
 		super();
@@ -57,6 +76,9 @@ public class AbstractWorldScene2d extends Group {
 				+ " - " + "H: " + worldHeight);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.Group#act(float)
+	 */
 	@Override
 	public void act(float delta) {
 		super.act(delta);
@@ -68,6 +90,14 @@ public class AbstractWorldScene2d extends Group {
 		}
 	}
 
+	/**
+	 * Sets the background texture.
+	 *
+	 * @param textureBackground the texture background
+	 * @param scaling the scaling
+	 * @param fillParent the fill parent
+	 * @param touchable the touchable
+	 */
 	public void setBackgroundTexture(TextureRegion textureBackground,
 			Scaling scaling, boolean fillParent, boolean touchable) {
 		Drawable tBg = new TextureRegionDrawable(textureBackground);
@@ -92,18 +122,38 @@ public class AbstractWorldScene2d extends Group {
 
 	}
 
+	/**
+	 * Gets the image background.
+	 *
+	 * @return the image background
+	 */
 	public Image getImageBackground() {
 		return imageBackground;
 	}
 
+	/**
+	 * Sets the image background.
+	 *
+	 * @param imageBackground the new image background
+	 */
 	public void setImageBackground(Image imageBackground) {
 		this.imageBackground = imageBackground;
 	}
 
+	/**
+	 * Gets the seconds time.
+	 *
+	 * @return the seconds time
+	 */
 	public long getSecondsTime() {
 		return secondsTime;
 	}
 
+	/**
+	 * Sets the seconds time.
+	 *
+	 * @param secondsTime the new seconds time
+	 */
 	public void setSecondsTime(long secondsTime) {
 		this.secondsTime = secondsTime;
 	}

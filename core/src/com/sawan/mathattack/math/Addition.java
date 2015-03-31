@@ -26,25 +26,34 @@
 package com.sawan.mathattack.math;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class Addition.
  *
+ * @author Itop1
  */
 public class Addition implements IQuestion {
 
+	/** The first_number. */
 	private int first_number;
 	
+	/** The second_number. */
 	private int second_number;
 
+	/** The question. */
 	private String question;
 	
+	/** The correct_answer. */
 	private int correct_answer;
 	
+	/** The answers. */
 	private int [] answers;
 	
 	/**
-	 * @param first_number
-	 * @param second_number
+	 * Instantiates a new addition.
+	 *
+	 * @param first_number the first_number
+	 * @param second_number the second_number
 	 */
 	public Addition(int first_number, int second_number) {
 		this.first_number = first_number;
@@ -55,18 +64,27 @@ public class Addition implements IQuestion {
 		setRandomAnswers(correct_answer);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#setQuestion(int, int)
+	 */
 	@Override
 	public String setQuestion(int first_number, int second_number) {
 		String question = Integer.toString(first_number) + " " + QuestionsSettings.OPERATION_SYMBOL_ADDITION + " " + Integer.toString(second_number) + " = ?";
 		return question; 
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#getAnswer()
+	 */
 	@Override
 	public int getAnswer() {
 		int result = first_number + second_number;
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.math.IQuestion#setRandomAnswers(int)
+	 */
 	@Override
 	public void setRandomAnswers(int correct_answer) {
 		int lower_bound = (correct_answer / 10) * 10;
@@ -93,6 +111,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Gets the question.
+	 *
 	 * @return the question
 	 */
 	@Override
@@ -101,6 +121,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Sets the question.
+	 *
 	 * @param question the question to set
 	 */
 	public void setQuestion(String question) {
@@ -108,6 +130,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Gets the correct_answer.
+	 *
 	 * @return the correct_answer
 	 */
 	@Override
@@ -116,6 +140,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Sets the correct_answer.
+	 *
 	 * @param correct_answer the correct_answer to set
 	 */
 	public void setCorrect_answer(int correct_answer) {
@@ -123,6 +149,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Gets the answers.
+	 *
 	 * @return the answers
 	 */
 	@Override
@@ -131,6 +159,8 @@ public class Addition implements IQuestion {
 	}
 
 	/**
+	 * Sets the answers.
+	 *
 	 * @param answers the answers to set
 	 */
 	public void setAnswers(int[] answers) {

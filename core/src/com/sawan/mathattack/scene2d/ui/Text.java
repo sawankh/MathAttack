@@ -31,12 +31,29 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sawan.mathattack.scene2d.AbstractActorLight;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Text.
+ */
 public class Text extends AbstractActorLight {
+	
+	/** The text. */
 	private String text = "";
+	
+	/** The bit map font. */
 	private BitmapFont bitMapFont;
 	//
+	/** The original pos y. */
 	private float originalPosY;
 
+	/**
+	 * Instantiates a new text.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public Text(BitmapFont bitMapFont, float width, float height,
 			boolean DIPActive) {
 		super(width, height, DIPActive);
@@ -47,6 +64,12 @@ public class Text extends AbstractActorLight {
 		}
 	}
 
+	/**
+	 * Sets the bit map font.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param DIPActive the DIP active
+	 */
 	public void setBitMapFont(BitmapFont bitMapFont, boolean DIPActive) {
 		this.bitMapFont = bitMapFont;
 		//
@@ -55,6 +78,9 @@ public class Text extends AbstractActorLight {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.scene2d.AbstractActorLight#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+	 */
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
@@ -62,28 +88,58 @@ public class Text extends AbstractActorLight {
 		drawText(batch);
 	}
 
+	/**
+	 * Draw text.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawText(SpriteBatch batch) {
 		if (bitMapFont != null) {
 			bitMapFont.draw(batch, text, getX(), getY());
 		}
 	}
 
+	/**
+	 * Gets the text.
+	 *
+	 * @return the text
+	 */
 	public String getText() {
 		return text;
 	}
 
+	/**
+	 * Sets the text.
+	 *
+	 * @param text the new text
+	 */
 	public void setText(String text) {
 		this.text = text;
 	}
 
+	/**
+	 * Gets the bit map font.
+	 *
+	 * @return the bit map font
+	 */
 	public BitmapFont getBitMapFont() {
 		return bitMapFont;
 	}
 
+	/**
+	 * Gets the original pos y.
+	 *
+	 * @return the original pos y
+	 */
 	public float getOriginalPosY() {
 		return originalPosY;
 	}
 
+	/**
+	 * Sets the original pos y.
+	 *
+	 * @param originalPosY the new original pos y
+	 */
 	public void setOriginalPosY(float originalPosY) {
 		this.originalPosY = originalPosY;
 	}

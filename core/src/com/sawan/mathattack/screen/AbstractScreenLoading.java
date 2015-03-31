@@ -28,12 +28,23 @@ package com.sawan.mathattack.screen;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.interfaces.IScreenLoading;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractScreenLoading.
+ */
 public abstract class AbstractScreenLoading extends AbstractScreen implements
 		IScreenLoading {
 
 	// Loading time before proceed to next screen
+	/** The loading time. */
 	private float loadingTime;
 
+	/**
+	 * Instantiates a new abstract screen loading.
+	 *
+	 * @param game the game
+	 * @param screenName the screen name
+	 */
 	public AbstractScreenLoading(AbstractGame game, String screenName) {
 		super(game, screenName);
 		loadingTime = 1f;
@@ -42,8 +53,10 @@ public abstract class AbstractScreenLoading extends AbstractScreen implements
 	}
 
 	/**
-	 * Get loading time
-	 * */
+	 * Get loading time.
+	 *
+	 * @return the loading time
+	 */
 	public float getLoadingTime() {
 		return loadingTime;
 	}
@@ -52,7 +65,9 @@ public abstract class AbstractScreenLoading extends AbstractScreen implements
 	 * Set a loading / splash time. Sometimes AssetManager loads very fast. It
 	 * may needed to wait specific amount of time to show logo, spash image,
 	 * etc... before proceeding next screen
-	 * */
+	 *
+	 * @param loadingTime the new loading time
+	 */
 	public void setLoadingTime(float loadingTime) {
 		this.loadingTime = loadingTime;
 	}

@@ -27,13 +27,20 @@ package com.sawan.mathattack.math;
 
 import java.util.Random;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class QuestionsUtils.
  *
+ * @author Itop1
  */
 public class QuestionsUtils {
 	
-	// Implementing Fisher–Yates shuffle
+	// Implementing Fisherï¿½Yates shuffle
+	/**
+	 * Shuffle array.
+	 *
+	 * @param ar the ar
+	 */
 	public static void shuffleArray(int[] ar) {
 	    Random rnd = new Random();
 	    
@@ -47,6 +54,13 @@ public class QuestionsUtils {
 	    }
 	}
 	
+	/**
+	 * Random number.
+	 *
+	 * @param lower_bound the lower_bound
+	 * @param higher_bound the higher_bound
+	 * @return the int
+	 */
 	public static int randomNumber(int lower_bound, int higher_bound) {
 		// A random integer value in the range [Lower_bound, Higher_bound] 
 		// Lower_bound + (int)(Math.random() * ((Higher_bound - Lower_bound) + 1))

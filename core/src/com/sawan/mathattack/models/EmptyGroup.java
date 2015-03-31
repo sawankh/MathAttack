@@ -28,12 +28,31 @@ package com.sawan.mathattack.models;
 
 import com.sawan.mathattack.scene2d.AbstractGroup;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmptyGroup.
+ */
 public class EmptyGroup extends AbstractGroup {
 
+	/**
+	 * Instantiates a new empty group.
+	 *
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param width the width
+	 * @param height the height
+	 */
 	public EmptyGroup(float posX, float posY, float width, float height) {
 		super(posX, posY, width, height);
 	}
 
+	/**
+	 * Instantiates a new empty group.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public EmptyGroup(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
 	}

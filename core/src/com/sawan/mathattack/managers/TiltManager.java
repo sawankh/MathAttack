@@ -31,19 +31,44 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 import com.sawan.mathattack.utils.UtilsNumbers;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TiltManager.
+ */
 public class TiltManager {
+	
+	/** The is sensor active. */
 	private boolean isSensorActive;
+	
+	/** The accel list for accuracy. */
 	private ArrayList<Float> accelListForAccuracy;
 
+	/**
+	 * The Enum Accel.
+	 */
 	public enum Accel {
-		X, Y, Z
+		
+		/** The x. */
+		X, 
+ /** The y. */
+ Y, 
+ /** The z. */
+ Z
 	}
 
+	/**
+	 * Instantiates a new tilt manager.
+	 */
 	public TiltManager() {
 		isSensorActive = true;
 		accelListForAccuracy = new ArrayList<Float>();
 	}
 
+	/**
+	 * Gets the accel x.
+	 *
+	 * @return the accel x
+	 */
 	public float getAccelX() {
 		if (isSensorActive) {
 			return Gdx.input.getAccelerometerX();
@@ -52,6 +77,11 @@ public class TiltManager {
 		}
 	}
 
+	/**
+	 * Gets the accel y.
+	 *
+	 * @return the accel y
+	 */
 	public float getAccelY() {
 		if (isSensorActive) {
 			return Gdx.input.getAccelerometerY();
@@ -60,6 +90,11 @@ public class TiltManager {
 		}
 	}
 
+	/**
+	 * Gets the accel z.
+	 *
+	 * @return the accel z
+	 */
 	public float getAccelZ() {
 		if (isSensorActive) {
 			return Gdx.input.getAccelerometerZ();
@@ -68,6 +103,13 @@ public class TiltManager {
 		}
 	}
 
+	/**
+	 * Gets the accurate accel.
+	 *
+	 * @param accel the accel
+	 * @param numberOfAvarage the number of avarage
+	 * @return the accurate accel
+	 */
 	public float getAccurateAccel(Accel accel, int numberOfAvarage) {
 		// FIXME
 		// Not works fine
@@ -95,10 +137,20 @@ public class TiltManager {
 		}
 	}
 
+	/**
+	 * Checks if is sensor active.
+	 *
+	 * @return true, if is sensor active
+	 */
 	public boolean isSensorActive() {
 		return isSensorActive;
 	}
 
+	/**
+	 * Sets the sensor active.
+	 *
+	 * @param isSensorActive the new sensor active
+	 */
 	public void setSensorActive(boolean isSensorActive) {
 		this.isSensorActive = isSensorActive;
 	}

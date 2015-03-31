@@ -42,17 +42,25 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class MAChapterScreen.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class MAChapterScreen extends AbstractScreen implements IScreen {
+
+/** The chapters. */
 Table chapters;
+
+/** The chapter. */
 public int chapter;	
 	
 	/**
-	 * @param game
-	 * @param screenName
+	 * Instantiates a new MA chapter screen.
+	 *
+	 * @param game the game
+	 * @param screenName the screen name
 	 */
 	public MAChapterScreen(AbstractGame game, String screenName) {
 		super(game, screenName);
@@ -61,6 +69,9 @@ public int chapter;
 		chapter = 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpScreenElements()
+	 */
 	@Override
 	public void setUpScreenElements() {
 		// TODO Auto-generated method stub
@@ -69,12 +80,18 @@ public int chapter;
 		setBackButtonActive(true);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpMenu()
+	 */
 	@Override
 	public void setUpMenu() {
 		// TODO Auto-generated method stub
 		
 	}
 	
+	/**
+	 * Sets the up chapters.
+	 */
 	public void setUpChapters() {
 		chapters = MenuCreator.createTable(false, UIAssets.getSkin());
 		chapters.setSize(1000f * AppSettings.getWorldSizeRatio(), 300f * AppSettings.getWorldSizeRatio());
@@ -141,6 +158,9 @@ public int chapter;
 		getStage().addActor(chapters);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.AbstractScreen#keyBackPressed()
+	 */
 	@Override
 	public void keyBackPressed() {
 		super.keyBackPressed();

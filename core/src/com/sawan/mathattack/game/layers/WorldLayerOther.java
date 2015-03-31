@@ -49,16 +49,33 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class WorldLayerOther.
  *
+ * @author Itop1
  */
 public class WorldLayerOther extends AbstractWorldScene2d {
+	
+	/** The game manager. */
 	public MAGameManager gameManager;
+	
+	/** The user_answer. */
 	public int user_answer;
+	
+	/** The quiz_table. */
 	public Table quiz_table;
 
 	
+	/**
+	 * Instantiates a new world layer other.
+	 *
+	 * @param gameManager the game manager
+	 * @param posX the pos x
+	 * @param posY the pos y
+	 * @param worldWidth the world width
+	 * @param worldHeight the world height
+	 */
 	public WorldLayerOther(MAGameManager gameManager, float posX, float posY, float worldWidth, float worldHeight) {
 		super(posX, posY, worldWidth, worldHeight);
 		this.gameManager =  gameManager;
@@ -66,6 +83,9 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 		setUpMathQuiz();
 	}
 	
+	/**
+	 * Sets the up math quiz.
+	 */
 	public void setUpMathQuiz() {
 		quiz_table = MenuCreator.createTable(false, UIAssets.getSkin());
 		//quiz_table.debug();
@@ -161,6 +181,9 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 		addActor(quiz_table);
 	}
 	
+	/**
+	 * Hide table.
+	 */
 	public void hideTable() {
 		quiz_table.addAction(Actions.moveTo(gameManager.getStage().getWidth() / 2 - (quiz_table.getWidth() / 2), gameManager.getStage().getHeight(), 0.5f));
 	}

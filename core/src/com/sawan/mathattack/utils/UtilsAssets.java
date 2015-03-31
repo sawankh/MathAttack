@@ -31,27 +31,40 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsAssets.
+ */
 public class UtilsAssets {
 
 	/**
 	 * LinearLinear - Smooth edges (Avoid pixelation as much as possible) </br>
 	 * NearestNeatrest - For pixel perfect games </br> MipMapping - requires
 	 * power of 2 textures/texture atlas, however it is the best quality at
-	 * performace cost </br>
-	 * */
+	 * performace cost </br>.
+	 */
 	public enum Filter {
-		Linear_Linear, Linear_Nearest, Nearest_Nearest, Nearest_Linear, MipMapLN_L
+		
+		/** The Linear_ linear. */
+		Linear_Linear, 
+ /** The Linear_ nearest. */
+ Linear_Nearest, 
+ /** The Nearest_ nearest. */
+ Nearest_Nearest, 
+ /** The Nearest_ linear. */
+ Nearest_Linear, 
+ /** The Mip map l n_ l. */
+ MipMapLN_L
 	}
 
 	/**
 	 * Load/Get a texture from internal file (Leave filter null if no filter
 	 * needed).
-	 * 
-	 * @param file
-	 *            internal file location
-	 * @param filter
-	 *            quick filter apply (leave null if no filter needed)
-	 * */
+	 *
+	 * @param file            internal file location
+	 * @param filter            quick filter apply (leave null if no filter needed)
+	 * @return the texture
+	 */
 	public static Texture loadTexture(String file, Filter filter) {
 		Texture t = new Texture(Gdx.files.internal(file));
 		if (filter != null)
@@ -66,7 +79,12 @@ public class UtilsAssets {
 	 * 
 	 * EXAMPLE:</br> User input for file: "data/font" </br> Auto fill will
 	 * perform "font.png" and "font.fnt" for user.
-	 * */
+	 *
+	 * @param file the file
+	 * @param flip the flip
+	 * @param filter the filter
+	 * @return the bitmap font
+	 */
 	public static BitmapFont loadFont(String file, boolean flip, Filter filter) {
 		BitmapFont f = new BitmapFont(Gdx.files.internal(file + ".fnt"),
 				Gdx.files.internal(file + ".png"), flip);
@@ -76,8 +94,12 @@ public class UtilsAssets {
 	}
 
 	/**
-	 * Load a particle
-	 * */
+	 * Load a particle.
+	 *
+	 * @param file the file
+	 * @param imageMainDir the image main dir
+	 * @return the particle effect
+	 */
 	public static ParticleEffect loadParticle(String file, String imageMainDir) {
 		ParticleEffect pe = new ParticleEffect();
 		pe.load(Gdx.files.internal(file + ".p"),
@@ -85,7 +107,12 @@ public class UtilsAssets {
 		return pe;
 	}
 
-	/** Apply a filter to a texture */
+	/**
+	 *  Apply a filter to a texture.
+	 *
+	 * @param t the t
+	 * @param filter the filter
+	 */
 	public static void addFilter(Texture t, Filter filter) {
 		switch (filter) {
 		case Linear_Linear:

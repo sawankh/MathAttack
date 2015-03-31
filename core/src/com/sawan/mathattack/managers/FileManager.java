@@ -38,29 +38,44 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.sawan.mathattack.settings.MtxLogger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FileManager.
+ */
 public class FileManager {
 	//
+	/** The Constant logTag. */
 	protected static final String logTag = "MtxFileManagerLog";
+	
+	/** The log active. */
 	public static boolean logActive = true;
 	//
+	/** The current line. */
 	@SuppressWarnings("unused")
 	private static String currentLine = "";
 
 	// File Type
+	/**
+	 * The Enum FileType.
+	 */
 	public enum FileType {
-		INTERNAL_FILE, LOCAL_FILE, EXTERNAL_FILE
+		
+		/** The internal file. */
+		INTERNAL_FILE, 
+ /** The local file. */
+ LOCAL_FILE, 
+ /** The external file. */
+ EXTERNAL_FILE
 	}
 
 	/**
 	 * Read lines from text file.
-	 * 
-	 * @param strFile
-	 *            file to read
-	 * @param lineNumber
-	 *            line number to read
-	 * @param fileType
-	 *            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
-	 * */
+	 *
+	 * @param strFile            file to read
+	 * @param lineNumber            line number to read
+	 * @param fileType            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
+	 * @return the string
+	 */
 	public static String readLine(String strFile, int lineNumber,
 			FileType fileType) {
 		// Identify file type and get storage location
@@ -90,15 +105,12 @@ public class FileManager {
 	}
 
 	/**
-	 * Write new lines in text file
-	 * 
-	 * @param strFile
-	 *            file to write
-	 * @param value
-	 *            value to write to new line
-	 * @param fileType
-	 *            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
-	 * */
+	 * Write new lines in text file.
+	 *
+	 * @param strFile            file to write
+	 * @param value            value to write to new line
+	 * @param fileType            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
+	 */
 	public static void writeLine(String strFile, String value, FileType fileType) {
 		try {
 			FileHandle file = getFile(strFile, fileType);
@@ -117,17 +129,13 @@ public class FileManager {
 	}
 
 	/**
-	 * Re-Write an existing line in a text file without effecting other lines
-	 * 
-	 * @param strFile
-	 *            file to write
-	 * @param lineNumber
-	 *            line number to write
-	 * @param newValue
-	 *            the new value to write over existing line
-	 * @param fileType
-	 *            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
-	 * */
+	 * Re-Write an existing line in a text file without effecting other lines.
+	 *
+	 * @param strFile            file to write
+	 * @param lineNumber            line number to write
+	 * @param newValue            the new value to write over existing line
+	 * @param fileType            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
+	 */
 	public static void writeExistingLine(String strFile, int lineNumber,
 			String newValue, FileType fileType) {
 		try {
@@ -150,6 +158,14 @@ public class FileManager {
 		}
 	}
 
+	/**
+	 * Gets the updated text info.
+	 *
+	 * @param strFile the str file
+	 * @param lineNumber the line number
+	 * @param newValue the new value
+	 * @return the updated text info
+	 */
 	private static ArrayList<String> getUpdatedTextInfo(String strFile,
 			int lineNumber, String newValue) {
 		ArrayList<String> lineByLineTextList = new ArrayList<String>();
@@ -178,15 +194,13 @@ public class FileManager {
 
 	/**
 	 * If a line consist of comma separated values, it returns each value in
-	 * ArrayList
-	 * 
-	 * @param strFile
-	 *            file to read
-	 * @param lineNumber
-	 *            line number to read, starts from 1
-	 * @param fileType
-	 *            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
-	 * */
+	 * ArrayList.
+	 *
+	 * @param strFile            file to read
+	 * @param lineNumber            line number to read, starts from 1
+	 * @param fileType            the type of file to retrieve file (INTERNAL, LOCAL, EXTERNAL)
+	 * @return the values seperated by comma in line
+	 */
 	public static ArrayList<String> getValuesSeperatedByCommaInLine(
 			String strFile, int lineNumber, FileType fileType) {
 		String lineString = readLine(strFile, lineNumber, fileType);
@@ -198,7 +212,9 @@ public class FileManager {
 	/**
 	 * Create a file in a LOCAL storage. Good place the store game data in text
 	 * files
-	 * */
+	 *
+	 * @param fileName the file name
+	 */
 	public static void createTextFileInLocalStorage(String fileName) {
 		// Get local storage
 		String localDir = Gdx.files.getLocalStoragePath();
@@ -215,8 +231,12 @@ public class FileManager {
 	}
 
 	/**
-	 * Get number of lines in a text file
-	 * */
+	 * Get number of lines in a text file.
+	 *
+	 * @param strFile the str file
+	 * @param fileType the file type
+	 * @return the number ofl ines in text file
+	 */
 	public static int getNumberOflInesInTextFile(String strFile,
 			FileType fileType) {
 		FileHandle file = getFile(strFile, fileType);
@@ -240,14 +260,12 @@ public class FileManager {
 
 	/**
 	 * Get file from one of the storages, there are three storages, INTERNAL
-	 * (Read Only), LOCAL, EXTERNAL (SD CARD)
-	 * 
-	 * @param strFile
-	 *            file name to retrieve
-	 * @param fileType
-	 *            file type for location identification
+	 * (Read Only), LOCAL, EXTERNAL (SD CARD).
+	 *
+	 * @param strFile            file name to retrieve
+	 * @param fileType            file type for location identification
 	 * @return the file
-	 * */
+	 */
 	public static FileHandle getFile(String strFile, FileType fileType) {
 		FileHandle file = null;
 		if (fileType == FileType.INTERNAL_FILE) {
@@ -275,6 +293,12 @@ public class FileManager {
 		return file;
 	}
 	
+	/**
+	 * Initiate ma file.
+	 *
+	 * @param strFile the str file
+	 * @param fileType the file type
+	 */
 	public static void initiateMAFile(String strFile, FileType fileType) {
 		for (int i = 0; i < 8; i++) {
 			writeLine(strFile, "0", fileType);

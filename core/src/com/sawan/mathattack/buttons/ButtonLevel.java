@@ -34,6 +34,7 @@ import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ButtonLevel.
  *
@@ -42,26 +43,54 @@ import com.sawan.mathattack.settings.AppSettings;
 public class ButtonLevel extends AbstractButton {
 
 	// Level stars (Not mandatory)
-		private TextureRegion textureStarHolder;
+		/** The texture star holder. */
+	private TextureRegion textureStarHolder;
+		
+		/** The texture star. */
 		private TextureRegion textureStar;
+		
+		/** The number of total stars. */
 		private int numberOfTotalStars = 1;
+		
+		/** The number of earned stars. */
 		private  int numberOfEarnedStars = 1;
+		
+		/** The star size width. */
 		private float starSizeWidth; 
+		
+		/** The star size height. */
 		private float starSizeHeight;
+		
+		/** The star pos x start. */
 		private float starPosXStart = 0;
+		
+		/** The star pos y start. */
 		private float starPosYStart = 0;
+		
+		/** The star size ratio. */
 		private float starSizeRatio = 5;
 
 		// Level Number (Not mandatory)
+		/** The level number. */
 		private int levelNumber = -999;
 
 		// Font (For writings and level number)
+		/** The bit map font. */
 		private BitmapFont bitMapFont;
 
+		/**
+		 * Instantiates a new button level.
+		 *
+		 * @param up the up
+		 * @param down the down
+		 */
 		public ButtonLevel(Drawable up, Drawable down) {
 			super(UIAssets.cartwheel_font, up, down);
 		}
 
+		/* (non-Javadoc)
+		 * @see com.badlogic.gdx.scenes.scene2d.ui.Button#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+		 */
 		@Override
 		public void draw(SpriteBatch batch, float parentAlpha) {
 			// If level locked
@@ -90,6 +119,11 @@ public class ButtonLevel extends AbstractButton {
 			}
 		}
 
+		/**
+		 * Draw stars.
+		 *
+		 * @param batch the batch
+		 */
 		private void drawStars(SpriteBatch batch) {
 			if(textureStarHolder != null && textureStar != null){
 				// Updated start positions
@@ -115,22 +149,42 @@ public class ButtonLevel extends AbstractButton {
 			}
 		}
 		
+		/**
+		 * Draw text.
+		 *
+		 * @param batch the batch
+		 */
 		private void drawText(SpriteBatch batch) {
 			if(isTextActive && bitMapFont != null){
 				bitMapFont.draw(batch, text, getX() +  textPosX, getY() + textPosY);
 			}
 		}
 
+		/**
+		 * Draw locked.
+		 *
+		 * @param batch the batch
+		 */
 		private void drawLocked(SpriteBatch batch) {
 			batch.draw(textureLocked, getX(), getY(), getWidth(), getHeight());
 		}
 		
+		/**
+		 * Draw external texture.
+		 *
+		 * @param batch the batch
+		 */
 		private void drawExternalTexture(SpriteBatch batch) {
 			if(isExternalTextureActive && textureExternal != null){
 				batch.draw(textureExternal, getX() + externalTexturePosX, getY() + externalTexturePosY, externalTextureSizeW, externalTextureSizeH);
 			}
 		}
 		
+		/**
+		 * Draw level number.
+		 *
+		 * @param batch the batch
+		 */
 		private void drawLevelNumber(SpriteBatch batch) {
 			// TODO Set precise position of level number for each game
 			// there i single numbers ( < 10) 
@@ -175,8 +229,10 @@ public class ButtonLevel extends AbstractButton {
 		
 		 
 		/**
-		 * Get level starts X position
-		 * */
+		 * Get level starts X position.
+		 *
+		 * @return the level star pos x start
+		 */
 		public float getLevelStarPosXStart() {
 			return starPosXStart;
 		}
@@ -184,28 +240,37 @@ public class ButtonLevel extends AbstractButton {
 		/**
 		 * Set level stars X position. This is being calculated automaticly and centered. Do not suggest to play 
 		 * width.
-		 * */
+		 *
+		 * @param starPosXStart the new level star pos x start
+		 */
 		public void setLevelStarPosXStart(float starPosXStart) {
 			this.starPosXStart = starPosXStart;
 		}
 
 		/**
-		 * Get level starts Y position
-		 * */
+		 * Get level starts Y position.
+		 *
+		 * @return the level star pos y start
+		 */
 		public float getLevelStarPosYStart() {
 			return starPosYStart;
 		}
+		
 		/**
 		 * Set level stars Y position. This can be used to lift all stars (holders and stars) up or down for 
 		 * adjusments
-		 * */
+		 *
+		 * @param starPosYStart the new level star pos y start
+		 */
 		public void setLevelStarPosYStart(float starPosYStart) {
 			this.starPosYStart = starPosYStart;
 		}
 
 		/**
-		 * Get level stars ratio
-		 * */
+		 * Get level stars ratio.
+		 *
+		 * @return the level star size ratio
+		 */
 		public float getLevelStarSizeRatio() {
 			return starSizeRatio;
 		}
@@ -213,7 +278,9 @@ public class ButtonLevel extends AbstractButton {
 		/**
 		 * Set level stars size ratio. This makes stars smaller or bigger (Default is 5). Bigger number makes stars/holders
 		 * bigger and vice-versa.
-		 * */
+		 *
+		 * @param starSizeRatio the new level star size ratio
+		 */
 		public void setLevelStarSizeRatio(float starSizeRatio) {
 			this.starSizeRatio = starSizeRatio;
 			float btnSizeW = getWidth() - (getWidth() / starSizeRatio);
@@ -223,72 +290,93 @@ public class ButtonLevel extends AbstractButton {
 		}
 		
 		/**
-		 * Get level number
-		 * */
+		 * Get level number.
+		 *
+		 * @return the level number
+		 */
 		public int getLevelNumber() {
 			return levelNumber;
 		}
 
 		/**
-		 * Set level number and the font to draw that number
-		 * */
+		 * Set level number and the font to draw that number.
+		 *
+		 * @param levelNumber the level number
+		 * @param font the font
+		 */
 		public void setLevelNumber(int levelNumber, BitmapFont font) {
 			this.levelNumber = levelNumber;
 			bitMapFont = font;
 		}
 		
 		/**
-		 * Set level number changes
-		 * */
+		 * Set level number changes.
+		 *
+		 * @param levelNumber the new level number change
+		 */
 		public void setLevelNumberChange(int levelNumber){
 			this.levelNumber = levelNumber;
 		}
 
 		/**
-		 * Get achievement object holder texture
-		 * */
+		 * Get achievement object holder texture.
+		 *
+		 * @return the texture star holder
+		 */
 		public TextureRegion getTextureStarHolder() {
 			return textureStarHolder;
 		}
 
 		/**
-		 * Set achievement object holder texture
-		 * */
+		 * Set achievement object holder texture.
+		 *
+		 * @param textureStarHolder the new texture star holder
+		 */
 		public void setTextureStarHolder(TextureRegion textureStarHolder) {
 			this.textureStarHolder = textureStarHolder;
 		}
 
 		/**
-		 * Get achievement object 
-		 * */
+		 * Get achievement object .
+		 *
+		 * @return the texture star
+		 */
 		public TextureRegion getTextureStar() {
 			return textureStar;
 		}
 
 		/**
-		 * Set achievement object texture
-		 * */
+		 * Set achievement object texture.
+		 *
+		 * @param textureStar the new texture star
+		 */
 		public void setTextureStar(TextureRegion textureStar) {
 			this.textureStar = textureStar;
 		}
 
 		/**
-		 * Get number of total achievement objects
-		 * */
+		 * Get number of total achievement objects.
+		 *
+		 * @return the number of total stars
+		 */
 		public int getNumberOfTotalStars() {
 			return numberOfTotalStars;
 		}
 
 		/**
-		 * Set number of total achievement object
-		 * */
+		 * Set number of total achievement object.
+		 *
+		 * @param numberOfTotalStars the new number of total stars
+		 */
 		public void setNumberOfTotalStars(int numberOfTotalStars) {
 				this.numberOfTotalStars = numberOfTotalStars;
 		}
 
 		/**
-		 * Get number of achievement object
-		 * */
+		 * Get number of achievement object.
+		 *
+		 * @return the number of earned stars
+		 */
 		public int getNumberOfEarnedStars() {
 			return numberOfEarnedStars;
 		}
@@ -296,7 +384,9 @@ public class ButtonLevel extends AbstractButton {
 		/**
 		 * Set number of earned achievement object. This number cannot be higher/lower than numberOfTotalStars, it auto
 		 * overrides if is less or more than numberOfTotalStars
-		 * */
+		 *
+		 * @param numberOfEarnedStars the new number of earned stars
+		 */
 		public void setNumberOfEarnedStars(int numberOfEarnedStars) {
 			if(numberOfEarnedStars > numberOfTotalStars){
 				numberOfEarnedStars = numberOfTotalStars;

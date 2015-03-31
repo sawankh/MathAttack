@@ -48,19 +48,35 @@ import com.sawan.mathattack.scene2d.ui.MenuCreator;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class MALevelScreen.
  *
+ * @author Sawan
  */
 public class MALevelScreen extends AbstractScreen implements IScreen {
+	
+	/** The lbl fps. */
 	private Label lblFps;
+	
+	/** The lbl screen time. */
 	private Label lblScreenTime;
+	
+	/** The chapter. */
 	public static int chapter;
 	
 	
 	//
+	/** The level_table. */
 	Table level_table;
 	
+	/**
+	 * Instantiates a new MA level screen.
+	 *
+	 * @param game the game
+	 * @param screenName the screen name
+	 * @param chapter the chapter
+	 */
 	public MALevelScreen(AbstractGame game, String screenName, int chapter) {
 		super(game, screenName);
 		MALevelScreen.chapter = chapter;
@@ -68,6 +84,9 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		setUpLevelsScreen();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpScreenElements()
+	 */
 	public void setUpScreenElements() {
 		// #1.1 TEST
 		// Set background texture
@@ -82,6 +101,9 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 
 	}
 	
+	/**
+	 * Sets the up levels screen.
+	 */
 	private void setUpLevelsScreen() {
 		// Create levels table
 		// ######################################################################
@@ -169,12 +191,18 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		level_table.setBackground(background);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.AbstractScreen#keyBackPressed()
+	 */
 	@Override
 	public void keyBackPressed() {
 		super.keyBackPressed();
 		getGame().setScreen(new MAMainMenuScreen(getGame(), ""));
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.screen.AbstractScreen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -182,6 +210,9 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		lblFps.setText("Fps: " + Gdx.graphics.getFramesPerSecond());
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sawan.mathattack.interfaces.IScreen#setUpMenu()
+	 */
 	@Override
 	public void setUpMenu() {
 		

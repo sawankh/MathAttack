@@ -28,40 +28,67 @@ package com.sawan.mathattack.utils;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilsOrigin.
+ */
 public class UtilsOrigin {
+	
+	/**
+	 * The Enum Origin.
+	 */
 	public enum Origin {
-		CENTER, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT, LEFT_CENTER, TOP_CENTER, BOTTOM_CENTER, RIGHT_CENTER
+		
+		/** The center. */
+		CENTER, 
+ /** The top left. */
+ TOP_LEFT, 
+ /** The top right. */
+ TOP_RIGHT, 
+ /** The bottom left. */
+ BOTTOM_LEFT, 
+ /** The bottom right. */
+ BOTTOM_RIGHT, 
+ /** The left center. */
+ LEFT_CENTER, 
+ /** The top center. */
+ TOP_CENTER, 
+ /** The bottom center. */
+ BOTTOM_CENTER, 
+ /** The right center. */
+ RIGHT_CENTER
 	}
 
 	/**
 	 * Set origin of an actor, since actors are complex objects, its variables
 	 * pointing same reference with copies, so the origin will be set in
-	 * original object
-	 * 
-	 * @param actor
-	 *            actor to set the origin
-	 * @param origin
-	 *            position of the origin, comes from Origin enum class
-	 * */
+	 * original object.
+	 *
+	 * @param actor            actor to set the origin
+	 * @param origin            position of the origin, comes from Origin enum class
+	 */
 	public static void setActorOrigin(Actor actor, Origin origin) {
 		setOrigin(actor, origin);
 	}
 
 	/**
-	 * Set multiple actors origin at once
-	 * 
-	 * @param origin
-	 *            position of the origin, comes from Origin enum class
-	 * @param actors
-	 *            multiple actors to set the origin
-	 * 
-	 * */
+	 * Set multiple actors origin at once.
+	 *
+	 * @param origin            position of the origin, comes from Origin enum class
+	 * @param actors            multiple actors to set the origin
+	 */
 	public static void setActorsOrigin(Origin origin, Actor... actors) {
 		for (Actor a : actors) {
 			setOrigin(a, origin);
 		}
 	}
 
+	/**
+	 * Sets the origin.
+	 *
+	 * @param actor the actor
+	 * @param origin the origin
+	 */
 	private static void setOrigin(Actor actor, Origin origin) {
 		switch (origin) {
 		case CENTER:

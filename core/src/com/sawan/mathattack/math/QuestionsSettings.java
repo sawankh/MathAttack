@@ -26,21 +26,29 @@
 package com.sawan.mathattack.math;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class QuestionsSettings.
  *
+ * @author Itop1
  */
 public class QuestionsSettings {
 
+	/** The Constant OPERATION_SYMBOL_ADDITION. */
 	public final static String OPERATION_SYMBOL_ADDITION = "+";
 	
+	/** The Constant OPERATION_SYMBOL_SUBTRACTION. */
 	public final static String OPERATION_SYMBOL_SUBTRACTION = "-";
 	
+	/** The Constant OPERATION_SYMBOL_MULTIPLICATION. */
 	public final static String OPERATION_SYMBOL_MULTIPLICATION = "x";
 	
+	/** The Constant NUM_ANSWER. */
 	public final static int NUM_ANSWER = 3;
 	
+	/** The Constant MAX_QUIZ_VALUE. */
 	public final static int MAX_QUIZ_VALUE = 49;
 	
+	/** The Constant MIN_QUIZ_VALUE. */
 	public final static int MIN_QUIZ_VALUE = 0;
 }

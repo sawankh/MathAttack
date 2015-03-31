@@ -28,16 +28,24 @@ package com.sawan.mathattack.models.characters;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.sawan.mathattack.scene2d.AbstractActor;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan
+ * The Class Hero.
  *
+ * @author Sawan
  */
 public class Hero extends AbstractActor {
 
+	/** The lifes. */
 	private int lifes;
+	
+	/** The lost_life. */
 	private boolean lost_life;
+	
+	/** The alive. */
 	private boolean alive;
 	
+	/** The Constant NUM_LIFES. */
 	public final static int NUM_LIFES = 5;
 	
 	/**
@@ -60,9 +68,11 @@ public class Hero extends AbstractActor {
 	
 	
 	/**
-	 * @param width
-	 * @param height
-	 * @param DIPActive
+	 * Instantiates a new hero.
+	 *
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
 	 */
 	public Hero(float width, float height, boolean DIPActive) {
 		super(width, height, DIPActive);
@@ -89,6 +99,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Gets the lifes.
+	 *
 	 * @return the lifes
 	 */
 	public int getLifes() {
@@ -98,6 +110,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Sets the lifes.
+	 *
 	 * @param lifes the lifes to set
 	 */
 	public void setLifes(int lifes) {
@@ -107,6 +121,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Checks if is lost_life.
+	 *
 	 * @return the lost_life
 	 */
 	public boolean isLost_life() {
@@ -116,6 +132,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Sets the lost_life.
+	 *
 	 * @param lost_life the lost_life to set
 	 */
 	public void setLost_life(boolean lost_life) {
@@ -125,6 +143,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Checks if is alive.
+	 *
 	 * @return the alive
 	 */
 	public boolean isAlive() {
@@ -134,6 +154,8 @@ public class Hero extends AbstractActor {
 
 
 	/**
+	 * Sets the alive.
+	 *
 	 * @param alive the alive to set
 	 */
 	public void setAlive(boolean alive) {

@@ -26,16 +26,33 @@
 
 package com.sawan.mathattack.game;
 
+// TODO: Auto-generated Javadoc
 /**
- * Common game states to be used in game logics
+ * Common game states to be used in game logics.
  */
 public enum GameState {
+	
+	/** The game running. */
 	GAME_RUNNING,
+	
+	/** The game paused. */
 	GAME_PAUSED,
+	
+	/** The game update. */
 	GAME_UPDATE,
+	
+	/** The game over. */
 	GAME_OVER,
+	
+	/** The game win. */
 	GAME_WIN,
+	
+	/** The game levelwin. */
 	GAME_LEVELWIN,
+	
+	/** The game idle. */
 	GAME_IDLE,
+	
+	/** The game slowmotion. */
 	GAME_SLOWMOTION
 }

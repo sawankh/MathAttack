@@ -33,17 +33,41 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ButtonGame.
+ */
 public class ButtonGame extends AbstractButton {
 
+	/**
+	 * Instantiates a new button game.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
+	 */
 	public ButtonGame(BitmapFont bitMapFont, Drawable up, Drawable down) {
 		super(bitMapFont, up, down);
 	}
 
+	/**
+	 * Instantiates a new button game.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
+	 */
 	public ButtonGame(BitmapFont bitMapFont, Drawable up, Drawable down,
 			float width, float height, boolean DIPActive) {
 		super(bitMapFont, up, down, width, height, DIPActive);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.scenes.scene2d.ui.Button#draw(com.badlogic.gdx.graphics.g2d.SpriteBatch, float)
+	 */
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		// If button locked
@@ -68,16 +92,31 @@ public class ButtonGame extends AbstractButton {
 		}
 	}
 
+	/**
+	 * Draw external texture.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawExternalTexture(SpriteBatch batch) {
 		if(isExternalTextureActive && textureExternal != null){
 			batch.draw(textureExternal, getX() + externalTexturePosX, getY() + externalTexturePosY, externalTextureSizeW, externalTextureSizeH);
 		}
 	}
 
+	/**
+	 * Draw locked.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawLocked(SpriteBatch batch) {
 		batch.draw(textureLocked, getX(), getY(), getWidth(), getHeight());
 	}
 	
+	/**
+	 * Draw text.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawText(SpriteBatch batch) {
 		bitMapFont.draw(batch, text, getX() +  textPosX, getY() + textPosY);
 	}

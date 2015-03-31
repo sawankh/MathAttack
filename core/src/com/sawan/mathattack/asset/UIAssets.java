@@ -50,8 +50,6 @@ public class UIAssets {
 	/** The Constant CARTWHEEL_FONT_FILE. */
 	private final static String CARTWHEEL_FONT_FILE = "skin/cartwheel.fnt";
 	
-	/** The Constant FILE_IMAGE_BACKGROUND_MAIN. */
-	//private final static String FILE_IMAGE_BACKGROUND_MAIN = "data/ma/game/menu_background.png";
 	
 	/** The atlas. */
 	public static TextureAtlas atlas;
@@ -91,32 +89,46 @@ public class UIAssets {
 	/** The cartwheel_font. */
 	public static BitmapFont cartwheel_font;
 	
+	/** The image_empty_bg. */
 	public static TextureRegion image_empty_bg;
 	
+	/** The image_pause_bg. */
 	public static TextureRegion image_pause_bg;
 	
+	/** The button_restart. */
 	public static TextureRegion button_restart;
 	
+	/** The button_resume. */
 	public static TextureRegion button_resume;
 	
+	/** The button_exit. */
 	public static TextureRegion button_exit;
 	
+	/** The button_back_levels. */
 	public static TextureRegion button_back_levels;
 	
+	/** The image_level_complete_bg. */
 	public static TextureRegion image_level_complete_bg;
 	
+	/** The image_star_right_completed. */
 	public static TextureRegion image_star_right_completed;
 	
+	/** The image_star_central_completed. */
 	public static TextureRegion image_star_central_completed;
 	
+	/** The image_star_left_completed. */
 	public static TextureRegion image_star_left_completed;
 
+	/** The image_star_right_incompleted. */
 	public static TextureRegion image_star_right_incompleted;
 	
+	/** The image_star_central_incompleted. */
 	public static TextureRegion image_star_central_incompleted;
 	
+	/** The image_star_left_incompleted. */
 	public static TextureRegion image_star_left_incompleted;
 	
+	/** The image_home_icon. */
 	public static TextureRegion image_home_icon;
 
 	

@@ -32,9 +32,11 @@ import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
 import com.sawan.mathattack.settings.AppSettings;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Itop1
+ * The Class GameButton.
  *
+ * @author Itop1
  */
 public class GameButton extends AbstractButton {
 	
@@ -58,12 +60,14 @@ public class GameButton extends AbstractButton {
 	
 	
 	/**
-	 * @param bitMapFont
-	 * @param up
-	 * @param down
-	 * @param width
-	 * @param height
-	 * @param DIPActive
+	 * Instantiates a new game button.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
+	 * @param width the width
+	 * @param height the height
+	 * @param DIPActive the DIP active
 	 */
 	public GameButton(BitmapFont bitMapFont, Drawable up, Drawable down,
 			float width, float height, boolean DIPActive) {
@@ -74,9 +78,11 @@ public class GameButton extends AbstractButton {
 
 
 	/**
-	 * @param bitMapFont
-	 * @param up
-	 * @param down
+	 * Instantiates a new game button.
+	 *
+	 * @param bitMapFont the bit map font
+	 * @param up the up
+	 * @param down the down
 	 */
 	public GameButton(BitmapFont bitMapFont, Drawable up, Drawable down) {
 		super(bitMapFont, up, down);
@@ -107,6 +113,11 @@ public class GameButton extends AbstractButton {
 		}
 	}
 	
+	/**
+	 * Draw answer.
+	 *
+	 * @param batch the batch
+	 */
 	private void drawAnswer(SpriteBatch batch) {
 		// there i single numbers ( < 10) 
 		// there is double numbers (9 >)
@@ -123,11 +134,22 @@ public class GameButton extends AbstractButton {
 		
 	}
 	
+	/**
+	 * Sets the answer.
+	 *
+	 * @param level_number the level_number
+	 * @param font the font
+	 */
 	public void setAnswer(int level_number, BitmapFont font) {
 		this.answer = level_number;
 		this.font = font;
 	}
 	
+	/**
+	 * Gets the answer.
+	 *
+	 * @return the answer
+	 */
 	public int getAnswer() {
 		return answer;
 	}

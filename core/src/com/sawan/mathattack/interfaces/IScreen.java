@@ -26,6 +26,10 @@
 
 package com.sawan.mathattack.interfaces;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface IScreen.
+ */
 public interface IScreen {
 	/**
 	 * Set up screen elements. Call this method in constructor first
@@ -38,7 +42,7 @@ public interface IScreen {
 	public void setUpScreenElements();
 
 	/**
-	 * Set up screen menu
-	 * */
+	 * Set up screen menu.
+	 */
 	public void setUpMenu();
 }

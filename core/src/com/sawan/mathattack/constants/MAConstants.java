@@ -25,42 +25,60 @@
  */
 package com.sawan.mathattack.constants;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Sawan J. Kapai Harpalani
+ * The Class MAConstants.
  *
+ * @author Sawan J. Kapai Harpalani
  */
 public class MAConstants {
 
+	/** The Constant ADDITION_FILE. */
 	public final static String ADDITION_FILE = "add.data";
 	
+	/** The Constant SUBTRACTION_FILE. */
 	public final static String SUBTRACTION_FILE = "sub.data";
 	
+	/** The Constant MULTIPLICATION_FILE. */
 	public final static String MULTIPLICATION_FILE = "mult.data";
 	
+	/** The Constant UNDEFINED. */
 	public final static int UNDEFINED = -999;
 	
+	/** The Constant CHAPTER_WIDTH. */
 	public final static float CHAPTER_WIDTH = 300f;
 	
+	/** The Constant CHAPTER_HEIGHT. */
 	public final static float CHAPTER_HEIGHT = 279f;
 	
+	/** The Constant SMALL_BUTTON_WIDTH. */
 	public final static float SMALL_BUTTON_WIDTH = 63f;
 	
+	/** The Constant SMALL_BUTTON_HEIGHT. */
 	public final static float SMALL_BUTTON_HEIGHT = 66f;
 	
+	/** The Constant CREDITS_WIDTH. */
 	public final static float CREDITS_WIDTH = 782f;
 	
+	/** The Constant CREDITS_HEIGHT. */
 	public final static float CREDITS_HEIGHT = 502f;
 	
+	/** The Constant LEVEL_TABLE_WIDTH. */
 	public final static float LEVEL_TABLE_WIDTH = 489;
 	
+	/** The Constant LEVEL_TABLE_HEIGHT. */
 	public final static float LEVEL_TABLE_HEIGHT = 429;
 	
+	/** The Constant NUMBER_LEVELS. */
 	public final static int NUMBER_LEVELS = 8;
 	
+	/** The Constant CHAPTER_ADDITION. */
 	public final static int CHAPTER_ADDITION = 1;
 	
+	/** The Constant CHAPTER_SUBTRACTION. */
 	public final static int CHAPTER_SUBTRACTION = 2;
 	
+	/** The Constant CHAPTER_MULTIPLICATION. */
 	public final static int CHAPTER_MULTIPLICATION = 3;
 	
 }
