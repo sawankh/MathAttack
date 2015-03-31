@@ -53,8 +53,12 @@ public class MainStarter extends AbstractGame {
 		AppSettings.setUp();
 		if (!SettingsManager.isFirstLaunchDone()) {
 			SettingsManager.setFirstLaunchDone(true);
-			FileManager.createTextFileInLocalStorage("profile.data");
-			FileManager.initiateMAFile("profile.data", FileType.LOCAL_FILE);
+			FileManager.createTextFileInLocalStorage("add.data");
+			FileManager.createTextFileInLocalStorage("sub.data");
+			FileManager.createTextFileInLocalStorage("mult.data");
+			FileManager.initiateMAFile("add.data", FileType.LOCAL_FILE);
+			FileManager.initiateMAFile("sub.data", FileType.LOCAL_FILE);
+			FileManager.initiateMAFile("mult.data", FileType.LOCAL_FILE);
 		}
 		//FileManager.getFile("profile.data", FileType.LOCAL_FILE).delete();
 		//SettingsManager.setFirstLaunchDone(false);
