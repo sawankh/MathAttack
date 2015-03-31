@@ -69,7 +69,9 @@ public class WorldLayerBG extends AbstractWorldScene2d {
 		setUpBackround();
 		setUpMountains();
 		setUpBottomSoils();
-		//setUpClouds();
+		if (this.level == 1 || this.level == 2 || this.level == 3 || this.level == 4) {
+			setUpClouds();
+		}
 		setUpLives(Hero.NUM_LIFES);
 		
 	}
