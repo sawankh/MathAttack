@@ -25,12 +25,16 @@
  */
 package com.sawan.mathattack.game_screens.credits;
 
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.interfaces.IScreen;
@@ -83,9 +87,31 @@ public class MACreditsScreen extends AbstractScreen implements IScreen {
 		credits.setBackground(background);
 		
 		Text credits_text = new Text(UIAssets.cartwheel_font, 90f * 3, 20f, true);
-		credits_text.setText("Game made by: Sawan J. Kapai Harpalani");
+		credits_text.setText("Game made by:");
 		
-		credits.add(credits_text);
+		Text credits_text_name = new Text(UIAssets.cartwheel_font, 90f * 3, 20f, true);
+		credits_text_name.setText("Sawan J. Kapai Harpalani");
+		
+		
+		credits.add(credits_text).padBottom(50f * AppSettings.getWorldPositionYRatio()).padRight(400f * AppSettings.getWorldPositionXRatio());
+		credits.row();
+		credits.add(credits_text_name).padBottom(50f * AppSettings.getWorldPositionYRatio()).padRight(400f * AppSettings.getWorldPositionXRatio());
+		
+		MathAttackButton home = new MathAttackButton(63f, 66f, null, true);
+		home.setTextureRegion(UIAssets.image_home_icon, true);
+		
+		home.addListener(new ActorGestureListener() {
+			@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					getGame().setScreen(new MAMainMenuScreen(getGame(), "Main Menu"));
+				}
+			});
+		
+		credits.row();
+		credits.add(home);
+		
+		getStage().addActor(credits);
 	}
 	
 	@Override
