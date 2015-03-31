@@ -1,0 +1,26 @@
+
+chapters.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+additions
+  rotate: false
+  xy: 1, 305
+  size: 250, 150
+  orig: 250, 150
+  offset: 0, 0
+  index: -1
+multiplications
+  rotate: false
+  xy: 1, 153
+  size: 250, 150
+  orig: 250, 150
+  offset: 0, 0
+  index: -1
+substractions
+  rotate: false
+  xy: 1, 1
+  size: 250, 150
+  orig: 250, 150
+  offset: 0, 0
+  index: -1
