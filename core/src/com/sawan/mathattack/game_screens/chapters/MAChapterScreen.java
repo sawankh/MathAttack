@@ -26,21 +26,18 @@
 package com.sawan.mathattack.game_screens.chapters;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.ChaptersAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
 import com.sawan.mathattack.game.AbstractGame;
+import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.interfaces.IScreen;
 import com.sawan.mathattack.models.EmptyActorLight;
 import com.sawan.mathattack.scene2d.ui.MenuCreator;
-import com.sawan.mathattack.scene2d.ui.Text;
 import com.sawan.mathattack.screen.AbstractScreen;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -94,9 +91,33 @@ Table chapters;
 	    sub.setTextureRegion(ChaptersAssets.image_chapter_sub, true);
 	    mult.setTextureRegion(ChaptersAssets.image_chapter_mult, true);
 	    
-	    chapters.add(add);
-	    chapters.add(sub);
-	    chapters.add(mult);
+	    chapters.add(add).pad(5f * AppSettings.getWorldPositionXRatio());
+	    chapters.add(sub).pad(5f * AppSettings.getWorldPositionXRatio());
+	    chapters.add(mult).pad(5f * AppSettings.getWorldPositionXRatio());
+	    
+	    add.addListener(new ActorGestureListener() {
+			@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+				}
+			});
+	    
+	    sub.addListener(new ActorGestureListener() {
+			@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+				}
+			});
+	    
+	    mult.addListener(new ActorGestureListener() {
+			@Override
+				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+					super.touchUp(event, x, y, pointer, button);
+					getGame().setScreen(new MALevelScreen(getGame(), "Main Menu"));
+				}
+			});
 	    
 		MathAttackButton home = new MathAttackButton(63f, 66f, null, true);
 		home.setTextureRegion(UIAssets.image_home_icon, true);
@@ -110,7 +131,7 @@ Table chapters;
 			});
 		
 		chapters.row();
-		chapters.add(home);
+		chapters.add(home).padTop(25f * AppSettings.getWorldPositionYRatio()).colspan(3);
 		
 		getStage().addActor(chapters);
 	}
