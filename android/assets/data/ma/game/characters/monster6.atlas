@@ -1,0 +1,19 @@
+
+monster6.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+walking
+  rotate: false
+  xy: 1, 462
+  size: 540, 459
+  orig: 540, 459
+  offset: 0, 0
+  index: 1
+walking
+  rotate: false
+  xy: 1, 1
+  size: 540, 459
+  orig: 540, 459
+  offset: 0, 0
+  index: 2
