@@ -31,7 +31,7 @@ import java.util.Random;
 
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
-import com.sawan.mathattack.asset.BlueMonsterAssets;
+import com.sawan.mathattack.asset.MonsterAssets;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.collision.CollisionDetector;
@@ -88,7 +88,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 			current_monster.setY(posY);
 			current_monster.setX(gameManager.getStage().getWidth() + (i * (current_monster.getWidth() + 100)));
 			
-			current_monster.setAnimation(BlueMonsterAssets.monster_walking, true, true);
+			current_monster.setAnimation(MonsterAssets.monster_walking, true, true);
 			
 			float rndSpeed = rnd.nextInt(100) + 20;
 			current_monster.startMoving(gameManager.getStage().getWidth(), rndSpeed, true, false);

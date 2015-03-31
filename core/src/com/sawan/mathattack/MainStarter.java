@@ -26,7 +26,7 @@
 package com.sawan.mathattack;
 
 import com.sawan.mathattack.asset.Backgrounds;
-import com.sawan.mathattack.asset.BlueMonsterAssets;
+import com.sawan.mathattack.asset.MonsterAssets;
 import com.sawan.mathattack.asset.GameAssets;
 import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.UIAssets;
@@ -64,7 +64,7 @@ public class MainStarter extends AbstractGame {
 		Backgrounds.loadAll();
 		MALevelAssets.loadAll();
 		HeroAssests.loadAll();
-		BlueMonsterAssets.loadAll();
+		MonsterAssets.loadAll();
 		GameAssets.loadAll();
 	}
 
