@@ -93,6 +93,7 @@ private int first_number;
 	/**
 	 * @return the question
 	 */
+	@Override
 	public String getQuestion() {
 		return question;
 	}
@@ -107,6 +108,7 @@ private int first_number;
 	/**
 	 * @return the correct_answer
 	 */
+	@Override
 	public int getCorrect_answer() {
 		return correct_answer;
 	}
@@ -121,6 +123,7 @@ private int first_number;
 	/**
 	 * @return the answers
 	 */
+	@Override
 	public int[] getAnswers() {
 		return answers;
 	}
@@ -132,5 +135,6 @@ private int first_number;
 		this.answers = answers;
 	}
 
+	
 
 }

@@ -35,4 +35,10 @@ public interface IQuestion {
 	public int getAnswer();
 	
 	public void setRandomAnswers(int correct_answer);
+	
+	public String getQuestion();
+
+	int getCorrect_answer();
+
+	int[] getAnswers();
 }

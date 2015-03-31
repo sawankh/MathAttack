@@ -48,7 +48,11 @@ private int first_number;
 	public Subtraction(int first_number, int second_number) {
 		this.first_number = first_number;
 		this.second_number = second_number;
-		question = setQuestion(first_number, second_number);
+		if (this.first_number < this.second_number) {
+			this.first_number = this.second_number;
+			this.second_number = first_number;
+		}
+		question = setQuestion(this.first_number, this.second_number);
 		correct_answer = getAnswer();
 		answers = new int [QuestionsSettings.NUM_ANSWER];
 		setRandomAnswers(correct_answer);
@@ -94,6 +98,7 @@ private int first_number;
 	/**
 	 * @return the question
 	 */
+	@Override
 	public String getQuestion() {
 		return question;
 	}
@@ -108,6 +113,7 @@ private int first_number;
 	/**
 	 * @return the correct_answer
 	 */
+	@Override
 	public int getCorrect_answer() {
 		return correct_answer;
 	}
@@ -122,6 +128,7 @@ private int first_number;
 	/**
 	 * @return the answers
 	 */
+	@Override
 	public int[] getAnswers() {
 		return answers;
 	}
@@ -133,5 +140,5 @@ private int first_number;
 		this.answers = answers;
 	}
 
-
+	
 }

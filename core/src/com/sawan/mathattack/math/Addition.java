@@ -95,6 +95,7 @@ public class Addition implements IQuestion {
 	/**
 	 * @return the question
 	 */
+	@Override
 	public String getQuestion() {
 		return question;
 	}
@@ -109,6 +110,7 @@ public class Addition implements IQuestion {
 	/**
 	 * @return the correct_answer
 	 */
+	@Override
 	public int getCorrect_answer() {
 		return correct_answer;
 	}
@@ -123,6 +125,7 @@ public class Addition implements IQuestion {
 	/**
 	 * @return the answers
 	 */
+	@Override
 	public int[] getAnswers() {
 		return answers;
 	}
