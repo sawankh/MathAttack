@@ -81,7 +81,7 @@ Table chapters;
 		chapters.setSize(1000f * AppSettings.getWorldSizeRatio(), 300f * AppSettings.getWorldSizeRatio());
 	    chapters.setPosition((getStage().getWidth() / 2) - (chapters.getWidth() / 2), (getStage().getHeight() / 2) - (chapters.getHeight() / 2));
 	    //level_table.align(Align.center);
-	    chapters.addAction(Actions.moveTo((getStage().getWidth() / 2) - (chapters.getWidth() / 2), (getStage().getHeight() / 2) - (chapters.getHeight() / 2), 2.5f));
+	    //chapters.addAction(Actions.moveTo((getStage().getWidth() / 2) - (chapters.getWidth() / 2), (getStage().getHeight() / 2) - (chapters.getHeight() / 2), 2.5f));
 		//level_table.top().left().pad(30, 30, 30, 30);
 		//Drawable background = new TextureRegionDrawable(UIAssets.image_empty_bg);
 		//chapters.setBackground(background);
