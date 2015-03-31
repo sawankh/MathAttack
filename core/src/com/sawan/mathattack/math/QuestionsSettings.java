@@ -34,6 +34,10 @@ public class QuestionsSettings {
 
 	public final static String OPERATION_SYMBOL_ADDITION = "+";
 	
+	public final static String OPERATION_SYMBOL_SUBTRACTION = "-";
+	
+	public final static String OPERATION_SYMBOL_MULTIPLICATION = "x";
+	
 	public final static int NUM_ANSWER = 3;
 	
 	public final static int MAX_QUIZ_VALUE = 49;
