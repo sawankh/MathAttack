@@ -47,8 +47,8 @@ import com.sawan.mathattack.settings.AppSettings;
 public class WorldLayerBG extends AbstractWorldScene2d {
 	MAGameManager gameManager;
 
-	public final float SOIL_WIDHT = 205f / 3;
-	public final float SOIL_HEIGHT = 208f /3;
+	public final float SOIL_WIDHT = 68f;
+	public final float SOIL_HEIGHT = 69f;
 	
 	
 	private ArrayList<Actor> hearts;

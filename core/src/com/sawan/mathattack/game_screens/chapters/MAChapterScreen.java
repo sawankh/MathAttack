@@ -32,6 +32,7 @@ import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.ChaptersAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.MathAttackButton;
+import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
@@ -84,9 +85,9 @@ public int chapter;
 		//Drawable background = new TextureRegionDrawable(UIAssets.image_empty_bg);
 		//chapters.setBackground(background);
 		
-	    EmptyActorLight add = new EmptyActorLight(300f, 279f, true);
-	    EmptyActorLight sub = new EmptyActorLight(300f, 279, true);
-	    EmptyActorLight mult = new EmptyActorLight(300f, 279f, true);
+	    EmptyActorLight add = new EmptyActorLight(MAConstants.CHAPTER_WIDTH, MAConstants.CHAPTER_HEIGHT, true);
+	    EmptyActorLight sub = new EmptyActorLight(MAConstants.CHAPTER_WIDTH, MAConstants.CHAPTER_HEIGHT, true);
+	    EmptyActorLight mult = new EmptyActorLight(MAConstants.CHAPTER_WIDTH, MAConstants.CHAPTER_HEIGHT, true);
 		
 	    add.setTextureRegion(ChaptersAssets.image_chapter_add, true);
 	    sub.setTextureRegion(ChaptersAssets.image_chapter_sub, true);
@@ -123,7 +124,7 @@ public int chapter;
 				}
 			});
 	    
-		MathAttackButton home = new MathAttackButton(63f, 66f, null, true);
+		MathAttackButton home = new MathAttackButton(MAConstants.SMALL_BUTTON_WIDTH, MAConstants.SMALL_BUTTON_HEIGHT, null, true);
 		home.setTextureRegion(UIAssets.image_home_icon, true);
 		
 		home.addListener(new ActorGestureListener() {

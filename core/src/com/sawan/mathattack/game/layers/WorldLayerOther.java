@@ -35,6 +35,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.GameButton;
+import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.game.managers.MAGameManager;
 import com.sawan.mathattack.game_screens.levels.MALevelScreen;
 import com.sawan.mathattack.math.Addition;
@@ -71,11 +72,11 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 		
 		final IQuestion question_type;
 		//final Addition question_type = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
-		if (MALevelScreen.chapter == 1) {
+		if (MALevelScreen.chapter == MAConstants.CHAPTER_ADDITION) {
 			question_type = new Addition(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
-		} else if (MALevelScreen.chapter == 2) {
+		} else if (MALevelScreen.chapter == MAConstants.CHAPTER_SUBTRACTION) {
 			question_type = new Subtraction(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
-		} else if (MALevelScreen.chapter == 3) {
+		} else if (MALevelScreen.chapter == MAConstants.CHAPTER_MULTIPLICATION) {
 			question_type = new Multiplication(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(1, 9));
 		} else {
 			question_type = null;

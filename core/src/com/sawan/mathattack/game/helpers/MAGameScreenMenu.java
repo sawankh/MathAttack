@@ -57,9 +57,11 @@ public class MAGameScreenMenu {
 	public Table level_complete;
 	public int number_stars;
 	
+	protected final static float PAUSE_SIZE = 64f;
+	
 	public void setUpGameScreenMenu(final MAGameScreen gameScreen) {
 		btnPlayStop = MenuCreator.createCustomToggleButton(null,
-                GameAssets.pause, GameAssets.pause, false, 64, 64,
+                GameAssets.pause, GameAssets.pause, false, PAUSE_SIZE, PAUSE_SIZE,
                 true);
 		btnPlayStop.setPosition(gameScreen.getStage().getWidth() - btnPlayStop.getWidth(), 
 				gameScreen.getStage().getHeight() - btnPlayStop.getHeight());

@@ -30,6 +30,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.sawan.mathattack.asset.UIAssets;
+import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.scene2d.ui.AbstractButton;
 import com.sawan.mathattack.settings.AppSettings;
 
@@ -71,7 +72,7 @@ public class ButtonLevel extends AbstractButton {
 
 			// If level number set
 			// ##################################################################
-			else if (levelNumber != -999 && bitMapFont != null) {
+			else if (levelNumber != MAConstants.UNDEFINED && bitMapFont != null) {
 				super.draw(batch, parentAlpha);
 				drawLevelNumber(batch);
 				drawText(batch);

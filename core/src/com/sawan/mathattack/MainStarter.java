@@ -32,9 +32,9 @@ import com.sawan.mathattack.asset.HeroAssests;
 import com.sawan.mathattack.asset.MonsterAssets;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.asset.levels.MALevelAssets;
+import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game_screens.chapters.MAChapterScreen;
-import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
 import com.sawan.mathattack.managers.FileManager;
 import com.sawan.mathattack.managers.FileManager.FileType;
 import com.sawan.mathattack.managers.SettingsManager;
@@ -53,12 +53,12 @@ public class MainStarter extends AbstractGame {
 		AppSettings.setUp();
 		if (!SettingsManager.isFirstLaunchDone()) {
 			SettingsManager.setFirstLaunchDone(true);
-			FileManager.createTextFileInLocalStorage("add.data");
-			FileManager.createTextFileInLocalStorage("sub.data");
-			FileManager.createTextFileInLocalStorage("mult.data");
-			FileManager.initiateMAFile("add.data", FileType.LOCAL_FILE);
-			FileManager.initiateMAFile("sub.data", FileType.LOCAL_FILE);
-			FileManager.initiateMAFile("mult.data", FileType.LOCAL_FILE);
+			FileManager.createTextFileInLocalStorage(MAConstants.ADDITION_FILE);
+			FileManager.createTextFileInLocalStorage(MAConstants.SUBTRACTION_FILE);
+			FileManager.createTextFileInLocalStorage(MAConstants.MULTIPLICATION_FILE);
+			FileManager.initiateMAFile(MAConstants.ADDITION_FILE, FileType.LOCAL_FILE);
+			FileManager.initiateMAFile(MAConstants.SUBTRACTION_FILE, FileType.LOCAL_FILE);
+			FileManager.initiateMAFile(MAConstants.MULTIPLICATION_FILE, FileType.LOCAL_FILE);
 		}
 		//FileManager.getFile("profile.data", FileType.LOCAL_FILE).delete();
 		//SettingsManager.setFirstLaunchDone(false);

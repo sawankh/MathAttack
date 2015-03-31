@@ -37,6 +37,7 @@ import com.sawan.mathattack.asset.Backgrounds;
 import com.sawan.mathattack.asset.UIAssets;
 import com.sawan.mathattack.buttons.ButtonLevel;
 import com.sawan.mathattack.buttons.MathAttackButton;
+import com.sawan.mathattack.constants.MAConstants;
 import com.sawan.mathattack.game.AbstractGame;
 import com.sawan.mathattack.game.screen.MAGameScreen;
 import com.sawan.mathattack.game_screens.main.MAMainMenuScreen;
@@ -62,7 +63,7 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 	
 	public MALevelScreen(AbstractGame game, String screenName, int chapter) {
 		super(game, screenName);
-		this.chapter = chapter;
+		MALevelScreen.chapter = chapter;
         setUpScreenElements();
 		setUpLevelsScreen();
 	}
@@ -78,25 +79,15 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		// (Override keyBackPressed to do some action see very below)
 		// #########################################################
 		setBackButtonActive(true);
-		
-		// #1.3 TEST
-		// Screen time / Fps
-		// Update by overriding render
-		// #########################################################
-		lblScreenTime = new Label("", UIAssets.getSkin());
-		lblFps = new Label("", UIAssets.getSkin());
-		lblScreenTime.setPosition(getStage().getWidth() - 80, getStage().getHeight() - 40);
-		lblFps.setPosition(getStage().getWidth() - 80, getStage().getHeight() - 60);
-		getStage().addActor(lblScreenTime);
-		getStage().addActor(lblFps);
+
 	}
 	
 	private void setUpLevelsScreen() {
 		// Create levels table
 		// ######################################################################
 	    level_table = MenuCreator.createTable(false, UIAssets.getSkin());
-	    level_table.setSize(489 * AppSettings.getWorldSizeRatio(), 429 * AppSettings.getWorldSizeRatio());
-	    level_table.setPosition(-999, 0);
+	    level_table.setSize(MAConstants.LEVEL_TABLE_WIDTH * AppSettings.getWorldSizeRatio(), MAConstants.LEVEL_TABLE_WIDTH * AppSettings.getWorldSizeRatio());
+	    level_table.setPosition(MAConstants.UNDEFINED, 0);
 	    //level_table.align(Align.center);
 	    level_table.addAction(Actions.moveTo((getStage().getWidth() / 2) - (level_table.getWidth() / 2), (getStage().getHeight() / 2) - (level_table.getHeight() / 2), 0.7f));
 		//level_table.top().left().pad(30, 30, 30, 30);
@@ -111,11 +102,11 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 		// Add levels buttons
 		// Normally get this number from textfiles or database
 		// ######################################################################
-		int numberOfLevels = 8;
+		//int numberOfLevels = 8;
 		
 		
 		// Create buttons with a loop
-		for (int i = 0; i < numberOfLevels; i++){
+		for (int i = 0; i < MAConstants.NUMBER_LEVELS; i++){
 			//1. Create level button
             Drawable dUp = new TextureRegionDrawable(UIAssets.button_level);
             Drawable dDown = new TextureRegionDrawable(UIAssets.button_level);
@@ -133,12 +124,12 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			//4. Set stars or any other achievements (get from database or text files here)
 			// I just made a random number of earned stars 
 			//Random rnd = new Random();
-			if (chapter == 1) {
-				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("add.data", i, FileType.LOCAL_FILE)));
-			} else if (chapter == 2) {
-				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("sub.data", i, FileType.LOCAL_FILE)));
-			} else if (chapter == 3) {
-				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine("mult.data", i, FileType.LOCAL_FILE)));
+			if (chapter == MAConstants.CHAPTER_ADDITION) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine(MAConstants.ADDITION_FILE, i, FileType.LOCAL_FILE)));
+			} else if (chapter == MAConstants.CHAPTER_SUBTRACTION) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine(MAConstants.SUBTRACTION_FILE, i, FileType.LOCAL_FILE)));
+			} else if (chapter == MAConstants.CHAPTER_MULTIPLICATION) {
+				levelButton.setLevelStars(UIAssets.image_level_no_star, UIAssets.image_level_star, 3, Integer.parseInt(FileManager.readLine(MAConstants.MULTIPLICATION_FILE, i, FileType.LOCAL_FILE)));
 			}
 			
 			//5. Add  listener
@@ -162,7 +153,7 @@ public class MALevelScreen extends AbstractScreen implements IScreen {
 			
 		}
 		
-		MathAttackButton home = new MathAttackButton(63f, 66f, null, true);
+		MathAttackButton home = new MathAttackButton(MAConstants.SMALL_BUTTON_WIDTH, MAConstants.SMALL_BUTTON_HEIGHT, null, true);
 		home.setTextureRegion(UIAssets.image_home_icon, true);
 		
 		home.addListener(new ActorGestureListener() {
