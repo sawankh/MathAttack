@@ -7,7 +7,8 @@ On the other hand the motor of this project is Libgdx, a powerful framework to c
 * version: 1.0
 * development blog: [Math Attack blog](http://mathattackgame.wordpress.com/)
 * desktop release: [Desktop](https://github.com/alu0100694765/MathAttack/releases)
-* android release: [MATHATTACK](https://play.google.com/store/apps/details?id=com.sawan.mathattack.android&hl=es)![GooglePlay](/logo/logo.jpg)
+* android release: [MATHATTACK](https://play.google.com/store/apps/details?id=com.sawan.mathattack.android&hl=es)
+![GooglePlay](/logo/logo.jpg)
 
 ## [Colaborators](https://github.com/alu0100694765/Knapsack/graphs/contributors)
 Sawan Jagdish Kapai Harpalani. Contact: <sawankapai@gmail.com>
