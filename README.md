@@ -6,6 +6,8 @@ Mathattack is a game for cross-platform such as html, android, desktop. Based fo
 On the other hand the motor of this project is Libgdx, a powerful framework to create games.
 * version: 1.0
 * development blog: [Math Attack blog](http://mathattackgame.wordpress.com/)
+* desktop release: [Desktop](https://github.com/alu0100694765/MathAttack/releases)
+* android release: [MATHATTACK](https://play.google.com/store/apps/details?id=com.sawan.mathattack.android&hl=es)![GooglePlay](/logo/logo.jpg)
 
 ## [Colaborators](https://github.com/alu0100694765/Knapsack/graphs/contributors)
 Sawan Jagdish Kapai Harpalani. Contact: <sawankapai@gmail.com>
@@ -39,3 +41,5 @@ This project has used this framework as a project template and the Math Attack t
 ## Importing Your Project
 
 Go to File -> Import -> Gradle -> Gradle Project, click Browse and navigate to the root folder of your project, then click Build Model. After a while, you'll see a root project and subprojects (android, core, desktop, html, ios). Select all the projects and click Finish. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
+
+Note: If you have problems with the file local.properties just modify it and add your android sdk path and then hit build model. Solved.
