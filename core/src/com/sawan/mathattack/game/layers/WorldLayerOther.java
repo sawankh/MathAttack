@@ -97,7 +97,7 @@ public class WorldLayerOther extends AbstractWorldScene2d {
 		} else if (MALevelScreen.chapter == MAConstants.CHAPTER_SUBTRACTION) {
 			question_type = new Subtraction(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE));
 		} else if (MALevelScreen.chapter == MAConstants.CHAPTER_MULTIPLICATION) {
-			question_type = new Multiplication(QuestionsUtils.randomNumber(QuestionsSettings.MIN_QUIZ_VALUE, QuestionsSettings.MAX_QUIZ_VALUE), QuestionsUtils.randomNumber(1, 9));
+			question_type = new Multiplication(QuestionsUtils.randomNumber(0, 11), QuestionsUtils.randomNumber(1, 9));
 		} else {
 			question_type = null;
 		}

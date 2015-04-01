@@ -128,7 +128,7 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 			current_monster.setAnimation(MonsterAssets.monster_walking, true, true);
 			
 			float rndSpeed = rnd.nextInt(SPEED) + 20;
-			current_monster.startMoving(gameManager.getStage().getWidth(), rndSpeed, true, false);
+			current_monster.startMoving(gameManager.getStage().getWidth(), rndSpeed * AppSettings.getWorldPositionXRatio(), true, false);
 			
 			enemies.add(current_monster);
 			addActor(current_monster);
@@ -235,12 +235,12 @@ public class WorldLayerActors extends AbstractWorldScene2d {
 	public void addBullet() {
 		final Bullet bullet = new Bullet(BULLET_SIZE, BULLET_SIZE, true);
 		bullet.setX(hero.getX() + hero.getWidth());
-		bullet.setY((gameManager.worldLayer_background.SOIL_HEIGHT * AppSettings.getWorldPositionYRatio()) + (hero.getHeight() / 2) - bullet.getHeight());
+		bullet.setY((hero.getY()) + (bullet.getHeight() / 2));
 		bullet.setTextureRegion(GameAssets.loadRandomProjectile(), true);
 		
 		bullets.add(bullet);
 		
-		bullet.startMoving(gameManager.getStage().getWidth(), 125f * AppSettings.getWorldPositionXRatio(), true);
+		bullet.startMoving(gameManager.getStage().getWidth(), 150f * AppSettings.getWorldPositionXRatio(), true);
 		
 		addActor(bullet);
 	}
